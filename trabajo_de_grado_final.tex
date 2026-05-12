@@ -149,13 +149,13 @@ Este logro también es suyo.}\\[0.8cm]
 
 \chapter*{Resumen}
 
-Este trabajo de grado evalúa la viabilidad técnica y el desempeño del algoritmo de Shor para la factorización del entero \(N = 15\) en procesadores cuánticos NISQ de IBM, comparando los resultados obtenidos en tres entornos de ejecución progresivamente más realistas: simulación ideal, simulación con modelo de ruido calibrado (\textit{Fake Backend} basado en \texttt{ibm\_torino}) y ejecución en el procesador real \texttt{ibm\_torino} (familia Heron~r1, 133 qubits superconductores). La implementación se realizó en Python utilizando el SDK Qiskit. Se aplicaron tres estrategias de optimización y supresión de errores: el algoritmo de ruteo SABRE para adaptar el circuito a la topología \textit{Heavy-Hex}, el Desacoplamiento Dinámico (DD) para reenfocar la decoherencia y el Pauli Twirling (PT) para convertir errores coherentes en ruido estocástico. El desempeño se cuantificó mediante la fidelidad de Hellinger y la probabilidad de éxito experimental (\(PST\)). Los resultados confirman la factorización experimental de \(N = 15 = 3 \times 5\) en hardware real, con una señal máxima de \(PST = 82.8\%\) y una tasa de éxito cercana al \(90\%\) en la extracción de los factores no triviales sobre las bases coprimas válidas. El nivel de optimización del transpilador resultó ser el factor más determinante para la viabilidad del algoritmo, con una ganancia aproximada de \(64\times\) en señal. Por contraste, las técnicas de supresión de errores mostraron un efecto contraproducente en el régimen estudiado: el Desacoplamiento Dinámico degradó la señal en más de 60 puntos porcentuales. Se documenta además que los \textit{Fake Backends} subestiman la calidad del hardware real en circuitos de profundidad moderada. El trabajo aporta evidencia experimental rigurosa y una metodología reproducible para futuros estudios en computación cuántica en la Universidad de Nariño.\\
+Este trabajo de grado evalúa la viabilidad técnica y el desempeño del algoritmo de Shor para la factorización del entero \(N = 15\) en procesadores cuánticos NISQ de IBM, comparando los resultados obtenidos en tres entornos de ejecución progresivamente más realistas: simulación ideal, simulación con modelo de ruido calibrado (\textit{Fake Backend} basado en \texttt{ibm\_torino}) y ejecución en el procesador real \texttt{ibm\_torino} (familia Heron~r1, 133 qubits superconductores). La implementación se realizó en Python utilizando el SDK Qiskit. Se aplicaron tres estrategias de optimización y supresión de errores: el algoritmo de ruteo SABRE para adaptar el circuito a la topología \textit{Heavy-Hex}, el Desacoplamiento Dinámico (DD) para reenfocar la decoherencia y el Pauli Twirling (PT) para convertir errores coherentes en ruido estocástico. El desempeño se cuantificó mediante la fidelidad de Hellinger y la probabilidad de éxito experimental (\(PST\)). Los resultados demuestran experimentalmente la ejecución exitosa de una versión compilada del algoritmo de Shor para \(N = 15\) en hardware real, recuperando los factores \(3 \times 5\) a partir de la fase medida, con una señal máxima de \(PST = 82.8\%\) y una tasa de éxito cercana al \(90\%\) en la extracción de los factores no triviales sobre las bases coprimas válidas. En el conjunto de configuraciones evaluadas, el nivel de optimización del transpilador fue la variable de control con \emph{mayor impacto observado} sobre la señal experimental, con una ganancia de hasta dos órdenes de magnitud en PST entre \texttt{opt=0} y \texttt{opt=2} sobre la base $a=4$. Por contraste, las técnicas de supresión de errores mostraron un efecto contraproducente en el régimen estudiado: el Desacoplamiento Dinámico degradó la señal en más de 60 puntos porcentuales. Se documenta, sobre las dos bases con medición pareada disponibles en ambos entornos, que el \textit{Fake Backend} utilizado subestima la calidad del hardware real en el régimen de circuitos de profundidad moderada estudiado. El trabajo aporta evidencia experimental rigurosa y una metodología reproducible para futuros estudios en computación cuántica en la Universidad de Nariño.\\
 
 \noindent\textbf{Palabras clave:} computación cuántica, algoritmo de Shor, era NISQ, IBM Quantum, transpilación, SABRE, Desacoplamiento Dinámico, Pauli Twirling, fidelidad de Hellinger.
 
 \chapter*{Abstract}
 
-This thesis evaluates the technical feasibility and performance of Shor's algorithm for the factorization of the integer \(N = 15\) on IBM NISQ quantum processors, comparing the results obtained in three progressively more realistic execution environments: ideal simulation, simulation with a calibrated noise model (\textit{Fake Backend} based on \texttt{ibm\_torino}), and execution on the real \texttt{ibm\_torino} processor (Heron~r1 family, 133 superconducting qubits). The implementation was carried out in Python using the Qiskit SDK. Three optimization and error suppression strategies were applied: the SABRE routing algorithm to adapt the circuit to the \textit{Heavy-Hex} topology, Dynamical Decoupling (DD) to refocus decoherence, and Pauli Twirling (PT) to convert coherent errors into stochastic noise. Performance was quantified using the Hellinger fidelity and the experimental probability of success (\(PST\)). The results confirm the experimental factorization of \(N = 15 = 3 \times 5\) on real hardware, with a maximum signal of \(PST = 82.8\%\) and a success rate close to \(90\%\) in the extraction of non-trivial factors over the valid coprime bases. The transpiler optimization level proved to be the most decisive factor for the viability of the algorithm, yielding an approximate \(64\times\) gain in signal. In contrast, the error suppression techniques showed a counterproductive effect in the studied regime: Dynamical Decoupling degraded the signal by more than 60 percentage points. It is also documented that \textit{Fake Backends} underestimate the quality of real hardware in moderate-depth circuits. This work provides rigorous experimental evidence and a reproducible methodology for future research in quantum computing at the University of Nariño.\\
+This thesis evaluates the technical feasibility and performance of Shor's algorithm for the factorization of the integer \(N = 15\) on IBM NISQ quantum processors, comparing the results obtained in three progressively more realistic execution environments: ideal simulation, simulation with a calibrated noise model (\textit{Fake Backend} based on \texttt{ibm\_torino}), and execution on the real \texttt{ibm\_torino} processor (Heron~r1 family, 133 superconducting qubits). The implementation was carried out in Python using the Qiskit SDK. Three optimization and error suppression strategies were applied: the SABRE routing algorithm to adapt the circuit to the \textit{Heavy-Hex} topology, Dynamical Decoupling (DD) to refocus decoherence, and Pauli Twirling (PT) to convert coherent errors into stochastic noise. Performance was quantified using the Hellinger fidelity and the experimental probability of success (\(PST\)). The results experimentally demonstrate the successful execution of a compiled version of Shor's algorithm for \(N = 15\) on real hardware, recovering the \(3 \times 5\) factorization from the measured phase, with a maximum signal of \(PST = 82.8\%\) and a success rate close to \(90\%\) in the extraction of non-trivial factors over the valid coprime bases. Across the set of evaluated configurations, the transpiler optimization level was the control variable with the \emph{largest observed impact} on the experimental signal, yielding gains of up to two orders of magnitude in PST between \texttt{opt=0} and \texttt{opt=2} for base $a=4$. In contrast, the error suppression techniques showed a counterproductive effect in the studied regime: Dynamical Decoupling degraded the signal by more than 60 percentage points. It is also documented, over the two bases for which paired measurements are available in both environments, that the \textit{Fake Backend} used underestimates the quality of real hardware in the moderate-depth regime studied. This work provides rigorous experimental evidence and a reproducible methodology for future research in quantum computing at the University of Nariño.\\
 
 \noindent\textbf{Keywords:} quantum computing, Shor's algorithm, NISQ era, IBM Quantum, transpilation, SABRE, Dynamical Decoupling, Pauli Twirling, Hellinger fidelity.
 
@@ -164,7 +164,7 @@ This thesis evaluates the technical feasibility and performance of Shor's algori
 
 \textbf{ALAP (\textit{As Late As Possible}):} criterio de planificación que retrasa cada operación lo máximo posible dentro del circuito, dejando los huecos de inactividad al inicio para insertar pulsos de protección.\\
 
-\textbf{AQFT:} versión recortada de la Transformada Cuántica de Fourier en la que se descartan las rotaciones de ángulo más pequeño; reduce la profundidad del circuito a cambio de una pequeña pérdida de precisión.\\
+\textbf{AQFT:} versión recortada de la Transformada Cuántica de Fourier en la que se descartan las rotaciones de ángulo más pequeño; reduce la profundidad del circuito a cambio de una pequeña pérdida de precisión. Se menciona en el marco teórico como referencia general de la literatura; en este trabajo no se aplicó truncamiento explícito de las rotaciones $R_k$, sino que la aproximación se delegó al parámetro \texttt{approximation\_degree} del transpilador de Qiskit (cf. Apéndice~\ref{app:sabre-avanzado}).\\
 
 \textbf{Backend:} dispositivo donde finalmente corre el circuito, ya sea una máquina física en un laboratorio de IBM o un programa que imita su comportamiento.\\
 
@@ -178,7 +178,7 @@ This thesis evaluates the technical feasibility and performance of Shor's algori
 
 \textbf{Eagle / Heron / Flamingo:} sucesivas familias de procesadores superconductores de IBM. Eagle tiene 127 qubits, Heron r1 (el utilizado en este trabajo) 133, y Flamingo es la generación anunciada como siguiente paso.\\
 
-\textbf{ECR (\textit{Echoed Cross-Resonance}):} compuerta nativa de dos qubits en algunos procesadores de IBM; lógicamente equivale a la CNOT salvo por rotaciones locales adicionales.\\
+\textbf{ECR (\textit{Echoed Cross-Resonance}):} compuerta nativa de dos qubits en la familia Eagle de IBM (basada en acoplamiento de cross-resonance); lógicamente equivale a la CNOT salvo por rotaciones locales adicionales. En la familia Heron~r1 utilizada en este trabajo, IBM migró a CZ como compuerta nativa de dos qubits mediante el uso de acopladores \textit{tunable}.\\
 
 \textbf{Fake Backend:} simulador local que imita un procesador real cargando una "fotografía" de sus parámetros de calibración; permite ensayar el algoritmo sin consumir tiempo de cómputo en la nube.\\
 
@@ -229,7 +229,7 @@ This thesis evaluates the technical feasibility and performance of Shor's algori
 
 La computación cuántica se ha consolidado como una de las fronteras más activas de la física contemporánea y la ciencia de la computación. Fundamentada en los principios de superposición y entrelazamiento de la mecánica cuántica, esta disciplina promete abordar problemas que resultan intratables para los computadores clásicos, con aplicaciones que abarcan desde la simulación de sistemas moleculares hasta la optimización combinatoria. Dentro de este panorama, el algoritmo de Shor ocupa un lugar paradigmático: demostró teóricamente que un computador cuántico puede factorizar un entero \(N\) en tiempo polinomial, una ventaja exponencial sobre los mejores algoritmos clásicos conocidos y una amenaza directa a los sistemas criptográficos de clave pública como RSA. Su materialización práctica, sin embargo, enfrenta un obstáculo físico fundamental: el hardware cuántico actual pertenece a la era NISQ (\textit{Noisy Intermediate-Scale Quantum}), caracterizada por un número intermedio de qubits y por la ausencia de corrección de errores cuánticos a escala completa. En este régimen, la decoherencia y las tasas de error de las compuertas lógicas restringen severamente la complejidad de los algoritmos que pueden ejecutarse con resultados distinguibles del ruido.\\
 
-El presente trabajo de grado nace de la confluencia de dos circunstancias. Por un lado, la democratización del acceso a procesadores cuánticos reales a través de la plataforma IBM Quantum y su ecosistema de desarrollo Qiskit, que permite a estudiantes e investigadores ejecutar circuitos en hardware superconductor de última generación desde cualquier lugar del mundo. Por otro lado, la escasez de trabajos experimentales en computación cuántica reportados desde la Universidad de Nariño y la región. Esta investigación se propone cerrar dicha brecha, aportando evidencia experimental sobre el desempeño del algoritmo de Shor en dispositivos reales y generando una metodología reproducible que sirva como referencia para futuros estudios en la institución.\\
+El presente trabajo de grado nace de la confluencia de dos circunstancias. Por un lado, la democratización del acceso a procesadores cuánticos reales a través de la plataforma IBM Quantum y su ecosistema de desarrollo Qiskit, que permite a estudiantes e investigadores ejecutar circuitos en hardware superconductor de última generación desde cualquier lugar del mundo. Por otro lado, la escasez de trabajos experimentales en computación cuántica reportados desde la Universidad de Nariño y la región. Esta investigación se propone cerrar dicha brecha, aportando evidencia experimental sobre el desempeño del algoritmo de Shor en dispositivos reales y generando una metodología reproducible que sirva como referencia para futuros estudios en la institución. Cabe precisar desde ahora que la implementación experimental aquí evaluada corresponde a la variante \emph{compilada} del algoritmo de Shor, estándar en la literatura NISQ para casos pedagógicos \cite{Skosana2021, Lanyon2007, smolin2013oversimplifying}: la exponenciación modular se sintetiza como un operador unitario precomputado clásicamente para cada base $a$, lo que se discute en detalle en §\ref{sec:construccion_circuitos} y en las limitaciones del trabajo (§\ref{cap:conclusiones}).\\
 
 Para la evaluación experimental, este trabajo se enfoca en la instancia pedagógica canónica del algoritmo, la factorización de \(N = 15\). A pesar de su tamaño reducido, este caso constituye una prueba de estrés exigente para el hardware actual, pues exige circuitos profundos de exponenciación modular y la aplicación de la Transformada Cuántica de Fourier sobre un registro de varios qubits. La ejecución en un procesador real introduce además tres desafíos físicos interrelacionados: la conectividad restringida de la topología \textit{Heavy-Hex} de los procesadores IBM, que obliga al transpilador a insertar compuertas SWAP adicionales y amplificar la profundidad del circuito; la fidelidad limitada de las compuertas nativas de dos qubits, cuyos errores se acumulan con cada operación; y los tiempos de coherencia finitos, que imponen un límite estricto a la duración total del experimento. Para contrarrestar estas limitaciones se evaluaron tres estrategias complementarias: el algoritmo de ruteo SABRE, que minimiza heurísticamente la inserción de SWAPs durante la transpilación; el Desacoplamiento Dinámico (DD), que reenfoca la decoherencia de baja frecuencia mediante secuencias de pulsos en los intervalos de inactividad; y el Pauli Twirling (PT), que convierte errores coherentes en ruido estocástico promediable.\\
 
@@ -346,10 +346,6 @@ En el ámbito nacional, Colombia ha mostrado señales de un interés institucion
 
 \newpage
 
-% =========================================================================
-% BLOQUE A — Sección 4.2 reducida (cuerpo principal)
-% =========================================================================
-
 \section{Fundamentos de la computación cuántica}
 \label{sec:fundamentos}
  
@@ -373,7 +369,7 @@ El estado más general de un qubit es una superposición coherente
 \end{equation}
 donde $\alpha$ y $\beta$ son las \textit{amplitudes de probabilidad}: al medir en la base computacional, los resultados $|0\rangle$ y $|1\rangle$ se obtienen con probabilidades $|\alpha|^2$ y $|\beta|^2$ respectivamente \cite{Nielsen2024, Wong2022}.\\
  
-Las matrices de Pauli (Figura ~\ref{fig:compuertas}), junto con la identidad, generan el espacio de operadores hermíticos sobre $\mathbb{C}^2$ \cite{Nielsen2024} y aparecen sistemáticamente en la descripción de compuertas y canales de ruido.\\
+Las matrices de Pauli (Figura~\ref{fig:compuertas}), junto con la identidad, generan el espacio de operadores hermíticos sobre $\mathbb{C}^2$ \cite{Nielsen2024} y aparecen sistemáticamente en la descripción de compuertas y canales de ruido.\\
 
 Cuando exista incertidumbre clásica adicional sobre el estado del sistema (por ejemplo, debido a la interacción con el entorno), se emplea el \textit{operador densidad} $\rho = |\psi\rangle\langle\psi|$ para estados puros, o $\rho = \sum_i p_i |\psi_i\rangle\langle\psi_i|$ con $\sum_i p_i = 1$ para ensambles estadísticos \cite{Nielsen2024, Watrous2018}. Este formalismo es indispensable para describir el ruido NISQ (Sección~\ref{sec:nisq}).
 
@@ -458,10 +454,6 @@ Finalmente, la medición proyectiva implementada en el hardware no es ideal: se 
 \end{equation}
 donde $P(m|s)$ es la probabilidad de registrar el resultado $m$ cuando el estado real del qubit es $|s\rangle$. La asimetría habitual entre $P(1|0)$ y $P(0|1)$ refleja la asimetría energética entre $|0\rangle$ y $|1\rangle$ en los qubits superconductores \cite{Preskill, DeCusatis2021}. La inversión de $\mathcal{A}$ permite mitigar el error de lectura a posteriori sobre las distribuciones de probabilidad medidas; el procedimiento concreto, junto con la representación de Kraus de los canales y la composición del canal despolarizante con la operación unitaria, se desarrolla en el Apéndice~\ref{app:ruido}.
 
-% =========================================================================
-% BLOQUE A — Sección 4.3 reescrita (cuerpo principal)
-% =========================================================================
-
 \section{El algoritmo de Shor}
 
 El algoritmo de Shor \cite{Shor1994} resuelve, en un computador cuántico ideal y en tiempo polinomial, el problema de factorizar un entero compuesto impar $N$. Su importancia trasciende el interés algorítmico: la seguridad del criptosistema RSA, ampliamente desplegado en la infraestructura de Internet, descansa sobre la presunta dificultad clásica de este mismo problema. Los mejores algoritmos clásicos conocidos (en particular el \textit{General Number Field Sieve}) requieren un tiempo subexponencial en el número de bits $L = \lceil \log_2 N \rceil$, mientras que el algoritmo de Shor lo logra en $\mathcal{O}(L^3)$ operaciones cuánticas, una aceleración superpolinomial.\\
@@ -508,7 +500,7 @@ Esta representación revela que el entrelazamiento del estado de entrada se mape
 
 \textbf{Limitaciones de la QFT en el régimen NISQ.}\\
 
-Asintóticamente, la QFT exacta demanda $\mathcal{O}(n^2)$ compuertas. Sin embargo, en la arquitectura NISQ, las compuertas $R_k$ para valores grandes de $k$ inducen rotaciones con ángulos $\theta = 2\pi/2^k$ exponencialmente pequeños. Cuando la magnitud de estas rotaciones cae por debajo de la tasa de error intrínseca de las compuertas de dos qubits, estas operaciones no solo son redundantes, sino perjudiciales, ya que inyectan más ruido por decoherencia térmica que corrección de fase. Esto justifica la adopción de la transformada cuántica de Fourier aproximada (AQFT), donde se truncan las compuertas $R_k$ para $k > m$, reduciendo la profundidad del circuito a cambio de una degradación controlada de la fidelidad.
+Asintóticamente, la QFT exacta demanda $\mathcal{O}(n^2)$ compuertas. Sin embargo, en la arquitectura NISQ, las compuertas $R_k$ para valores grandes de $k$ inducen rotaciones con ángulos $\theta = 2\pi/2^k$ exponencialmente pequeños. Cuando la magnitud de estas rotaciones cae por debajo de la tasa de error intrínseca de las compuertas de dos qubits, estas operaciones pueden inyectar más ruido por decoherencia térmica que corrección de fase efectiva. Una estrategia general presente en la literatura para mitigar este efecto es la transformada cuántica de Fourier aproximada (AQFT), en la que las compuertas $R_k$ se truncan explícitamente para $k > m$, reduciendo la profundidad del circuito a cambio de una degradación controlada de la fidelidad. En el presente trabajo, sin embargo, no se aplicó AQFT mediante truncamiento explícito de las rotaciones $R_k$; en su lugar, se delegó la aproximación al transpilador de Qiskit mediante el parámetro \texttt{approximation\_degree}$=0{,}7$, que es un umbral de fidelidad de síntesis de bloques de dos qubits dentro del compilador y cuya función exacta se detalla en el Apéndice~\ref{app:sabre-avanzado}. Por tanto, la AQFT se presenta aquí como referencia metodológica de la literatura, no como técnica adoptada por el flujo experimental.
 
 \subsection{Estimación de fase cuántica (QPE) y cotas de error}
 \label{sec:qpe}
@@ -773,7 +765,7 @@ Las limitaciones centrales de los dispositivos NISQ pueden resumirse en tres eje
 \begin{enumerate}
     \item \textit{Decoherencia y tiempos de coherencia finitos:} como se formalizó en la Sección~\ref{sec:nisq}, los qubits superconductores poseen tiempos de relajación $T_1$ y de desfase $T_2$ del orden de decenas a cientos de microsegundos \cite{AbuGhanem2025, errores_lectura, Preskill}. Esto impone un límite superior estricto a la profundidad del circuito: una vez que el tiempo de ejecución total del circuito transpilado se aproxima a $T_2$, la señal cuántica se degrada irreversiblemente \cite{Preskill}.
 
-    \item \textit{Errores intrínsecos de las compuertas:} las compuertas de un qubit alcanzan fidelidades $\gtrsim 99.9\%$ en los procesadores actuales de IBM \cite{compuertas_CNOT,AbuGhanem2025}, pero las compuertas de dos qubits (la compuerta ECR nativa, equivalente a CNOT con rotaciones locales)\cite{IBM_ECRGate2025} presentan tasas de error típicas del orden de $\epsilon_{2q} \sim 10^{-3}$ en el mejor de los casos \cite{AbuGhanem2025, DeCusatis2021,errores_lectura}. El error global del circuito se acumula multiplicativamente: para un circuito con $N_g$ compuertas de dos qubits, la fidelidad del estado de salida decae aproximadamente como $(1 - \epsilon_{2q})^{N_g}$, lo que hace que circuitos con unos pocos cientos de compuertas ECR produzcan distribuciones de medición esencialmente indistinguibles del ruido \cite{szasz2023numerical}. Este comportamiento multiplicativo ha sido confirmado tanto en contextos de síntesis de circuitos \cite{szasz2023numerical}
+    \item \textit{Errores intrínsecos de las compuertas:} las compuertas de un qubit alcanzan fidelidades $\gtrsim 99.9\%$ en los procesadores actuales de IBM \cite{compuertas_CNOT,AbuGhanem2025}, mientras que las compuertas de dos qubits nativas (ECR en la familia Eagle previa y CZ en Heron~r1, esta última implementada mediante un acoplador \textit{tunable})\cite{IBM_ECRGate2025} presentan tasas de error típicas del orden de $\epsilon_{2q} \sim 10^{-3}$ en el mejor de los casos \cite{AbuGhanem2025, DeCusatis2021,errores_lectura}. El error global del circuito se acumula multiplicativamente: para un circuito con $N_g$ compuertas de dos qubits, la fidelidad del estado de salida decae aproximadamente como $(1 - \epsilon_{2q})^{N_g}$, lo que hace que circuitos con unos pocos cientos de compuertas de dos qubits produzcan distribuciones de medición esencialmente indistinguibles del ruido \cite{szasz2023numerical}. Este comportamiento multiplicativo ha sido confirmado tanto en contextos de síntesis de circuitos \cite{szasz2023numerical}
           como en modelos analíticos de acumulación de errores \cite{deburuaga2024fidelity}.
 
     \item \textit{Errores de lectura (\textit{readout}):} la medición de cada qubit también introduce errores asimétricos modelados por la matriz de confusión (Ec.~\ref{eq:matriz_confusion}), con tasas típicas de $1$--$5\%$ por qubit \cite{DeCusatis2021}.
@@ -795,7 +787,7 @@ El principio físico fundamental es la cuantización de la carga y el flujo magn
     \label{fig:transmon}
 \end{figure}
 
-Las operaciones (compuertas) sobre los qubits transmon se realizan mediante \textit{pulsos de microondas} calibrados a la frecuencia de resonancia de cada qubit ($\omega_{01} \sim 4$--$5\;\text{GHz}$) \cite{AbuGhanem2025}. Una rotación arbitraria de un qubit se logra modulando la amplitud, la fase y la duración del pulso. La base de compuertas nativas (\textit{basis gates}) para algunos de los procesadores IBM Eagle/Heron es: \textit{RZ($\lambda$)}, \textit{SX}, \textit{X}, \textit{ECR}(equivalente a CNOT con rotaciones locales), junto con otras como \textit{CZ}, \textit{ID}, \textit{DELAY}, \textit{MEASURE}, etc \cite{IBMcloud2025}.
+Las operaciones (compuertas) sobre los qubits transmon se realizan mediante \textit{pulsos de microondas} calibrados a la frecuencia de resonancia de cada qubit ($\omega_{01} \sim 4$--$5\;\text{GHz}$) \cite{AbuGhanem2025}. Una rotación arbitraria de un qubit se logra modulando la amplitud, la fase y la duración del pulso. El conjunto de compuertas nativas (\textit{basis gates}) varía con la familia del procesador. En la familia Eagle previa se utilizaba la compuerta ECR como compuerta entrelazante nativa, equivalente a una CNOT salvo por rotaciones locales adicionales. La familia Heron~r1 (utilizada en este trabajo) migró a la compuerta CZ como nativa de dos qubits, implementada mediante un acoplador \textit{tunable}; las compuertas nativas de un qubit incluyen $RZ(\lambda)$, $SX$ y $X$, además de instrucciones de control como \textit{ID}, \textit{DELAY} y \textit{MEASURE} \cite{IBMcloud2025}.
 %% ----------------------------------------------------------------
 %% 4.4.3  TOPOLOGÍA HEAVY-HEX Y CONECTIVIDAD
 %% ----------------------------------------------------------------
@@ -803,12 +795,7 @@ Las operaciones (compuertas) sobre los qubits transmon se realizan mediante \tex
 
 En un procesador cuántico ideal con conectividad \textit{all-to-all}, cualquier compuerta de dos qubits podría aplicarse directamente entre dos qubits cualesquiera del chip. Sin embargo, los procesadores superconductores de IBM emplean una topología de conectividad restringida denominada \textit{Heavy-Hex} \cite{AbuGhanem2025, IBMcloud2025}. En esta arquitectura, los qubits se disponen en los vértices y aristas de una red hexagonal pesada (\textit{heavy hexagonal lattice}), donde cada qubit está acoplado a un máximo de dos o tres vecinos según su posición en la red. Los procesadores de la familia Eagle (127 qubits), Heron (133 qubits) y los más recientes de la hoja de ruta de IBM utilizan variantes de esta topología \cite{AbuGhanem2025}.\\
 
-La consecuencia operativa más importante de esta conectividad restringida es la necesidad de insertar \textit{compuertas SWAP} durante la transpilación. Cuando el circuito lógico requiere una compuerta de dos qubits entre qubits que no son vecinos físicos en la topología, el transpilador debe mover la información cuántica a través de la red insertando operaciones SWAP, cada una de las cuales equivale a tres compuertas ECR nativas \cite{compuertas_SWAP}:
-\begin{equation}
-    \text{SWAP} = \text{ECR}_{ij}\;\text{ECR}_{ji}\;\text{ECR}_{ij},
-    \label{eq:swap_ecr}
-\end{equation}
-triplicando el número de compuertas de dos qubits ruidosas por cada SWAP insertado \cite{villarreal, IBMcloud2025}. Este fenómeno constituye el \textit{principal cuello de botella físico} para la ejecución de algoritmos profundos como Shor: un circuito lógico con $N_{\text{ECR}}$ compuertas de dos qubits puede inflarse a $3N_{\text{SWAP}} + N_{\text{ECR}}$ compuertas de dos qubits tras la transpilación, donde $N_{\text{SWAP}}$ depende de la distancia topológica entre los qubits involucrados y de la calidad del algoritmo de ruteo empleado.\\
+La consecuencia operativa más importante de esta conectividad restringida es la necesidad de insertar \textit{compuertas SWAP} durante la transpilación. Cuando el circuito lógico requiere una compuerta de dos qubits entre qubits que no son vecinos físicos en la topología, el transpilador debe mover la información cuántica a través de la red insertando operaciones SWAP. En la familia Heron~r1, donde la compuerta entrelazante nativa es CZ, una operación SWAP se descompone en tres compuertas CZ intercaladas con rotaciones locales de un qubit, lo que \emph{triplica aproximadamente} el número de compuertas entrelazantes ruidosas por cada SWAP insertado \cite{compuertas_SWAP, villarreal, IBMcloud2025}. Este fenómeno constituye el \textit{principal cuello de botella físico} para la ejecución de algoritmos profundos como Shor: un circuito lógico con $N_{2Q}$ compuertas de dos qubits puede inflarse a aproximadamente $3N_{\text{SWAP}} + N_{2Q}$ compuertas de dos qubits tras la transpilación, donde $N_{\text{SWAP}}$ depende de la distancia topológica entre los qubits involucrados y de la calidad del algoritmo de ruteo empleado.\\
 
 \begin{figure}[htbp]
     \centering
@@ -832,12 +819,12 @@ El proceso de transpilación en Qiskit se estructura en un \textit{pipeline} com
     \item \textit{Inicialización (init):} configura el transpilador con los parámetros iniciales y las propiedades del \textit{backend} objetivo.
     \item \textit{Asignación lógica a física (layout):} establece un mapeo inicial entre los qubits virtuales (lógicos) del circuito y los qubits físicos del dispositivo. Este mapeo busca, en sus etapas iniciales, minimizar la distancia para futuras operaciones.
     \item \textit{Enrutamiento (routing):} dado que las compuertas de dos qubits solo pueden ejecutarse en pares físicamente conectados, esta etapa inserta compuertas SWAP para enrutar los qubits lógicos a posiciones donde las compuertas no locales puedan ser aplicadas.
-    \item \textit{Traducción (translation):} convierte todas las compuertas del circuito a un conjunto de compuertas base (\textit{basis gates}) que son físicamente realizables por el \textit{backend}, como las mencionadas (\texttt{rz}, \texttt{sx}, \texttt{x}, \texttt{ecr}).
+    \item \textit{Traducción (translation):} convierte todas las compuertas del circuito a un conjunto de compuertas base (\textit{basis gates}) que son físicamente realizables por el \textit{backend}, como las correspondientes a la familia Heron~r1 utilizada en este trabajo (\texttt{rz}, \texttt{sx}, \texttt{x}, \texttt{cz}); para procesadores de la familia Eagle previa, la compuerta entrelazante nativa correspondería a \texttt{ecr} en lugar de \texttt{cz}.
     \item \textit{Optimización (optimization):} aplica una serie de transformaciones para reducir el número de compuertas, la profundidad del circuito y otras métricas, sin alterar la función unitaria del algoritmo.
     \item \textit{Programación (scheduling):} asigna los tiempos de ejecución de cada instrucción en el hardware, considerando efectos como la calibración dinámica (e.g., compuertas RZ virtuales) y los tiempos de relajación de los qubits.
 \end{enumerate}
 
-Para controlar el balance entre el tiempo de compilación y la calidad de la optimización, el transpilador ofrece cuatro niveles de optimización, configurados mediante el parámetro \texttt{optimization\_level}, cuyo valor puede ser 0, 1, 2 o 3 \cite{IBM_optimization_2025}. Cada nivel activa un conjunto diferente de rutinas de optimización, impactando significativamente en el número final de compuertas, la profundidad del circuito y el tiempo de compilación. En la Tabla ~\ref{tab:opt_levels} se presenta un resumen comparativo de estos niveles.
+Para controlar el balance entre el tiempo de compilación y la calidad de la optimización, el transpilador ofrece cuatro niveles de optimización, configurados mediante el parámetro \texttt{optimization\_level}, cuyo valor puede ser 0, 1, 2 o 3 \cite{IBM_optimization_2025}. Cada nivel activa un conjunto diferente de rutinas de optimización, impactando significativamente en el número final de compuertas, la profundidad del circuito y el tiempo de compilación. En la Tabla~\ref{tab:opt_levels} se presenta un resumen comparativo de estos niveles.
 
 \begin{table}[htbp]
     \centering
@@ -863,7 +850,7 @@ Dentro de las etapas de asignación (\textit{layout}) y enrutamiento (\textit{ro
     \caption{Ejemplo de transpilación de un circuito cuántico simple en Qiskit para un procesador IBM con topología Heavy-Hex \cite{IBM_transpile_2025}.
         A la izquierda se muestra el circuito lógico original.
         A la derecha aparece el circuito transpilado, donde se han insertado compuertas nativas del hardware y se han mapeado los qubits lógicos $q_0$ y $q_1$ a los qubits físicos 58 y 57, respectivamente.
-        Nótese cómo incluso un circuito sencillo requiere varias compuertas de dos qubits (\textit{ECR}) y rotaciones adicionales para adaptarse a la conectividad restringida del procesador.}
+        Nótese cómo incluso un circuito sencillo requiere varias compuertas de dos qubits (en la figura, ejemplo con \textit{ECR}; en Heron~r1 corresponderían a CZ) y rotaciones adicionales para adaptarse a la conectividad restringida del procesador.}
     \label{fig:transpilacion-ejemplo-qiskit}
 \end{figure}
 
@@ -926,14 +913,10 @@ Un rasgo particularmente potente de SABRE es que no se limita al transporte loca
 En síntesis, SABRE reduce la sobrecarga de transporte cuántico mediante dos mecanismos geométricamente complementarios \cite{Li2019SABRE}: restringe la búsqueda a los SWAP físicamente relevantes para la conectividad inmediata, y selecciona entre ellos con una métrica de distancia que aproxima el coste experimental real, ya que menos intercambios implican menos compuertas entrelazantes y, por tanto, menor acumulación de decoherencia. Para esta investigación, dicha filosofía resulta especialmente apropiada: el cuello de botella en la implementación de Shor sobre hardware NISQ no es de naturaleza computacional, sino física. Cada compuerta adicional debilita la señal útil del estado cuántico antes de la medición, de modo que un algoritmo de enrutamiento que minimiza profundidad y número de operaciones entrelazantes incrementa directamente la viabilidad experimental del circuito sobre el procesador \cite{IBM_SABRE2026}.
 
 
-% =========================================================================
-% BLOQUE A — Sección 4.6 reducida (cuerpo principal)
-% =========================================================================
-
 \section{Estrategias de supresión en compilaciones complejas}
 \label{sec:supresion_errores}
 
-En los dispositivos NISQ, incluso los circuitos relativamente cortos del algoritmo de Shor acumulan errores con rapidez: las compuertas de dos qubits (ECR o CX) introducen errores coherentes a cada aplicación, y los intervalos en los que un qubit permanece inactivo lo exponen a la decoherencia del entorno. Sin acceso a corrección de errores completa, se recurre a técnicas de \textit{supresión de errores} que actúan durante la compilación y la ejecución del circuito con bajo costo adicional. En este trabajo se emplean dos técnicas complementarias: el \textit{Desacoplamiento Dinámico} (DD) y el \textit{Pauli Twirling} (PT). Ambas son compatibles con el flujo de transpilación (incluyendo SABRE) y se activan automáticamente desde Qiskit como configuraciones del \texttt{SamplerV2}.
+En los dispositivos NISQ, incluso los circuitos relativamente cortos del algoritmo de Shor acumulan errores con rapidez: las compuertas de dos qubits nativas (CZ en Heron~r1, ECR en la familia Eagle previa) introducen errores coherentes a cada aplicación, y los intervalos en los que un qubit permanece inactivo lo exponen a la decoherencia del entorno. Sin acceso a corrección de errores completa, se recurre a técnicas de \textit{supresión de errores} que actúan durante la compilación y la ejecución del circuito con bajo costo adicional. En este trabajo se emplean dos técnicas complementarias: el \textit{Desacoplamiento Dinámico} (DD) y el \textit{Pauli Twirling} (PT). Ambas son compatibles con el flujo de transpilación (incluyendo SABRE) y se activan automáticamente desde Qiskit como configuraciones del \texttt{SamplerV2}.
 
 \subsection{Desacoplamiento Dinámico (Dynamical Decoupling)}
 
@@ -961,14 +944,14 @@ A diferencia del DD, que actúa sobre los intervalos de inactividad, el Pauli Tw
 
 El Pauli Twirling, también denominado \textit{compilación aleatorizada} \cite{Wallman2016}, transforma los errores coherentes en errores estocásticos. La operación consiste en envolver cada compuerta de dos qubits $\mathcal{U}$ entre un par de operadores de Pauli $(P_{\text{antes}}, P_{\text{después}})$ con $P \in \{I, X, Y, Z\}^{\otimes 2}$, elegidos aleatoriamente de un conjunto finito de combinaciones válidas. Tras promediar sobre múltiples instancias aleatorizadas del circuito, las componentes fuera de la diagonal del canal de error en la base de Pauli se cancelan y el ruido residual queda descrito por un canal estocástico de Pauli, cuya acumulación es lineal en $N_g$ \cite{CaiBenjamin2018, ibm_error_mitigation}.\\
 
-La condición física que hace posible esta operación sin alterar el algoritmo es que el par de Pauli debe preservar la operación lógica de la compuerta original. Para una compuerta nativa de dos qubits como ECR (o su equivalente CNOT), los pares válidos satisfacen
+La condición física que hace posible esta operación sin alterar el algoritmo es que el par de Pauli debe preservar la operación lógica de la compuerta original. Para una compuerta nativa de dos qubits como CZ (la utilizada en Heron~r1) o ECR (su análoga en Eagle), los pares válidos satisfacen
 \begin{equation}
     P_{\text{después}} \cdot \mathcal{U} \cdot P_{\text{antes}} = e^{i\phi}\, \mathcal{U},
     \label{eq:pt_preservation}
 \end{equation}
 para alguna fase global $\phi$, irrelevante para las probabilidades de medición \cite{ibm_error_mitigation}. Cada compuerta de dos qubits admite, por tanto, un conjunto finito de pares válidos del que el motor de ejecución selecciona aleatoriamente en cada instancia.\\
 
-DD y PT actúan sobre fuentes de error diferentes: el primero protege a los qubits durante los intervalos de inactividad, el segundo aleatoriza los errores de las compuertas activas. El análisis detallado se reporta en el Apéndice~\ref{app:dd-formal} y en el~\ref{app:dd-formal}.
+DD y PT actúan sobre fuentes de error diferentes: el primero protege a los qubits durante los intervalos de inactividad, el segundo aleatoriza los errores de las compuertas activas. El análisis detallado se reporta en los Apéndices~\ref{app:dd-formal} y~\ref{app:pt-formal}.
 
 \section{Métricas de Evaluación}
 \label{sec:metricas_evaluacion}
@@ -1022,7 +1005,7 @@ La $PST$ se define como la suma de las probabilidades experimentales medidas exc
     \label{eq:pst_definicion}
 \end{equation}
 
-En una simulación ideal sin ruido, toda la probabilidad se concentra en los picos del QPE, de modo que $PST = 1$. En el régimen ruidoso, la decoherencia y los errores de compuerta redistribuyen la probabilidad hacia cadenas binarias que no corresponden a ninguna fase válida, reduciendo la $PST$. Como señala \cite{Bagourd2026}, para que el algoritmo de Shor sea útil, la masa de probabilidad en las posiciones correctas debe superar de forma estadísticamente significativa la línea base que produciría un espectro completamente uniforme (aleatorio), la cual vale $b = 1/r$. En el régimen ideal, cada pico del QPE deposita al menos $4/\pi^2 \approx 0.405$ \cite{ibm_phase_estimation_procedure} de su masa dentro de la ventana de fracciones continuas, garantizando un éxito constante por ejecución \cite{Bagourd2026}. Cuando el ruido del hardware reduce la $PST$ por debajo de estos umbrales, el algoritmo pierde su ventaja cuántica y el número de repeticiones necesarias crece hasta hacer inviable la factorización. \\
+En una simulación ideal sin ruido, toda la probabilidad se concentra en los picos del QPE, de modo que $PST = 1$. En el régimen ruidoso, la decoherencia y los errores de compuerta redistribuyen la probabilidad hacia cadenas binarias que no corresponden a ninguna fase válida, reduciendo la $PST$. Como señala \cite{Bagourd2026}, para que la $PST$ sea \emph{informativa} la masa de probabilidad en las posiciones correctas debe superar de manera estadísticamente significativa la línea base que produciría una distribución completamente uniforme sobre los $2^t$ resultados posibles del registro de conteo. Dado que la subrutina concentra masa sobre $r$ picos teóricos del QPE, esa línea base uniforme corresponde a $b_{\text{unif}} = r/2^t$; para $t = 9$ esto vale aproximadamente $0{,}4\%$ con $r = 2$ y $0{,}78\%$ con $r = 4$, valores muy inferiores al umbral ideal. En el régimen ideal, cada pico del QPE deposita al menos $4/\pi^2 \approx 0.405$ \cite{ibm_phase_estimation_procedure} de su masa dentro de la ventana de fracciones continuas, garantizando un éxito constante por ejecución \cite{Bagourd2026}. Cuando el ruido del hardware reduce la $PST$ por debajo de estos umbrales el algoritmo pierde su ventaja cuántica, pero conviene subrayar que el éxito algorítmico no depende sólo de PST: depende de que los picos teóricos sigan siendo los modos dominantes de la distribución, un requisito mucho más laxo que cualquier umbral fijo. \\
 
 La $PST$ complementa a $\mathcal{F}_H$ de forma natural: mientras la fidelidad mide la similitud global entre distribuciones, la $PST$ cuantifica directamente la utilidad algorítmica de los resultados experimentales. Es posible obtener una $\mathcal{F}_H$ moderada pero una $PST$ aceptable si el ruido redistribuye la probabilidad de forma relativamente uniforme entre los estados no deseados, manteniendo los picos correctos como los más probables. En la práctica, ambas métricas se reportan conjuntamente para ofrecer una evaluación completa del rendimiento del circuito en cada entorno de ejecución.
 
@@ -1056,7 +1039,7 @@ El algoritmo de Shor posee una naturaleza fundamentalmente híbrida: antes de in
 
 \subsection{Selección de la base $a$ y caracterización del grupo multiplicativo}
 
-Para el caso de estudio $N = 15$, el grupo multiplicativo $\mathbb{Z}_{15}^* = \{2, 4, 7, 8, 11, 13, 14\}$ contiene siete elementos coprimos con $15$. Una rutina de pre-cálculo clásico determina, para cada base candidata, su orden multiplicativo $r$ ---evaluando sucesivamente $a^k \bmod N$ para $k = 1, 2, \ldots, N-1$ hasta encontrar el primer $k$ tal que $a^k \equiv 1 \pmod{N}$--- y verifica las condiciones de no-degeneración del Algoritmo~\ref{alg:shor}. Los resultados de esta caracterización, fundamentales para el diseño experimental, se resumen en la Tabla~\ref{tab:caracterizacion_a}.
+Para el caso de estudio $N = 15$, el grupo multiplicativo $\mathbb{Z}_{15}^* = \{1, 2, 4, 7, 8, 11, 13, 14\}$ contiene ocho elementos coprimos con $15$. El elemento $a = 1$ es trivial (orden $r = 1$, no genera dinámica útil) y se excluye del estudio experimental; las bases candidatas no triviales son las siete restantes. Una rutina de pre-cálculo clásico determina, para cada base candidata, su orden multiplicativo $r$ ---evaluando sucesivamente $a^k \bmod N$ para $k = 1, 2, \ldots, N-1$ hasta encontrar el primer $k$ tal que $a^k \equiv 1 \pmod{N}$--- y verifica las condiciones de no-degeneración del Algoritmo~\ref{alg:shor}. Los resultados de esta caracterización, fundamentales para el diseño experimental, se resumen en la Tabla~\ref{tab:caracterizacion_a}.
 
 \begin{table}[htbp]
     \centering
@@ -1128,7 +1111,7 @@ El núcleo computacional del circuito reside en la secuencia de operaciones cont
     \item \textit{Construcción de la matriz de permutación.} Con la constante $b$ ya conocida, se construye una matriz de permutación $P_b$ de dimensión $2^L \times 2^L$ que codifica el mapeo $|x\rangle \to |bx \bmod N\rangle$ para todos los estados $x \in \{0, 1, \ldots, N-1\}$. Los estados con $x \geq N$, que no tienen significado aritmético en el contexto del algoritmo, se mapean a sí mismos, es decir, $P_b[x][x] = 1$ para $x \geq N$, garantizando que la matriz sea una permutación unitaria completa. La matriz resultante se encapsula como una compuerta unitaria que posteriormente se convierte en una compuerta controlada.\\ 
 \end{enumerate}
 
-Este enfoque de síntesis ---también denominado \textit{compiled Shor's algorithm} en la literatura \cite{Skosana2021,Lanyon2007}--- tiene una ventaja decisiva para la implementación NISQ: el transpilador recibe una única compuerta unitaria controlada de $L+1$ qubits en lugar de un circuito aritmético profundo. Aunque el transpilador deberá descomponer esta unitaria en compuertas nativas del hardware, el conteo final de compuertas de dos qubits es significativamente menor que el de una implementación aritmética genérica \cite{smolin2013oversimplifying}.
+Este enfoque de síntesis ---también denominado \textit{compiled Shor's algorithm} en la literatura \cite{Skosana2021,Lanyon2007}--- tiene una ventaja decisiva para la implementación NISQ: el transpilador recibe una única compuerta unitaria controlada de $L+1$ qubits en lugar de un circuito aritmético profundo. Aunque el transpilador deberá descomponer esta unitaria en compuertas nativas del hardware, el conteo final de compuertas de dos qubits es significativamente menor que el de una implementación aritmética genérica \cite{smolin2013oversimplifying}. Esta estrategia, conocida en la literatura como \textit{Shor compilado}, ha sido objeto de crítica por Smolin et al.~\cite{smolin2013oversimplifying} al señalar que el conocimiento previo de la base $a$ y de su orden $r$ permite simplificaciones que un Shor general no podría aprovechar. El presente trabajo adopta esta vía siguiendo la práctica establecida para implementaciones NISQ pedagógicas, y la discusión de sus implicaciones sobre el alcance interpretativo de los resultados se retoma en las limitaciones del trabajo (§\ref{cap:conclusiones}).
 
 % =====================================================================
 % 5.2 PROTOCOLO EXPERIMENTAL EN TRES FASES
@@ -1163,6 +1146,8 @@ En las tres fases, los resultados de cada ejecución se almacenan en formato JSO
 
 Las diferencias entre fases obedecen a un compromiso entre rigor estadístico y costo computacional: en Fase~1, el bajo costo del simulador ideal permite barrer las cuatro bases diagnósticas y los cuatro niveles de optimización con $4096$~\textit{shots}; en Fase~2, el costo del modelo de ruido (aproximadamente dos órdenes de magnitud superior) obliga a restringir el barrido a las dos bases representativas $a \in \{4, 7\}$ y a los niveles extremos $\texttt{opt} \in \{0, 3\}$; en Fase~3, el cupo de \textit{jobs} disponibles bajo el plan de acceso abierto fija el alcance experimental.\\
 
+\textit{Sobre el número de shots de la Fase~2.} Las simulaciones de Fase~2 con \texttt{FakeTorino} se ejecutaron con $M = 512$~\textit{shots} por configuración, en contraste con los $M = 4096$~\textit{shots} de la Fase~1 y de la Fase~3. Esta reducción se debió a restricciones de cómputo local: el modelo de ruido completo cargado por \texttt{AerSimulator.from\_backend(FakeTorino())} hace que cada ejecución sea aproximadamente dos órdenes de magnitud más costosa que la simulación ideal, lo que impidió mantener 4096~\textit{shots} dentro del cronograma del anteproyecto y los tiempos de ejecución de los \textit{scripts} en la PC del autor. El número adoptado preserva la capacidad de discriminar los picos teóricos del piso de ruido ---propósito principal de la fase--- aunque se reconoce que reduce la resolución estadística absoluta de las métricas reportadas, lo que se tiene presente al interpretar diferencias del orden de uno o dos puntos porcentuales entre configuraciones de la Fase~2.\\
+
 \textit{Bases diagnósticas:} la base $a = 14$ produce factores triviales tras el post-procesamiento clásico (cf. Sección~\ref{sec:preprocesamiento_parametros}), pero su circuito es instancia plenamente válida de la estimación de fase cuántica con orden $r = 2$. Su inclusión en la Fase~3 no busca factorizar $N$, sino caracterizar la respuesta del procesador para circuitos cortos: en estas ejecuciones las métricas relevantes son exclusivamente la fidelidad de Hellinger $\mathcal{F}_H$ y la $PST$, que cuantifican la calidad de la señal cuántica con independencia del éxito del filtro clásico.
 
 % =====================================================================
@@ -1185,7 +1170,7 @@ La lista detallada de parámetros del transpilador, los valores nominales de los
 \section{Técnicas de supresión de errores}
 \label{sec:supresion_implementada}
 
-El estudio del impacto de las técnicas de supresión de errores se organizó como un diseño factorial $2 \times 2$ que combina la activación o desactivación de Desacoplamiento Dinámico (DD) y de Pauli Twirling (PT). Las cuatro variantes resultantes (sin supresión, solo DD, solo PT, DD$+$PT) se evaluaron sobre la misma transpilación del circuito, de modo que las diferencias observadas en las métricas se atribuyen exclusivamente al efecto de las técnicas.\\
+El estudio del impacto de las técnicas de supresión de errores se planificó inicialmente como un diseño factorial $2 \times 2$ que combina la activación o desactivación de Desacoplamiento Dinámico (DD) y de Pauli Twirling (PT). En la Fase~2 (\texttt{FakeTorino}) este diseño se ejecutó de forma completa: las cuatro variantes resultantes (sin supresión, solo DD, solo PT, DD$+$PT) se evaluaron sobre la misma transpilación del circuito, de modo que las diferencias observadas en las métricas se atribuyen exclusivamente al efecto de las técnicas. En la Fase~3 (hardware real), las restricciones de cupo del Open Plan y la retirada anticipada de \texttt{ibm\_torino} de la flota disponible impidieron completar la cuarta celda (solo PT) como ejecución independiente. En su lugar, esa celda se infiere por comparación entre la línea base sin supresión del estudio A6/A7 y la corrida V1 (con PT activado y sin DD) sobre el mismo circuito, asumiendo el riesgo metodológico de que ambas ejecuciones corresponden a ventanas de calibración distintas; esta limitación se discute explícitamente en la interpretación de los resultados (§\ref{subsec:mitigacion_hardware}) y en las limitaciones del trabajo (§\ref{cap:conclusiones}).\\
 
 \textbf{Selección de la secuencia DD}\\
 
@@ -1220,7 +1205,7 @@ Cuando el filtro clásico devuelve un par de factores no triviales, la ejecució
 
 La evaluación cuantitativa de cada ejecución se realiza con dos métricas complementarias, definidas formalmente en el marco teórico: la fidelidad de Hellinger $\mathcal{F}_H$ y la probabilidad de éxito experimental $PST$. Ambas se calculan comparando la distribución experimental contra la distribución ideal obtenida del simulador sin ruido.\\
 
-Para interpretar los resultados que se presentan en el Capítulo~\ref{chap:resultados} se adoptan umbrales operacionales explícitos sobre ambas métricas. En primer lugar, siguiendo el criterio teórico de \cite{Bagourd2026} discutido en el marco teórico, una $PST$ se considera \textit{aceptable} únicamente si supera de manera estadísticamente significativa la línea base uniforme $1/r$, que vale $0{,}5$ para $r = 2$ y $0{,}25$ para $r = 4$. El caso ideal $PST = 1{,}0$ corresponde a toda la masa de probabilidad concentrada sobre los picos correctos del QPE; en consecuencia, el umbral mínimo práctico se fija en $PST > 1/r + \delta$ con $\delta = 0{,}1$, margen que se establece como cota de significancia estadística compatible con el número de \textit{shots} empleado en cada fase. En cuanto a la fidelidad de Hellinger, se adoptan los umbrales habituales en la literatura de \textit{benchmarking} de circuitos NISQ: $\mathcal{F}_H > 0{,}9$ indica \textit{alta fidelidad}, el rango $0{,}7 \leq \mathcal{F}_H \leq 0{,}9$ señala \textit{fidelidad moderada} y $\mathcal{F}_H < 0{,}7$ se interpreta como \textit{degradación severa} de la distribución respecto a la ideal. La interpretación combinada de ambos umbrales constituye el criterio central de análisis en el Capítulo~\ref{chap:resultados}.\\
+Para interpretar los resultados que se presentan en el Capítulo~\ref{chap:resultados} se adoptan umbrales operacionales explícitos sobre ambas métricas. En primer lugar, siguiendo el criterio teórico de \cite{Bagourd2026} discutido en el marco teórico, la $PST$ se compara contra la línea base uniforme que se obtendría si los $M$ \textit{shots} se distribuyeran al azar sobre los $2^t$ resultados posibles del registro de conteo. Como la subrutina deposita masa sobre $r$ picos teóricos del QPE, dicha línea base es $b_{\text{unif}} = r/2^t$; para $t = 9$ esto corresponde a $\approx 0{,}4\%$ con $r = 2$ y $\approx 0{,}78\%$ con $r = 4$. Una $PST$ se considera \emph{informativa} cuando supera de manera estadísticamente significativa esta línea base; el éxito algorítmico, sin embargo, no depende de superar un umbral fijo sino de que los picos teóricos sigan siendo los modos dominantes de la distribución empírica, requisito que el experimento confirma en regímenes donde la $PST$ es modesta pero los picos correctos preservan su rango relativo. En cuanto a la fidelidad de Hellinger, se adoptan los umbrales habituales en la literatura de \textit{benchmarking} de circuitos NISQ: $\mathcal{F}_H > 0{,}9$ indica \textit{alta fidelidad}, el rango $0{,}7 \leq \mathcal{F}_H \leq 0{,}9$ señala \textit{fidelidad moderada} y $\mathcal{F}_H < 0{,}7$ se interpreta como \textit{degradación severa} de la distribución respecto a la ideal. La interpretación combinada de ambos umbrales constituye el criterio central de análisis en el Capítulo~\ref{chap:resultados}.\\
 
 Todo el código fuente, los archivos de configuración empleados en cada experimento y los identificadores de los \textit{jobs} de IBM Quantum se encuentran documentados en el repositorio público del proyecto \cite{compuertas_CNOT}, garantizando la reproducibilidad completa del estudio.
 
@@ -1229,24 +1214,18 @@ Todo el código fuente, los archivos de configuración empleados en cada experim
 
 % ============================================================
 % SECCIÓN 6.1 — RESULTADOS DE LA SIMULACIÓN IDEAL
-% Versión compacta sin tablas redundantes (Tablas 6.1–6.5 omitidas;
-% Tabla de fracciones continuas trasladada al Apéndice C).
-% Referencias exclusivas a Figuras 6.1–6.6.
 % ============================================================
 \section{Resultados de la simulación ideal}
 \label{sec:resultados_ideal}
 
 La validación del algoritmo de Shor para $N = 15$ se aborda en tres fases progresivas (simulación ideal, simulación con ruido calibrado de \texttt{FakeTorino} y ejecución en \texttt{ibm\_torino}). Esta sección reporta la primera fase, ejecutada en el simulador \texttt{AerSimulator} de Qiskit.
 
-% ============================================================
-% 6.1.1  CARACTERIZACIÓN DE BLOQUES FUNDAMENTALES
-% ============================================================
 \subsection{Caracterización de los bloques fundamentales}
 \label{sec:caracterizacion_bloques}
 
 Antes de evaluar el circuito completo, se verificó individualmente la corrección de cada sub-circuito constituyente: la Transformada Cuántica de Fourier ($\mathrm{QFT}$) y la exponenciación modular controlada ($c$-$U_{a^{2^k}}$). La verificación numérica de la unitariedad arrojó $\lVert U^{\dagger} U - I \rVert_F < 10^{-13}$ para todas las variantes evaluadas (QFT directa e inversa, descompuesta y transpilada), valor compatible con la precisión de punto flotante. Para el operador de exponenciación modular se verificó adicionalmente la propiedad de periodicidad $(U_a)^r = I$, obteniendo $\lVert (U_a)^r - I \rVert_F = 0$ en todas las bases. El detalle exhaustivo se documenta en el Apéndice~\ref{app:caracterizacion-bloques}.\\
 
-Un resultado estructural relevante para todo lo que sigue es la asimetría entre bases (Fig. ~\ref{fig:circuitos_a4_a7}). Para cada $a$, solo los bloques con $a^{2^k} \bmod N \neq 1$ contribuyen a la profundidad del circuito; los demás colapsan a la identidad. Esto explica por qué las bases con $r = 2$ producen circuitos significativamente menos profundos que $a = 7$ (con $r = 4$): para $r = 2$ únicamente el bloque $k = 0$ es no trivial, mientras que para $a = 7$ los bloques $k = 0$ y $k = 1$ lo son simultáneamente ($7^1 \bmod 15 = 7$ y $7^2 \bmod 15 = 4$). Esta diferencia tiene una consecuencia directa para la viabilidad experimental en hardware NISQ: la base $a = 7$, al exigir el doble de compuertas entrelazantes, será la más susceptible a la decoherencia en las fases experimentales con ruido. La selección clásica de $a$ como estrategia de pre-procesamiento (Sección~\ref{sec:preprocesamiento_parametros}) queda así cuantitativamente justificada.
+Un resultado estructural relevante para todo lo que sigue es la asimetría entre bases (Figura~\ref{fig:circuitos_a4_a7}). Para cada $a$, solo los bloques con $a^{2^k} \bmod N \neq 1$ contribuyen a la profundidad del circuito; los demás colapsan a la identidad. Esto explica por qué las bases con $r = 2$ producen circuitos significativamente menos profundos que $a = 7$ (con $r = 4$): para $r = 2$ únicamente el bloque $k = 0$ es no trivial, mientras que para $a = 7$ los bloques $k = 0$ y $k = 1$ lo son simultáneamente ($7^1 \bmod 15 = 7$ y $7^2 \bmod 15 = 4$). Esta diferencia tiene una consecuencia directa para la viabilidad experimental en hardware NISQ: la base $a = 7$, al exigir el doble de compuertas entrelazantes, será la más susceptible a la decoherencia en las fases experimentales con ruido. La selección clásica de $a$ como estrategia de pre-procesamiento (Sección~\ref{sec:preprocesamiento_parametros}) queda así cuantitativamente justificada.
 
 \begin{figure}[H]
     \centering
@@ -1406,7 +1385,7 @@ A pesar de esta degradación, el resultado más importante del experimento es po
 \subsection{Efecto de las técnicas de supresión de errores}
 \label{subsec:efecto_mitigacion_ruido}
 
-Para evaluar las estrategias de supresión formuladas en la Sección~\ref{sec:supresion_implementada} se ejecutó el circuito en cuatro configuraciones: \textit{baseline} (sin supresión), Desacople Dinámico (DD), Pauli Twirling (PT) y la combinación DD + PT. La Figura~\ref{fig:comparacion_mitigacion_ruido} sintetiza el experimento para ambas bases.\\
+Para evaluar las estrategias de supresión formuladas en la Sección~\ref{sec:supresion_implementada} se ejecutó el circuito en cuatro configuraciones: \textit{baseline} (sin supresión), Desacoplamiento Dinámico (DD), Pauli Twirling (PT) y la combinación DD + PT. La Figura~\ref{fig:comparacion_mitigacion_ruido} sintetiza el experimento para ambas bases.\\
 
 El resultado es, a primera vista, contraintuitivo: las técnicas de supresión no mejoran ---e incluso degradan ligeramente--- las métricas de señal en el simulador. Para $a = 7$, la línea base sin supresión alcanza $PST \approx 56.6\%$ y $\mathcal{F}_H \approx 0.40$, mientras que la combinación DD + PT reduce ambos indicadores a $PST \approx 46.5\%$ y $\mathcal{F}_H \approx 0.29$. La caída concertada de las dos métricas en la misma dirección descarta que se trate de una anomalía: reflejan que, en el simulador estocástico, las técnicas de supresión añaden sobrecosto sin recuperar señal de manera sustancial.
 
@@ -1417,7 +1396,7 @@ El resultado es, a primera vista, contraintuitivo: las técnicas de supresión n
     \label{fig:comparacion_mitigacion_ruido}
 \end{figure}
 
-Lejos de ser un fracaso de las técnicas, este comportamiento es exactamente lo que cabía esperar y constituye una observación metodológica importante. Tanto el desacople dinámico como el Pauli twirling están diseñados para combatir fenómenos físicos específicos del hardware real que el modelo de \texttt{FakeTorino} no reproduce, pues su ruido es puramente estocástico. Al insertar pulsos y compuertas auxiliares sobre un ruido que ya es estocástico, las técnicas no encuentran errores coherentes que estabilizar y, en cambio, alargan ligeramente el circuito, sumando una pequeña cantidad de error adicional que las dos métricas registran de manera consistente.
+Lejos de ser un fracaso de las técnicas, este comportamiento es exactamente lo que cabía esperar y constituye una observación metodológica importante. Tanto el Desacoplamiento Dinámico como el Pauli Twirling están diseñados para combatir fenómenos físicos específicos del hardware real que el modelo de \texttt{FakeTorino} no reproduce, pues su ruido es puramente estocástico. Al insertar pulsos y compuertas auxiliares sobre un ruido que ya es estocástico, las técnicas no encuentran errores coherentes que estabilizar y, en cambio, alargan ligeramente el circuito, sumando una pequeña cantidad de error adicional que las dos métricas registran de manera consistente.
 % ============================================================
 % 6.2.4  POST-PROCESAMIENTO CLÁSICO BAJO RUIDO
 % ============================================================
@@ -1522,16 +1501,18 @@ En primer lugar se analizan los resultados obtenidos con la configuración base 
 
 \subsubsection{Impacto del nivel de optimización del transpilador}
 
-Según la Tabla \ref{tab:jobs_hardware}, el nivel de optimización del transpilador de Qiskit resultó ser la variable de control con mayor impacto sobre la señal experimental en hardware real. El estudio A2 fijó $a = 4$ y barrió formalmente $\texttt{opt} \in \{0, 1, 2\}$, manteniendo el resto de la configuración constante. La cuarta configuración ($\texttt{opt}=3$) no se ejecutó como parte del estudio A2 propiamente dicho, sino que su valor de referencia para esta base se toma del estudio A6/A7 sin supresión ($PST = 82.8\%$, $\mathcal{F}_H = 0.547$, mismo circuito de 116~CZ que la transpilación con $\texttt{opt}=2$); esta nota metodológica es importante para no sobre-interpretar la comparación entre los cuatro niveles, ya que A2 y A6/A7 corresponden a ventanas de calibración distintas y, por tanto, una pequeña parte de la diferencia $\texttt{opt}=2 \to \texttt{opt}=3$ puede atribuirse a deriva natural y no al transpilador.\\
+Según la Tabla \ref{tab:jobs_hardware}, en el conjunto de configuraciones evaluadas, el nivel de optimización del transpilador de Qiskit fue la variable de control con \emph{mayor impacto observado} sobre la señal experimental en hardware real, con saltos de aproximadamente dos órdenes de magnitud en $PST$ entre \texttt{opt}=0 y \texttt{opt}=2 sobre la misma base $a=4$. El estudio A2 fijó $a = 4$ y barrió formalmente $\texttt{opt} \in \{0, 1, 2\}$, manteniendo el resto de la configuración constante. La cuarta configuración ($\texttt{opt}=3$) no se ejecutó como parte del estudio A2 propiamente dicho, sino que su valor de referencia para esta base se toma del estudio A6/A7 sin supresión ($PST = 82.8\%$, $\mathcal{F}_H = 0.547$, mismo circuito de 116~CZ que la transpilación con $\texttt{opt}=2$).\\
+
+\textit{Nota metodológica sobre comparaciones cruzadas.} Las cifras de $PST$ citadas a continuación combinan ejecuciones de los estudios A2 (barrido de \texttt{opt}) y A6/A7 (barrido de supresión), realizadas en días distintos. Aunque el procesador y la transpilación nominal son idénticos, las calibraciones del backend pueden haber diferido entre ambas ventanas de ejecución. La magnitud absoluta del salto reportado debe entenderse, por tanto, como un \emph{orden de magnitud robusto} del impacto del nivel de optimización del transpilador, y no como un coeficiente preciso reproducible al punto porcentual; en particular, una pequeña parte de la diferencia $\texttt{opt}=2 \to \texttt{opt}=3$ puede atribuirse a deriva natural de calibración y no exclusivamente al transpilador.
 
 La transición del nivel~0 al nivel~2 produce una reducción del $84.9\%$ en la profundidad 2Q (de 770 a 116 capas CZ) y del $90.5\%$ en el número de compuertas CZ (de 1220 a 116). Esta reducción se traduce en un incremento de la señal $PST$ de $1.1\%$ a $70.8\%$, y de la fidelidad de $\mathcal{F}_H = 0.011$ a $\mathcal{F}_H = 0.529$. El número de \textit{outcomes} únicos (bitstrings distintos observados) disminuye de 512 a 57, lo cual refleja la concentración de la probabilidad en los picos teóricos en lugar de dispersarse uniformemente por ruido.\\
 
-Con $\texttt{opt} = 0$ (layout trivial, routing \textit{basic}), el circuito requiere 113~SWAPs estimados para adaptar la topología lógica a la malla Heavy-Hex del chip, cada uno descompuesto en 3~compuertas CZ. El circuito resultante ($D_{2Q} = 770$) excede ampliamente el umbral donde la acumulación multiplicativa de errores destruye la señal:
+Con $\texttt{opt} = 0$ (layout trivial, routing \textit{basic}), el circuito requiere 113~SWAPs estimados para adaptar la topología lógica a la malla Heavy-Hex del chip, cada uno descompuesto en 3~compuertas CZ. El circuito resultante ($D_{2Q} = 770$) excede ampliamente el umbral donde la acumulación multiplicativa de errores destruye la coherencia del estado:
 \begin{equation}
     \mathcal{F}_{\text{est}} \sim (1 - \epsilon_{\text{CZ}})^{1220} \approx (0.995)^{1220} \approx 0.002,
     \label{eq:fidelidad_opt0}
 \end{equation}
-lo que es consistente con la señal observada de $1.1\%$, prácticamente indistinguible de una distribución uniforme.\\
+Aunque este valor es una estimación de fidelidad y no directamente de PST, ambos comparten el mismo régimen asintótico en este caso extremo: cuando $\mathcal{F}$ cae por debajo del 1\%, la distribución empírica es estadísticamente indistinguible del fondo uniforme sobre los $2^9 = 512$ resultados posibles y, en consecuencia, el $PST$ tiende a la línea base uniforme $r/2^t \approx 0{,}4\%$ para $r = 2$. La observación de $PST = 1.1\%$ es, por tanto, coherente con el régimen de fidelidad colapsada predicho por el modelo.
 
 En contraste, $\texttt{opt} = 2$ con SABRE elimina completamente la necesidad de SWAPs adicionales y reduce la profundidad a 116~capas CZ. La estimación correspondiente es:
 \begin{equation}
@@ -1609,11 +1590,12 @@ El pico dominante en $|000000000\rangle$ ($\varphi = 0$, conteo = 2897, $p = 70.
 
 \subsubsection{Viabilidad temporal del circuito}
 
-Un criterio fundamental para la ejecución en hardware NISQ es que la duración del circuito sea significativamente menor que los tiempos de coherencia del procesador. Para los circuitos ejecutados:
+Un criterio fundamental para la ejecución en hardware NISQ es que la duración del circuito sea significativamente menor que los tiempos de coherencia del procesador. La duración total del circuito puede estimarse como
 \begin{equation}
-    T_{\text{circuito}} \approx D_{2Q} \times \tau_{\text{CZ}} \approx 116 \times 660\;\text{ns} \approx 76.6\;\mu\text{s},
+    T_{\text{circuito}} \approx D_{2Q} \times \tau_{\text{CZ}},
+    \label{eq:tiempo_circuito}
 \end{equation}
-donde $\tau_{\text{CZ}} \approx 660$~ns es la duración típica de una compuerta CZ en el procesador Heron~r1. El cociente $T_{\text{circuito}} / T_2 \approx 76.6 / 250 \approx 0.31$ confirma que el circuito opera holgadamente dentro del tiempo de coherencia. Para $a = 7$ ($D_{2Q} = 244$), esta razón asciende a $\sim 0.64$, aún dentro del margen viable pero con menor holgura, lo que explica el incremento de ruido observado.
+donde $\tau_{\text{CZ}}$ es la duración nominal de la compuerta CZ en Heron~r1. Adoptando el valor reportado por el \textit{snapshot} de calibración utilizado en este trabajo, $\tau_{\text{CZ}} \sim 6{,}6 \times 10^{2}$~ns, se obtiene para $a = 4$ con $D_{2Q} = 116$ una estimación de $T_{\text{circuito}} \approx 77\,\mu$s. El cociente $T_{\text{circuito}}/T_2 \approx 0{,}31$ confirma que el circuito opera dentro del tiempo de coherencia transversal característico ($T_2 \sim 250\,\mu$s) del procesador. Para $a = 7$ ($D_{2Q} = 244$), esta razón asciende a $\sim 0.64$, aún dentro del margen viable pero con menor holgura, lo que explica el incremento de ruido observado. Estos valores nominales pueden variar de un día a otro y de un par de qubits a otro dentro del chip; se reportan aquí como órdenes de magnitud representativos extraídos del \textit{snapshot} de calibración y no como mediciones independientes propias del estudio.
 
 El tiempo cuántico real reportado por el \textit{runtime} fue de 3~segundos para todos los \textit{jobs}, lo que incluye la inicialización de qubits, la ejecución del circuito y la lectura de 4096 \textit{shots}.
 
@@ -1670,6 +1652,8 @@ La celda \emph{Solo PT} inferida de V1 da $PST = 75.5\%$, ligeramente por debajo
 
 La combinación de ambas técnicas produjo el peor resultado de todas las configuraciones: $PST = 0.76\%$ con $\mathcal{F}_H = 0.007$, una distribución efectivamente indistinguible del ruido uniforme. Se observaron 469~\textit{outcomes} únicos de los 512 posibles ($2^9$), lo cual confirma la pérdida casi total de la estructura periódica del QPE. El hecho de que los factores $\{3, 5\}$ fueran formalmente extraíbles en esta configuración (por la coincidencia estadística de que $r = 2$ fue identificado como candidato) no debe interpretarse como un éxito: la señal en los picos teóricos ($0.22\%$ en $|000000000\rangle$ y $0.54\%$ en $|100000000\rangle$) es despreciable frente al fondo de ruido.\\
 
+La extracción formal de factores con DD$+$PT (Tabla~\ref{tab:mitigacion_hw}) no debe interpretarse como un éxito algorítmico: con un $PST$ por debajo del $1\%$ la distribución es estadísticamente indistinguible del ruido uniforme, y la coincidencia entre el modo más frecuente y un \textit{bitstring} compatible con $r = 2$ es estadísticamente plausible bajo aleatoriedad sobre $2^9 = 512$ resultados. Por contraste, la configuración solo DD, con $PST$ mayor ($20.3\%$), presentó un modo dominante en un \textit{bitstring} espurio respecto al cual las fracciones continuas no recuperan el período correcto. Ambos casos ilustran que $PST$ y éxito clásico no están unívocamente acoplados en el régimen de señal colapsada: el filtro de fracciones continuas puede devolver factores correctos por coincidencia cuando la distribución es casi uniforme, y puede no devolverlos cuando la distribución tiene moda fuera de los picos teóricos.\\
+
 Este resultado demuestra que la combinación PT + DD no es aditiva en sus beneficios: el DD amplifica el ruido por los mecanismos ya descritos, y el PT, al aleatorizar las compuertas de Pauli alrededor de cada CZ, modifica la estructura de cancelación de errores que el circuito original podría exhibir naturalmente, eliminando posibles interferencias destructivas de errores que serían favorables.
 
 \subsubsection{Contraste con la simulación ruidosa}
@@ -1678,7 +1662,7 @@ La Tabla~\ref{tab:contraste_mitigacion} contrasta el efecto de las cuatro varian
 
 \begin{table}[H]
     \centering
-    \caption{Contraste del efecto de la mitigación entre el simulador ruidoso (FakeTorino, Fase~2) y el hardware real (\texttt{ibm\_torino}, Fase~3), para $a = 4$, $\texttt{opt}=3$. La celda \emph{Solo PT} en HW se obtiene por inferencia indirecta de V1.\\}
+    \caption{Contraste del efecto de la mitigación entre el simulador ruidoso (FakeTorino, Fase~2) y el hardware real (\texttt{ibm\_torino}, Fase~3), para $a = 4$, $\texttt{opt}=3$. La celda \emph{Solo PT} en HW se obtiene por inferencia indirecta de V1. \emph{Nota:} los valores de FakeTorino reportados aquí provienen de la corrida del estudio de mitigación (cf. nota de la Tabla~\ref{tab:faketorino_mitigacion}); por eso, para la fila \emph{sin mitigación}, se reproduce el par $(PST_{\text{FT}}, \mathcal{F}_H^{\text{FT}}) = (3{,}52\%,\, 0{,}0039)$ del estudio de mitigación, en lugar del par $(4{,}30\%,\, 0{,}0010)$ que reporta la Tabla~\ref{tab:faketorino_sin_mitigacion} (corrida independiente con la misma configuración nominal).\\}
     \label{tab:contraste_mitigacion}
     \begin{tabular}{lcccc}
         \hline
@@ -1735,7 +1719,7 @@ La Tabla~\ref{tab:degradacion_cascada} cuantifica la degradación de la señal c
     \item En un circuito como el de $a = 4$ con 116~CZ, las sobre-rotaciones sistemáticas y las fases espúreas asociadas a cada compuerta pueden interferir destructivamente entre sí en la cadena, recuperando parte de la señal que el modelo estocástico, por construcción, da por perdida. Este mecanismo se atenúa progresivamente al aumentar la profundidad, lo cual es consistente con la observación empírica: la inversión es muy fuerte en $a = 4$ ($\Delta_{\text{HW-FT}} \approx +71$~pp, 116~CZ) y se reduce a un valor pequeño en $a = 7$ ($\Delta_{\text{HW-FT}} \approx +8$~pp, 244~CZ).
 \end{enumerate}
 
-La lectura conjunta de estos tres factores conduce a un hallazgo metodológico de interés para futuros trabajos en NISQ: \emph{el \textit{fake backend} no es un predictor optimista de su propio hardware en el régimen de circuitos cortos; es un predictor pesimista}. Cualquier estimación de viabilidad basada en el simulador con ruido tenderá a subestimar la señal real cuando el circuito quepa cómodamente dentro del tiempo de coherencia, y las decisiones de ingeniería tomadas exclusivamente sobre el simulador --- como descartar una base $a$ por baja $PST$ simulada --- pueden ser injustificadamente conservadoras.\\
+La lectura conjunta de estos tres factores conduce a un hallazgo metodológico de interés para futuros trabajos en NISQ: \emph{en las dos bases con medición pareada disponibles, el \textit{Fake Backend} se comporta como predictor pesimista de su propio hardware en el régimen de circuitos cortos estudiado, no como predictor optimista}. Esta observación se sostiene sobre dos bases con medición pareada en ambos entornos y no debe extrapolarse sin nueva evidencia a circuitos más profundos, a otras bases o a otras configuraciones del modelo de ruido. Cualquier estimación de viabilidad basada en el simulador con ruido podría, en el régimen aquí caracterizado, subestimar la señal real cuando el circuito quepa cómodamente dentro del tiempo de coherencia, y las decisiones de ingeniería tomadas exclusivamente sobre el simulador --- como descartar una base $a$ por baja $PST$ simulada --- podrían ser, en ese régimen, injustificadamente conservadoras.\\
 
 \textit{Comportamiento de las bases sin medición en Fase~2:} para $a \in \{2, 8, 11, 13\}$ no se dispone de medición en FakeTorino, lo que impide cuantificar la cascada completa. La columna $PST_{\text{HW}}$ permite, no obstante, ordenar las bases por dificultad efectiva en hardware: $a = 8$ y $a = 4$ encabezan el ranking con $PST > 75\%$, mientras que $a = 11$ ($D_{2Q} = 75$, la menor del estudio) aparece en el extremo opuesto con $PST = 35.5\%$. Esta no-monotonía respecto a la profundidad fue ya discutida y se atribuye a la heterogeneidad de la fidelidad CZ a lo largo de las cadenas Heavy-Hex que SABRE selecciona en cada ejecución.\\
 
@@ -1749,11 +1733,11 @@ El presente trabajo de grado se propuso evaluar la viabilidad técnica y el dese
 
 \section{Resultados principales}
 
-La factorización $N = 15 = 3 \times 5$ se demostró experimentalmente en el procesador \texttt{ibm\_torino} con una señal máxima de $PST = 82.8\%$, correspondiente a la línea base sin supresión del estudio A6/A7 (\texttt{job\_id}~\texttt{d6agiah7}, $\mathcal{F}_H = 0.547$), y con una tasa de éxito cercana al $90\%$ en la extracción de los factores no triviales sobre las ejecuciones con bases coprimas válidas (Tabla~\ref{tab:jobs_hardware}). Hasta donde se tiene conocimiento, ésta constituye la primera demostración experimental del algoritmo de Shor en hardware cuántico real reportada desde la Universidad de Nariño.\\
+La ejecución exitosa de una versión compilada del algoritmo de Shor para $N = 15$ se demostró experimentalmente en el procesador \texttt{ibm\_torino}, recuperando los factores $3 \times 5$ con una señal máxima de $PST = 82.8\%$, correspondiente a la línea base sin supresión del estudio A6/A7 (\texttt{job\_id}~\texttt{d6agiah7}, $\mathcal{F}_H = 0.547$), y con una tasa de éxito cercana al $90\%$ en la extracción de los factores no triviales sobre las ejecuciones con bases coprimas válidas (Tabla~\ref{tab:jobs_hardware}). Hasta donde se tiene conocimiento, ésta constituye la primera demostración experimental del algoritmo de Shor en hardware cuántico real reportada desde la Universidad de Nariño.\\
 
 La Transformada Cuántica de Fourier ($n = 9$ qubits) y los bloques controlados de exponenciación modular se implementaron en Qiskit y se verificaron numéricamente con errores de unitariedad $\lVert U^{\dagger} U - I \rVert_F < 10^{-13}$ en todas las variantes evaluadas (Tabla~\ref{tab:qft_metricas}). El mapeo a la topología Heavy-Hex de FakeTorino evidenció un \textit{overhead} sobre el conteo de compuertas de dos qubits que llega hasta un factor de $\sim 3.9\times$ con mapeo trivial respecto a la conectividad \textit{all-to-all} (Tabla~\ref{tab:transpilacion_faketorino}). Sobre esa base, el algoritmo SABRE redujo de forma sistemática el sobrecosto, con disminuciones de entre el $11\%$ y el $18\%$ en profundidad de dos qubits y entre el $19\%$ y el $27\%$ en el conteo de compuertas de dos qubits para las bases evaluadas (Tabla~\ref{tab:reduccion_sabre}).\\
 
-Más allá de la transpilación, el factor con mayor impacto sobre la señal experimental resultó ser el nivel de optimización del transpilador de Qiskit. El estudio A2 (Tabla~\ref{tab:opt_level_hardware}, Sección~\ref{subsec:resultados_crudos_hw}) registró una transición de $PST = 1.1\%$ (\texttt{opt}~$=0$, 770~capas CZ y 1220~compuertas CZ con 113~SWAPs estimadas) a $PST = 70.8\%$ (\texttt{opt}~$=2$, 116~capas CZ sin SWAPs adicionales), una ganancia de aproximadamente $64\times$ obtenida al sólo modificar este parámetro. La transición adicional de \texttt{opt}~$=2$ a \texttt{opt}~$=3$ con \textit{Pauli Twirling} desactivado (línea base de A6/A7) elevó la señal hasta el máximo de $82.8\%$, atribuible al pase de re-síntesis con conciencia del ruido del \textit{backend}. Esta evidencia cuantifica por qué la compilación cuántica no constituye una optimización accesoria, sino una pieza estructural del algoritmo en la era NISQ.\\
+Más allá de la transpilación, en el conjunto de configuraciones evaluadas el nivel de optimización del transpilador de Qiskit fue la variable de control con \emph{mayor impacto observado} sobre la señal experimental. El estudio A2 (Tabla~\ref{tab:opt_level_hardware}, Sección~\ref{subsec:resultados_crudos_hw}) registró una transición de $PST = 1.1\%$ (\texttt{opt}~$=0$, 770~capas CZ y 1220~compuertas CZ con 113~SWAPs estimadas) a $PST = 70.8\%$ (\texttt{opt}~$=2$, 116~capas CZ sin SWAPs adicionales), una ganancia de aproximadamente dos órdenes de magnitud en señal obtenida al sólo modificar este parámetro. La transición adicional de \texttt{opt}~$=2$ a \texttt{opt}~$=3$ con \textit{Pauli Twirling} desactivado (línea base de A6/A7) elevó la señal hasta el máximo de $82.8\%$, atribuible al pase de re-síntesis con conciencia del ruido del \textit{backend}. Conviene recordar que parte de la diferencia entre $\texttt{opt}=2$ (estudio A2) y $\texttt{opt}=3$ (estudio A6/A7) corresponde a ventanas de calibración distintas, por lo que la magnitud absoluta del salto debe entenderse como un orden de magnitud robusto y no como un coeficiente fino reproducible al punto porcentual. Esta evidencia, cualificaciones aparte, cuantifica por qué la compilación cuántica no constituye una optimización accesoria, sino una pieza estructural del algoritmo en la era NISQ.\\
 
 La estrategia de pre-procesamiento clásico propuesta en la literatura reciente \cite{villarreal} se validó experimentalmente bajo condiciones equivalentes. El módulo desarrollado en Python caracterizó exhaustivamente el grupo $\mathbb{Z}_{15}^*$ e identificó las bases $a \in \{4, 11, 14\}$ con período $r = 2$ como las de menor complejidad estructural de circuito (Sección~\ref{sec:preprocesamiento_parametros}, Tabla~\ref{tab:caracterizacion_a}). En la serie V1 (\texttt{opt}~$=3$, PT activado), la base $a = 4$ ($r = 2$, 116~CZ) alcanzó $PST = 75.5\%$ frente a $a = 7$ ($r = 4$, 244~CZ) con $PST = 67.5\%$ ---una diferencia de 8.0~puntos porcentuales atribuible directamente a la profundidad del circuito (Tabla~\ref{tab:bases_hw})---, lo que convierte una predicción teórica sobre el escalamiento con $r$ en una ventaja medible y reproducible en hardware NISQ.\\
 
@@ -1761,7 +1745,7 @@ La cadena completa de degradación se cuantificó utilizando la fidelidad de Hel
 
 Quizá el hallazgo más inesperado, y a la vez más informativo desde un punto de vista físico, se obtuvo al evaluar las técnicas de supresión de errores en hardware real. El Desacoplamiento Dinámico con secuencia XY4, lejos de mejorar la señal, la degradó en $62.5$~puntos porcentuales: el $PST$ se redujo de $82.8\%$ (línea base) a $20.3\%$, la fidelidad cayó de $\mathcal{F}_H = 0.547$ a $0.154$, y la dispersión pasó de 30 a 163~\textit{outcomes} únicos (Tabla~\ref{tab:mitigacion_hw}). La combinación PT$+$DD acentuó este efecto hasta llevar la señal por debajo del $1\%$ ($PST = 0.8\%$, $\mathcal{F}_H = 0.007$, 469~\textit{outcomes} únicos sobre los 512 posibles), produciendo una distribución prácticamente indistinguible del ruido uniforme. Como se discutió en la Sección~\ref{subsec:mitigacion_hardware}, este comportamiento se atribuye a que, para circuitos de profundidad moderada ($D_{2Q} \sim 116$) en procesadores con compuertas nativas de alta fidelidad, los intervalos de inactividad son demasiado breves para que la refocalización compense los errores de calibración propios de los pulsos de DD; adicionalmente, el PT modifica patrones de cancelación coherente potencialmente favorables. La implicación práctica es directa: la aplicación indiscriminada de técnicas de supresión puede ser contraproducente, y su eficacia debe evaluarse empíricamente para cada régimen operativo.\\
 
-A los resultados anteriores se añade una observación de carácter metodológico: en el régimen de circuitos cortos, los \textit{Fake Backends} subestiman la calidad del hardware real. El contraste de la Tabla~\ref{tab:contraste_mitigacion} muestra que, para el mismo circuito $a = 4$ con \texttt{opt}~$=3$, FakeTorino predice $PST_{\text{FT}} = 3.5\%$ sin supresión, mientras que \texttt{ibm\_torino} entrega $PST_{\text{HW}} = 82.8\%$. Además, las cuatro variantes de supresión producen señales prácticamente indistinguibles en el simulador ($PST \in [2.34, 3.91]\%$, $\mathcal{F}_H \in [0.003, 0.007]$), pero difieren en aproximadamente dos órdenes de magnitud en hardware. Esta firma del régimen NISQ ---ruido coherente, deriva de calibración entre ventanas y posibles cancelaciones destructivas en cadenas largas de CZ--- no la captura el modelo estocástico del \textit{snapshot}, lo que tiene implicaciones claras para el uso de simuladores ruidosos como filtro previo a la ejecución en hardware.
+A los resultados anteriores se añade una observación de carácter metodológico: en el régimen de circuitos cortos aquí estudiado y sobre las dos bases con medición pareada disponibles, el \textit{Fake Backend} utilizado subestima la calidad del hardware real. El contraste de la Tabla~\ref{tab:contraste_mitigacion} muestra que, para el mismo circuito $a = 4$ con \texttt{opt}~$=3$, FakeTorino predice $PST_{\text{FT}} = 3.5\%$ sin supresión, mientras que \texttt{ibm\_torino} entrega $PST_{\text{HW}} = 82.8\%$. Además, las cuatro variantes de supresión producen señales prácticamente indistinguibles en el simulador ($PST \in [2.34, 3.91]\%$, $\mathcal{F}_H \in [0.003, 0.007]$), pero difieren en aproximadamente dos órdenes de magnitud en hardware. Esta firma del régimen NISQ ---ruido coherente, deriva de calibración entre ventanas y posibles cancelaciones destructivas en cadenas largas de CZ--- no la captura el modelo estocástico del \textit{snapshot}, lo que tiene implicaciones claras para el uso de simuladores ruidosos como filtro previo a la ejecución en hardware. Esta observación se sostiene sobre dos bases con medición pareada y no debe extrapolarse sin nueva evidencia a circuitos más profundos o a otras configuraciones del modelo de ruido.
 
 \section{Limitaciones del trabajo}
 
@@ -1769,11 +1753,11 @@ Es importante reconocer las limitaciones que acotan el alcance de los resultados
 
 La limitación más fundamental es la restricción al caso $N = 15$, la instancia pedagógica más pequeña del algoritmo de Shor. Si bien este caso es canónico en la literatura y permite ilustrar de forma rigurosa la cadena completa de factorización, la extrapolación a enteros de relevancia criptográfica resulta inviable en el hardware actual.\\
 
-En segundo lugar, el número de ejecuciones en hardware real estuvo condicionado por el cupo del IBM Quantum Open Plan (10~minutos mensuales de tiempo de procesador). Si bien los 13~\textit{jobs} ejecutados cubrieron de manera coherente los estudios planificados, una caracterización estadística más robusta (por ejemplo, repeticiones múltiples de cada configuración para cuantificar la variabilidad inter-ejecución, o réplicas de la línea base en distintos días) habría requerido un volumen de acceso fuera del alcance del plan abierto. La anomalía observada para $a = 11$ ($PST = 35.5\%$ a pesar de tener la menor profundidad 2Q del estudio, 75~capas, Tabla~\ref{tab:bases_hw}) ilustra esta limitación: sin réplicas, no es posible distinguir formalmente entre variabilidad en la calidad de los qubits asignados por SABRE y un efecto sistemático asociado a la base.\\
+En segundo lugar, el número de ejecuciones en hardware real estuvo doblemente condicionado. Primero, por el cupo del IBM Quantum Open Plan, que limita el tiempo mensual de procesador real disponible. Segundo, por la propia disponibilidad de \texttt{ibm\_torino}: durante el período experimental, la cola del servicio acumulaba decenas de \textit{jobs} en espera y el procesador atravesó al menos una ventana de mantenimiento, lo que obligó a ejecutar el estudio en días no consecutivos. Tras el cierre de la fase experimental, \texttt{ibm\_torino} fue retirado de la flota disponible de IBM Quantum, lo que impidió de manera definitiva la ejecución de réplicas adicionales o de un barrido factorial completo. La opción de migrar a otros procesadores Heron disponibles fue evaluada y descartada por motivos de cronograma: cada nuevo \textit{backend} habría requerido instanciar su correspondiente \textit{Fake Backend}, reproducir íntegramente la Fase~2 sobre ese \textit{snapshot} y rehacer el protocolo de transpilación específico para su topología y calibración. En consecuencia, los 13~\textit{jobs} reportados corresponden a corridas únicas por configuración, sin réplicas, y deben interpretarse con la cautela estadística que ello implica: una parte de las diferencias inter-condición observadas (en particular las del orden de unos pocos puntos porcentuales) es compatible tanto con efectos sistemáticos como con la variabilidad natural del procesador entre ventanas de calibración. La anomalía observada para $a = 11$ ($PST = 35.5\%$ a pesar de tener la menor profundidad 2Q del estudio, 75~capas, Tabla~\ref{tab:bases_hw}) ilustra esta limitación: sin réplicas, no es posible distinguir formalmente entre variabilidad en la calidad de los qubits asignados por SABRE y un efecto sistemático asociado a la base.\\
 
-En tercer lugar, los simuladores con modelos de ruido (\textit{Fake Backends}) mostraron limitaciones importantes como predictores del comportamiento en hardware real. Como ya se documentó en las Secciones~\ref{subsec:efecto_mitigacion_ruido} y~\ref{subsec:mitigacion_hardware}, el \textit{snapshot} de FakeTorino reproduce despolarización, relajación térmica $T_1/T_2$ y matrices de confusión de lectura, pero no captura \textit{crosstalk} dinámico entre qubits vecinos, errores coherentes de compuerta ni la deriva temporal de las calibraciones. El resultado neto, sintetizado en la Tabla~\ref{tab:contraste_mitigacion}, es que el \textit{snapshot} resulta ser un predictor pesimista en circuitos cortos y produce un veredicto cualitativa y cuantitativamente incorrecto sobre la efectividad de DD y PT.\\
+En tercer lugar, los simuladores con modelos de ruido (\textit{Fake Backends}) mostraron limitaciones importantes como predictores del comportamiento en hardware real. Como ya se documentó en las Secciones~\ref{subsec:efecto_mitigacion_ruido} y~\ref{subsec:mitigacion_hardware}, el \textit{snapshot} de FakeTorino reproduce despolarización, relajación térmica $T_1/T_2$ y matrices de confusión de lectura, pero no captura \textit{crosstalk} dinámico entre qubits vecinos, errores coherentes de compuerta ni la deriva temporal de las calibraciones. El resultado neto, sintetizado en la Tabla~\ref{tab:contraste_mitigacion}, es que el \textit{snapshot} resulta ser un predictor pesimista en las dos bases con medición pareada disponible y produce un veredicto cualitativa y cuantitativamente incorrecto sobre la efectividad de DD y PT en esas dos bases; esta observación no debe extrapolarse sin nueva evidencia a circuitos más profundos o a otras configuraciones del modelo de ruido.\\
 
-Finalmente, la implementación de la exponenciación modular se basó en matrices unitarias precomputadas (clase \texttt{UnitaryGate} de Qiskit). Esta elección fue deliberada y, dado el tamaño del registro objetivo ($t_t = 4$ qubits), permitió minimizar la profundidad del circuito y centrar la atención en las preguntas de transpilación y supresión que son el foco del trabajo. No obstante, no constituye una implementación escalable: una demostración general del algoritmo requeriría descomponer la exponenciación modular en compuertas elementales reversibles (Tabla~\ref{tab:exp_mod_bloques}), lo que incrementaría sustancialmente la profundidad y, por tanto, agudizaría los efectos de ruido aquí caracterizados.
+Finalmente, la implementación de la exponenciación modular se basó en matrices unitarias precomputadas (clase \texttt{UnitaryGate} de Qiskit). Esta opción ubica el presente trabajo dentro de las implementaciones \emph{compiladas} de Shor descritas en la literatura \cite{Skosana2021,Lanyon2007,smolin2013oversimplifying}, no en una implementación de propósito general. La elección fue deliberada y, dado el tamaño del registro objetivo ($t_t = 4$ qubits), permitió minimizar la profundidad del circuito y centrar la atención en las preguntas de transpilación y supresión que son el foco del trabajo. No obstante, no constituye una implementación escalable: una demostración general del algoritmo requeriría descomponer la exponenciación modular en compuertas elementales reversibles (Tabla~\ref{tab:exp_mod_bloques}), lo que incrementaría sustancialmente la profundidad y, por tanto, agudizaría los efectos de ruido aquí caracterizados.
 
 \section{Perspectivas futuras}
 
@@ -1797,15 +1781,13 @@ Más allá del rigor técnico, este proyecto significó el paso del aula a la co
 
 Se confía en que este aporte a la Universidad de Nariño y a su comunidad académica constituya un precedente concreto de investigación experimental en computación cuántica: una metodología documentada, un conjunto de datos reproducibles ---incluidos todos los \texttt{job\_id} y archivos de configuración--- y la evidencia de que es posible realizar investigación significativa en esta disciplina con los recursos de acceso abierto disponibles. Se espera que este estudio sirva como punto de partida para futuros trabajos que continúen explorando las fronteras de la computación cuántica desde la institución.
 
-% =========================================================================
-% BLOQUE B — Apéndice A "Preliminares matemáticos y formalismo cuántico"
-% =========================================================================
-
 \appendix
 \chapter{Preliminares matemáticos y formalismo cuántico}
 \label{app:ruido}
  
 Este apéndice complementa la Sección~\ref{sec:nisq} con los elementos formales mínimos del modelo de ruido empleados para describir, simular y mitigar los errores observados en la ejecución del algoritmo de Shor sobre los procesadores de IBM Quantum.
+
+\textbf{Nota sobre la notación.} En el cuerpo principal del trabajo y a partir de la metodología experimental (Capítulo~\ref{chap:metodologia}) se utiliza la variable $a$ para denotar la base de la búsqueda de orden, siguiendo la convención habitual de la literatura NISQ. En este apéndice y en aquellos que reproducen textualmente el desarrollo de Nielsen \& Chuang \cite{Nielsen2024} se conserva la notación original $x$ para la misma cantidad, con el único propósito de facilitar el cotejo con la referencia.
  
 \section{Canales cuánticos y representación de Kraus}
 \label{app:kraus}
@@ -1826,16 +1808,6 @@ En un dispositivo NISQ, la aplicación de una compuerta cuántica $U$ no produce
     \label{eq:canal_gate}
 \end{equation}
 El parámetro $p$ se identifica con la tasa de error de compuerta reportada por IBM para cada qubit y par de qubits en sus calibraciones diarias \cite{AbuGhanem2025}. En las simulaciones clásicas con el \textit{noise model} de Qiskit Aer, este canal se aplica tras cada compuerta del circuito transpilado.
-
-
-
-% =========================================================================
-% BLOQUE B — Material migrado al Apéndice A (continuación)
-% =========================================================================
-
-% Las siguientes secciones se insertan dentro del mismo
-% \chapter{Preliminares matemáticos y formalismo cuántico}
-% creado para §4.2, después de las secciones ya existentes.
 
 Las siguientes secciones recogen el desarrollo formal de los resultados algebraicos empleados en §\ref{sec:qft}, §\ref{sec:order_finding} y §\ref{sec:reduccion_clasica}, presentados allí en forma compacta.
 
@@ -1893,10 +1865,6 @@ Tras la medición del registro de conteo se obtiene un entero $y \in \{0, 1, \ld
           con condiciones iniciales $p_{-1} = 1$, $p_{-2} = 0$, $q_{-1} = 0$, $q_{-2} = 1$. El Teorema~\ref{thm:fracciones_continuas} (Ec.~\ref{eq:fracciones_continuas}) garantiza que si $t \geq 2L + 1$, donde $L = \lceil \log_2 N \rceil$, entonces $s/r$ aparece como uno de los convergentes \cite{Nielsen2024}.
     \item Para cada convergente con denominador $q_k < N$, se verifica computacionalmente si $x^{q_k} \equiv 1 \pmod{N}$. Si la condición se cumple, $r = q_k$ (o $r$ divide a $q_k$); en caso contrario, se prueban los convergentes subsiguientes o se repite la ejecución cuántica con un nuevo resultado de medición.
 \end{enumerate}
-
-% =========================================================================
-% BLOQUE B — Apéndice A: secciones nuevas sobre DD y PT formal
-% =========================================================================
 
 \section{Formalismo del Desacoplamiento Dinámico}
 \label{app:dd-formal}
@@ -1989,18 +1957,11 @@ Como se indicó en el cuerpo principal (Ec.~\ref{eq:pt_preservation}), los pares
     \label{fig:pt_cnot_ecr}
 \end{figure}
 
-% =========================================================================
-% BLOQUE B — Apéndice B "Arquitectura del software e implementación"
-% =========================================================================
-
 \chapter{Arquitectura del software e implementación}
 \label{app:arquitectura-software-cap}
 
 Este apéndice documenta los aspectos de implementación del software empleado en el trabajo. Su contenido complementa el Capítulo~\ref{chap:metodologia} y permite la reproducibilidad técnica del estudio sin sobrecargar el discurso metodológico del cuerpo principal. Las secciones siguen el orden lógico del flujo de desarrollo: migración técnica respecto al repositorio base, estructura modular del proyecto, configuración detallada del transpilador y del algoritmo SABRE, configuración de las técnicas de supresión, \textit{scripts} de ejecución por fase, módulos de post-procesamiento y, finalmente, versiones del entorno de software.
 
-% =====================================================================
-% B.1 MIGRACIÓN TÉCNICA
-% =====================================================================
 \section{Migración técnica del repositorio base a Qiskit~2.x}
 \label{app:migracion-qiskit}
 
@@ -2369,11 +2330,6 @@ La Tabla~\ref{tab:entorno_software} resume las versiones específicas de cada pa
     \end{tabular}
 \end{table}
 
-% =========================================================================
-% BLOQUE B — Apéndice C "Tablas de validación complementaria"
-% (incluir Tabla 6.1, Tabla 6.2 y Figura 6.1)
-% =========================================================================
-
 \chapter{Tablas complementarias}
 \label{app:caracterizacion-bloques}
 
@@ -2381,7 +2337,7 @@ Este apéndice consolida las tablas y figuras de validación numérica del capí
 
 \section{Verificación de la Transformada Cuántica de Fourier}
 
-La QFT sobre $n = 9$ qubits de control se implementó conforme a la descomposición estándar en compuertas Hadamard y rotaciones de fase controladas $CR_k$ (Ec.~\ref{eq:rotacion_fase}), requiriendo teóricamente $n = 9$ compuertas Hadamard, $\binom{9}{2} = 36$ rotaciones $CR_k$, y $\lfloor 9/2 \rfloor = 4$ compuertas SWAP para la inversión del orden de los qubits de salida. La corrección del operador se verificó numéricamente calculando la norma de Frobenius del error residual $\|U^{\dagger}U - I\|_F$, tanto para la QFT directa como para su inversa. Adicionalmente, se verificó la relación de inversión $\mathrm{QFT} \cdot \mathrm{QFT}^{-1} = I$ obteniendo $\|\mathrm{QFT} \cdot \mathrm{QFT}^{-1} - I\|_F = 3.82 \times 10^{-14}$, lo cual confirma que ambos operadores son mutuamente inversos con precisión numérica de máquina. La discrepancia entre la profundidad descompuesta (Depth Total $= 18$) y la transpilada (Depth Total $= 61$) refleja el costo de traducir las rotaciones $CR_k$ abstractas a la base nativa $\{\mathrm{RZ}, \mathrm{SX}, \mathrm{X}, \mathrm{ECR}\}$, un factor que se amplifica significativamente al considerar la topología restringida del hardware.
+La QFT sobre $n = 9$ qubits de control se implementó conforme a la descomposición estándar en compuertas Hadamard y rotaciones de fase controladas $CR_k$ (Ec.~\ref{eq:rotacion_fase}), requiriendo teóricamente $n = 9$ compuertas Hadamard, $\binom{9}{2} = 36$ rotaciones $CR_k$, y $\lfloor 9/2 \rfloor = 4$ compuertas SWAP para la inversión del orden de los qubits de salida. La corrección del operador se verificó numéricamente calculando la norma de Frobenius del error residual $\|U^{\dagger}U - I\|_F$, tanto para la QFT directa como para su inversa. Adicionalmente, se verificó la relación de inversión $\mathrm{QFT} \cdot \mathrm{QFT}^{-1} = I$ obteniendo $\|\mathrm{QFT} \cdot \mathrm{QFT}^{-1} - I\|_F = 3.82 \times 10^{-14}$, lo cual confirma que ambos operadores son mutuamente inversos con precisión numérica de máquina. La discrepancia entre la profundidad descompuesta (Depth Total $= 18$) y la transpilada (Depth Total $= 61$) refleja el costo de traducir las rotaciones $CR_k$ abstractas a la base nativa del procesador objetivo (en Heron~r1: $\{\mathrm{RZ}, \mathrm{SX}, \mathrm{X}, \mathrm{CZ}\}$), un factor que se amplifica significativamente al considerar la topología restringida del hardware.
 
 \begin{table}[H]
     \centering
@@ -2666,7 +2622,7 @@ El operador unitario de multiplicación modular $U_a |y\rangle = |ay \bmod N\ran
 \begin{table}[H]
     \centering
     \caption{Comparación de técnicas de supresión ($\texttt{opt} = 3$, FakeTorino,
-    512~\textit{shots}). Se reportan $PST$, $\mathcal{F}_H$ y los factores extraídos para cada variante.}
+    512~\textit{shots}). Se reportan $PST$, $\mathcal{F}_H$ y los factores extraídos para cada variante. \emph{Nota:} la fila de \textit{a}=4 sin supresión ($PST=3{,}52\%$, $\mathcal{F}_H=0{,}0039$) corresponde a la corrida del estudio de mitigación; la línea base equivalente reportada en la Tabla~\ref{tab:faketorino_sin_mitigacion} ($PST=4{,}30\%$, $\mathcal{F}_H=0{,}0010$) corresponde a una corrida independiente con la misma configuración nominal pero distinta semilla de \textit{sampling}. Las diferencias del orden de un punto porcentual son compatibles con la variabilidad esperada en distribuciones cercanas a la uniformidad sobre $M=512$~\textit{shots}.}
     \label{tab:faketorino_mitigacion}
     \begin{tabular}{clcccc}
         \hline
@@ -2728,9 +2684,83 @@ El operador unitario de multiplicación modular $U_a |y\rangle = |ay \bmod N\ran
     \end{tabular}
 \end{table}
 
+% =====================================================================
+% RESUMEN DE CORRECCIONES APLICADAS (no se imprime en el PDF)
+% ---------------------------------------------------------------------
+% Bloque A — Correcciones técnicas verificables:
+%   A1: ECR -> CZ en marco teórico (§4.4.1, §4.4.2), supresión (§4.6),
+%       Pauli Twirling (§4.6.2), pie de figura de transpilación y
+%       apéndice C (tabla QFT métricas). Glosario de ECR aclarado.
+%   A2: Umbral 1/r corregido por r/2^t en §4.7.2 y §5.8; "PST informativa"
+%       en lugar de "PST aceptable con umbral fijo".
+%   A3: "Shor compilado" cualificado en abstract (ES/EN), introducción,
+%       §5.4.1 (con cita explícita a Smolin), conclusiones (§7.1) y
+%       limitaciones (§7.2).
+%   A4: Notas al pie en tab:faketorino_mitigacion y tab:contraste_mitigacion
+%       aclarando que cifras a=4, opt=3 provienen de corridas independientes
+%       con semillas distintas (canónico 4.30% / 0.0010 en tabla sin
+%       mitigación; 3.52% / 0.0039 en estudio de mitigación).
+%   A5: Doble \ref{app:dd-formal} corregida; segunda referencia ahora
+%       apunta a \ref{app:pt-formal}.
+%   A6: Eliminados comentarios LaTeX editoriales residuales (% BLOQUE A,
+%       % BLOQUE B, % Versión compacta sin tablas redundantes, etc.).
+%   A7: Ecuación SWAP=ECR_ij·ECR_ji·ECR_ij sustituida por descripción
+%       textual ("triplica aproximadamente el número de compuertas
+%       entrelazantes"); label eq:swap_ecr eliminada; verificado que no
+%       hay referencias colgantes.
+%   A8: AQFT reformulada como referencia metodológica de la literatura;
+%       declarado que el trabajo usa approximation_degree=0.7 (umbral del
+%       transpilador) y no AQFT lógica. Glosario actualizado.
+%
+% Bloque B — Blindaje ante jurado y limitaciones declaradas:
+%   B1: Justificación explícita de los 512 shots de Fase 2 en §5.5
+%       (restricciones de cómputo local del autor).
+%   B2: Reescrito el párrafo de Limitaciones (§7.2) declarando ausencia
+%       de réplicas, retirada de ibm_torino de la flota y decisión de no
+%       migrar a otros backends Heron por motivos de cronograma.
+%   B3: Cualificadas comparaciones cruzadas A2 vs A6/A7 en §6.3.2 y §7.1
+%       (ventanas de calibración distintas); "factor 64x" sustituido por
+%       "dos órdenes de magnitud".
+%   B4: §5.7 reescrita: factorial 2x2 "planificado inicialmente";
+%       Fase 2 completa, Fase 3 incompleta (solo PT inferida por
+%       comparación V1 ↔ A6/A7 con riesgo de calibración).
+%   B5: Modelo F~(1-eps)^Ng vs PST en §6.3.2 reconciliado: aclarado que
+%       la estimación es de fidelidad, no de PST, y que en el régimen
+%       colapsado PST tiende a r/2^t.
+%   B6: Duración tau_CZ cualificada como "valor del snapshot, varía día
+%       a día y entre pares de qubits".
+%   B7: "Fake Backends subestiman" suavizado en abstract (ES/EN),
+%       §6.3.4 y §7.1: "sobre las dos bases con medición pareada
+%       disponibles, no debe extrapolarse sin nueva evidencia".
+%   B8: Z*_15 corregido de 7 a 8 elementos: {1, 2, 4, 7, 8, 11, 13, 14},
+%       con aclaración de que a=1 es trivial y se excluye del estudio.
+%   B9: Forma incorrecta "Desacople (dinámico)" unificada a "Desacoplamiento
+%       Dinámico" en todo el documento.
+%   B10: "Factor más determinante" sustituido por "variable de control con
+%        mayor impacto observado" en §6.3.2 y §7.1.
+%   B11: §6.3.3: añadida nota sobre DD+PT con PST=0.8% que "extrae
+%        factores" por coincidencia estadística, no por éxito algorítmico.
+%
+% Bloque C — Limpieza y consistencia editorial:
+%   C1: Comentarios LaTeX editoriales eliminados (ver A6).
+%   C2: Verificación automatizada de coherencia \ref vs \label:
+%       0 referencias colgantes sobre 99 \ref totales.
+%   C4: Nota sobre notación x vs a añadida al inicio del Apéndice A,
+%       conservando x en los apéndices que reproducen Nielsen-Chuang.
+%   C5: Corregidos 3 casos de "Figura ~\ref" / "Tabla ~\ref" /
+%       "Fig. ~\ref" a formato consistente "Figura~\ref" / "Tabla~\ref".
+%
+% No tocado deliberadamente (siguiendo el prompt):
+%   - Ecuaciones de QFT, QPE, Pauli Twirling, canales de Kraus.
+%   - Algoritmos en pseudocódigo (alg:order_finding, alg:shor, alg:qpe).
+%   - Teoremas 1 y 2 (reducción factorización <-> búsqueda de orden).
+%   - Números experimentales: PST, fidelidades, Depth 2Q, job IDs.
+%   - Bibliografía (claves IBM*, compuertas_CNOT, etc.).
+%   - Agradecimientos, dedicatoria, reflexión final.
+% =====================================================================
+
 \bibliography{bibliografia}
 \end{document}
-
 
 
 
