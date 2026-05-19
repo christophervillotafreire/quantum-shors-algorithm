@@ -1,0 +1,82 @@
+{
+  "a=4": [
+    {
+      "base": 4,
+      "optimization_level": 0,
+      "depth_total": 2509,
+      "depth_2q": 504,
+      "gates_2q": 749,
+      "total_gates": 5145,
+      "pst": 25.0,
+      "noise_pct": 75.0,
+      "fidelidad_hellinger": 0.148206,
+      "factors": [
+        3,
+        5
+      ],
+      "trivial": true,
+      "success": true,
+      "transpile_time_s": 0.37,
+      "simulation_time_s": 202.83
+    },
+    {
+      "base": 4,
+      "optimization_level": 3,
+      "depth_total": 1598,
+      "depth_2q": 439,
+      "gates_2q": 600,
+      "total_gates": 3338,
+      "pst": 4.3,
+      "noise_pct": 95.7,
+      "fidelidad_hellinger": 0.000977,
+      "factors": [
+        3,
+        5
+      ],
+      "trivial": true,
+      "success": true,
+      "transpile_time_s": 0.75,
+      "simulation_time_s": 167.88
+    }
+  ],
+  "a=7": [
+    {
+      "base": 7,
+      "optimization_level": 0,
+      "depth_total": 4952,
+      "depth_2q": 1015,
+      "gates_2q": 1255,
+      "total_gates": 9104,
+      "pst": 43.16,
+      "noise_pct": 56.84,
+      "fidelidad_hellinger": 0.22847,
+      "factors": [
+        3,
+        5
+      ],
+      "trivial": true,
+      "success": true,
+      "transpile_time_s": 0.19,
+      "simulation_time_s": 375.86
+    },
+    {
+      "base": 7,
+      "optimization_level": 3,
+      "depth_total": 3172,
+      "depth_2q": 869,
+      "gates_2q": 1071,
+      "total_gates": 6051,
+      "pst": 59.18,
+      "noise_pct": 40.82,
+      "fidelidad_hellinger": 0.413342,
+      "factors": [
+        3,
+        5
+      ],
+      "trivial": true,
+      "success": true,
+      "transpile_time_s": 1.11,
+      "simulation_time_s": 6019.97
+    }
+  ]
+}

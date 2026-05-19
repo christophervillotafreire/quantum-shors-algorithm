@@ -1,0 +1,142 @@
+{
+  "a=4": {
+    "baseline": {
+      "variante": "baseline",
+      "label": "Sin mitigación",
+      "dd": false,
+      "pt": false,
+      "pst": 3.52,
+      "fidelidad_hellinger": 0.003906,
+      "factors": [
+        3,
+        5
+      ],
+      "trivial": true,
+      "success": true,
+      "depth_2q": 439,
+      "gates_2q": 600,
+      "simulation_time_s": 114.92
+    },
+    "dd_only": {
+      "variante": "dd_only",
+      "label": "DD (XY4)",
+      "dd": true,
+      "pt": false,
+      "pst": 3.91,
+      "fidelidad_hellinger": 0.007289,
+      "factors": [
+        3,
+        5
+      ],
+      "trivial": true,
+      "success": true,
+      "depth_2q": 439,
+      "gates_2q": 600,
+      "simulation_time_s": 119.07
+    },
+    "pt_only": {
+      "variante": "pt_only",
+      "label": "PT (active)",
+      "dd": false,
+      "pt": true,
+      "pst": 2.34,
+      "fidelidad_hellinger": 0.005692,
+      "factors": [
+        3,
+        5
+      ],
+      "trivial": true,
+      "success": true,
+      "depth_2q": 439,
+      "gates_2q": 600,
+      "simulation_time_s": 115.58
+    },
+    "dd_pt": {
+      "variante": "dd_pt",
+      "label": "DD + PT",
+      "dd": true,
+      "pt": true,
+      "pst": 3.32,
+      "fidelidad_hellinger": 0.00293,
+      "factors": [
+        3,
+        5
+      ],
+      "trivial": true,
+      "success": true,
+      "depth_2q": 439,
+      "gates_2q": 600,
+      "simulation_time_s": 151.19
+    }
+  },
+  "a=7": {
+    "baseline": {
+      "variante": "baseline",
+      "label": "Sin mitigación",
+      "dd": false,
+      "pt": false,
+      "pst": 56.64,
+      "fidelidad_hellinger": 0.40291,
+      "factors": [
+        3,
+        5
+      ],
+      "trivial": true,
+      "success": true,
+      "depth_2q": 869,
+      "gates_2q": 1071,
+      "simulation_time_s": 3650.37
+    },
+    "dd_only": {
+      "variante": "dd_only",
+      "label": "DD (XY4)",
+      "dd": true,
+      "pt": false,
+      "pst": 49.61,
+      "fidelidad_hellinger": 0.330024,
+      "factors": [
+        3,
+        5
+      ],
+      "trivial": true,
+      "success": true,
+      "depth_2q": 869,
+      "gates_2q": 1071,
+      "simulation_time_s": 10317.48
+    },
+    "pt_only": {
+      "variante": "pt_only",
+      "label": "PT (active)",
+      "dd": false,
+      "pt": true,
+      "pst": 54.69,
+      "fidelidad_hellinger": 0.399844,
+      "factors": [
+        3,
+        5
+      ],
+      "trivial": true,
+      "success": true,
+      "depth_2q": 869,
+      "gates_2q": 1071,
+      "simulation_time_s": 2875.26
+    },
+    "dd_pt": {
+      "variante": "dd_pt",
+      "label": "DD + PT",
+      "dd": true,
+      "pt": true,
+      "pst": 46.48,
+      "fidelidad_hellinger": 0.290537,
+      "factors": [
+        3,
+        5
+      ],
+      "trivial": true,
+      "success": true,
+      "depth_2q": 869,
+      "gates_2q": 1071,
+      "simulation_time_s": 11500.36
+    }
+  }
+}

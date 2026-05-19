@@ -1,0 +1,60 @@
+{
+  "a=4": {
+    "orden_r": 2,
+    "picos_teoricos": [
+      0,
+      256
+    ],
+    "fidelidad_hellinger_ruido": 0.000977,
+    "distancia_hellinger_ruido": 0.984251,
+    "divergencia_kl_ruido": 19.695403,
+    "prob_en_picos_teoricos_ruido": 0.001953,
+    "prob_fuera_picos_ruido": 0.998047,
+    "fidelidad_hellinger_ideal": 0.999987,
+    "degradacion_F_H": 0.99901,
+    "shots": 512,
+    "optimization_level": 3,
+    "distribucion_ruidosa_top10": {
+      "110100011": 5,
+      "010101111": 5,
+      "001011100": 4,
+      "100010100": 4,
+      "001010000": 4,
+      "111101011": 4,
+      "000010100": 4,
+      "101011001": 4,
+      "011111110": 3,
+      "000011110": 3
+    }
+  },
+  "a=7": {
+    "orden_r": 4,
+    "picos_teoricos": [
+      0,
+      128,
+      256,
+      384
+    ],
+    "fidelidad_hellinger_ruido": 0.455929,
+    "distancia_hellinger_ruido": 0.56989,
+    "divergencia_kl_ruido": 0.800307,
+    "prob_en_picos_teoricos_ruido": 0.462891,
+    "prob_fuera_picos_ruido": 0.537109,
+    "fidelidad_hellinger_ideal": 0.999706,
+    "degradacion_F_H": 0.543777,
+    "shots": 512,
+    "optimization_level": 3,
+    "distribucion_ruidosa_top10": {
+      "000000000": 83,
+      "100000000": 57,
+      "010000000": 55,
+      "110000000": 42,
+      "010100000": 12,
+      "000100000": 10,
+      "101000000": 10,
+      "111000000": 9,
+      "110000001": 9,
+      "100000010": 8
+    }
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "a=4": [
+    {
+      "optimization_level": 0,
+      "transpile_time_s": 0.23,
+      "depth_total": 2615,
+      "depth_2q": 570,
+      "gates_2q": 923,
+      "total_gates": 5667,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [
+        3,
+        5
+      ],
+      "trivial_factors": false,
+      "periods_found": [
+        2
+      ],
+      "success": true,
+      "note": ""
+    },
+    {
+      "optimization_level": 1,
+      "transpile_time_s": 0.26,
+      "depth_total": 1869,
+      "depth_2q": 526,
+      "gates_2q": 779,
+      "total_gates": 4042,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [
+        3,
+        5
+      ],
+      "trivial_factors": false,
+      "periods_found": [
+        2
+      ],
+      "success": true,
+      "note": ""
+    },
+    {
+      "optimization_level": 2,
+      "transpile_time_s": 0.55,
+      "depth_total": 1607,
+      "depth_2q": 433,
+      "gates_2q": 584,
+      "total_gates": 3224,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [
+        3,
+        5
+      ],
+      "trivial_factors": false,
+      "periods_found": [
+        2
+      ],
+      "success": true,
+      "note": ""
+    },
+    {
+      "optimization_level": 3,
+      "transpile_time_s": 0.6,
+      "depth_total": 1598,
+      "depth_2q": 439,
+      "gates_2q": 600,
+      "total_gates": 3337,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [
+        3,
+        5
+      ],
+      "trivial_factors": false,
+      "periods_found": [
+        2
+      ],
+      "success": true,
+      "note": ""
+    }
+  ],
+  "a=7": [
+    {
+      "optimization_level": 0,
+      "transpile_time_s": 0.17,
+      "depth_total": 5521,
+      "depth_2q": 1180,
+      "gates_2q": 1648,
+      "total_gates": 10283,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [
+        3,
+        5
+      ],
+      "trivial_factors": false,
+      "periods_found": [
+        4
+      ],
+      "success": true,
+      "note": ""
+    },
+    {
+      "optimization_level": 1,
+      "transpile_time_s": 0.33,
+      "depth_total": 3576,
+      "depth_2q": 1042,
+      "gates_2q": 1261,
+      "total_gates": 6819,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [
+        3,
+        5
+      ],
+      "trivial_factors": false,
+      "periods_found": [
+        4
+      ],
+      "success": true,
+      "note": ""
+    },
+    {
+      "optimization_level": 2,
+      "transpile_time_s": 0.89,
+      "depth_total": 3186,
+      "depth_2q": 874,
+      "gates_2q": 1075,
+      "total_gates": 6047,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [
+        3,
+        5
+      ],
+      "trivial_factors": false,
+      "periods_found": [
+        4
+      ],
+      "success": true,
+      "note": ""
+    },
+    {
+      "optimization_level": 3,
+      "transpile_time_s": 2.28,
+      "depth_total": 3189,
+      "depth_2q": 869,
+      "gates_2q": 1071,
+      "total_gates": 6027,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [
+        3,
+        5
+      ],
+      "trivial_factors": false,
+      "periods_found": [
+        4
+      ],
+      "success": true,
+      "note": ""
+    }
+  ],
+  "a=11": [
+    {
+      "optimization_level": 0,
+      "transpile_time_s": 0.11,
+      "depth_total": 2607,
+      "depth_2q": 569,
+      "gates_2q": 922,
+      "total_gates": 5651,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [
+        3,
+        5
+      ],
+      "trivial_factors": false,
+      "periods_found": [
+        2
+      ],
+      "success": true,
+      "note": ""
+    },
+    {
+      "optimization_level": 1,
+      "transpile_time_s": 0.29,
+      "depth_total": 1864,
+      "depth_2q": 525,
+      "gates_2q": 778,
+      "total_gates": 4041,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [
+        3,
+        5
+      ],
+      "trivial_factors": false,
+      "periods_found": [
+        2
+      ],
+      "success": true,
+      "note": ""
+    },
+    {
+      "optimization_level": 2,
+      "transpile_time_s": 0.59,
+      "depth_total": 1553,
+      "depth_2q": 418,
+      "gates_2q": 569,
+      "total_gates": 3164,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [
+        3,
+        5
+      ],
+      "trivial_factors": false,
+      "periods_found": [
+        2
+      ],
+      "success": true,
+      "note": ""
+    },
+    {
+      "optimization_level": 3,
+      "transpile_time_s": 0.8,
+      "depth_total": 1636,
+      "depth_2q": 461,
+      "gates_2q": 607,
+      "total_gates": 3313,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [
+        3,
+        5
+      ],
+      "trivial_factors": false,
+      "periods_found": [
+        2
+      ],
+      "success": true,
+      "note": ""
+    }
+  ],
+  "a=14": [
+    {
+      "optimization_level": 0,
+      "transpile_time_s": 0.11,
+      "depth_total": 2618,
+      "depth_2q": 570,
+      "gates_2q": 923,
+      "total_gates": 5667,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [],
+      "trivial_factors": true,
+      "periods_found": [
+        2
+      ],
+      "success": false,
+      "note": "a=14 ≡ -1 (mod 15): factores triviales {1, 15}"
+    },
+    {
+      "optimization_level": 1,
+      "transpile_time_s": 0.27,
+      "depth_total": 1869,
+      "depth_2q": 526,
+      "gates_2q": 779,
+      "total_gates": 4056,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [],
+      "trivial_factors": true,
+      "periods_found": [
+        2
+      ],
+      "success": false,
+      "note": "a=14 ≡ -1 (mod 15): factores triviales {1, 15}"
+    },
+    {
+      "optimization_level": 2,
+      "transpile_time_s": 0.5,
+      "depth_total": 1567,
+      "depth_2q": 427,
+      "gates_2q": 588,
+      "total_gates": 3290,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [],
+      "trivial_factors": true,
+      "periods_found": [
+        2
+      ],
+      "success": false,
+      "note": "a=14 ≡ -1 (mod 15): factores triviales {1, 15}"
+    },
+    {
+      "optimization_level": 3,
+      "transpile_time_s": 0.93,
+      "depth_total": 1567,
+      "depth_2q": 427,
+      "gates_2q": 588,
+      "total_gates": 3290,
+      "signal_pct": 100.0,
+      "noise_pct": 0.0,
+      "factors_found": [],
+      "trivial_factors": true,
+      "periods_found": [
+        2
+      ],
+      "success": false,
+      "note": "a=14 ≡ -1 (mod 15): factores triviales {1, 15}"
+    }
+  ]
+}

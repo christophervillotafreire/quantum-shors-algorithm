@@ -1,0 +1,473 @@
+{
+  "a=4": {
+    "orden_teorico": 2,
+    "total_shots": 4096,
+    "resultados_analizados": [
+      {
+        "y_medido": 256,
+        "bitstring": "100000000",
+        "fase_estimada": 0.5,
+        "fase_fraccion": "256/512",
+        "coeficientes_fc": [
+          0,
+          2
+        ],
+        "notacion_fc": "[0; 2]",
+        "convergentes": [
+          {
+            "k": 0,
+            "coeficiente_a_k": 0,
+            "convergente_p_k": 0,
+            "convergente_q_k": 1,
+            "fraccion": "0/1",
+            "valor_decimal": 0.0,
+            "es_candidato_r": false,
+            "es_periodo_valido": false,
+            "factores": null,
+            "es_trivial": false,
+            "gcd_values": null
+          },
+          {
+            "k": 1,
+            "coeficiente_a_k": 2,
+            "convergente_p_k": 1,
+            "convergente_q_k": 2,
+            "fraccion": "1/2",
+            "valor_decimal": 0.5,
+            "es_candidato_r": true,
+            "es_periodo_valido": true,
+            "factores": [
+              3,
+              5
+            ],
+            "es_trivial": false,
+            "gcd_values": [
+              3,
+              5
+            ]
+          }
+        ],
+        "periodo_encontrado": 2,
+        "factores_encontrados": [
+          3,
+          5
+        ],
+        "fraccion_python_limit_denom": "1/2",
+        "r_python": 2,
+        "conteo": 2105,
+        "probabilidad": 0.513916
+      },
+      {
+        "y_medido": 0,
+        "bitstring": "000000000",
+        "fase_estimada": 0.0,
+        "fase_fraccion": "0/512",
+        "coeficientes_fc": [
+          0
+        ],
+        "notacion_fc": "[0]",
+        "convergentes": [
+          {
+            "k": 0,
+            "coeficiente_a_k": 0,
+            "convergente_p_k": 0,
+            "convergente_q_k": 1,
+            "fraccion": "0/1",
+            "valor_decimal": 0.0,
+            "es_candidato_r": false,
+            "es_periodo_valido": false,
+            "factores": null,
+            "es_trivial": false,
+            "gcd_values": null
+          }
+        ],
+        "periodo_encontrado": null,
+        "factores_encontrados": null,
+        "fraccion_python_limit_denom": "0/1",
+        "r_python": null,
+        "conteo": 1991,
+        "probabilidad": 0.486084
+      }
+    ]
+  },
+  "a=7": {
+    "orden_teorico": 4,
+    "total_shots": 4096,
+    "resultados_analizados": [
+      {
+        "y_medido": 384,
+        "bitstring": "110000000",
+        "fase_estimada": 0.75,
+        "fase_fraccion": "384/512",
+        "coeficientes_fc": [
+          0,
+          1,
+          3
+        ],
+        "notacion_fc": "[0; 1, 3]",
+        "convergentes": [
+          {
+            "k": 0,
+            "coeficiente_a_k": 0,
+            "convergente_p_k": 0,
+            "convergente_q_k": 1,
+            "fraccion": "0/1",
+            "valor_decimal": 0.0,
+            "es_candidato_r": false,
+            "es_periodo_valido": false,
+            "factores": null,
+            "es_trivial": false,
+            "gcd_values": null
+          },
+          {
+            "k": 1,
+            "coeficiente_a_k": 1,
+            "convergente_p_k": 1,
+            "convergente_q_k": 1,
+            "fraccion": "1/1",
+            "valor_decimal": 1.0,
+            "es_candidato_r": false,
+            "es_periodo_valido": false,
+            "factores": null,
+            "es_trivial": false,
+            "gcd_values": null
+          },
+          {
+            "k": 2,
+            "coeficiente_a_k": 3,
+            "convergente_p_k": 3,
+            "convergente_q_k": 4,
+            "fraccion": "3/4",
+            "valor_decimal": 0.75,
+            "es_candidato_r": true,
+            "es_periodo_valido": true,
+            "factores": [
+              3,
+              5
+            ],
+            "es_trivial": false,
+            "gcd_values": [
+              3,
+              5
+            ]
+          }
+        ],
+        "periodo_encontrado": 4,
+        "factores_encontrados": [
+          3,
+          5
+        ],
+        "fraccion_python_limit_denom": "3/4",
+        "r_python": 4,
+        "conteo": 1073,
+        "probabilidad": 0.261963
+      },
+      {
+        "y_medido": 0,
+        "bitstring": "000000000",
+        "fase_estimada": 0.0,
+        "fase_fraccion": "0/512",
+        "coeficientes_fc": [
+          0
+        ],
+        "notacion_fc": "[0]",
+        "convergentes": [
+          {
+            "k": 0,
+            "coeficiente_a_k": 0,
+            "convergente_p_k": 0,
+            "convergente_q_k": 1,
+            "fraccion": "0/1",
+            "valor_decimal": 0.0,
+            "es_candidato_r": false,
+            "es_periodo_valido": false,
+            "factores": null,
+            "es_trivial": false,
+            "gcd_values": null
+          }
+        ],
+        "periodo_encontrado": null,
+        "factores_encontrados": null,
+        "fraccion_python_limit_denom": "0/1",
+        "r_python": null,
+        "conteo": 1027,
+        "probabilidad": 0.250732
+      },
+      {
+        "y_medido": 128,
+        "bitstring": "010000000",
+        "fase_estimada": 0.25,
+        "fase_fraccion": "128/512",
+        "coeficientes_fc": [
+          0,
+          4
+        ],
+        "notacion_fc": "[0; 4]",
+        "convergentes": [
+          {
+            "k": 0,
+            "coeficiente_a_k": 0,
+            "convergente_p_k": 0,
+            "convergente_q_k": 1,
+            "fraccion": "0/1",
+            "valor_decimal": 0.0,
+            "es_candidato_r": false,
+            "es_periodo_valido": false,
+            "factores": null,
+            "es_trivial": false,
+            "gcd_values": null
+          },
+          {
+            "k": 1,
+            "coeficiente_a_k": 4,
+            "convergente_p_k": 1,
+            "convergente_q_k": 4,
+            "fraccion": "1/4",
+            "valor_decimal": 0.25,
+            "es_candidato_r": true,
+            "es_periodo_valido": true,
+            "factores": [
+              3,
+              5
+            ],
+            "es_trivial": false,
+            "gcd_values": [
+              3,
+              5
+            ]
+          }
+        ],
+        "periodo_encontrado": 4,
+        "factores_encontrados": [
+          3,
+          5
+        ],
+        "fraccion_python_limit_denom": "1/4",
+        "r_python": 4,
+        "conteo": 1007,
+        "probabilidad": 0.24585
+      },
+      {
+        "y_medido": 256,
+        "bitstring": "100000000",
+        "fase_estimada": 0.5,
+        "fase_fraccion": "256/512",
+        "coeficientes_fc": [
+          0,
+          2
+        ],
+        "notacion_fc": "[0; 2]",
+        "convergentes": [
+          {
+            "k": 0,
+            "coeficiente_a_k": 0,
+            "convergente_p_k": 0,
+            "convergente_q_k": 1,
+            "fraccion": "0/1",
+            "valor_decimal": 0.0,
+            "es_candidato_r": false,
+            "es_periodo_valido": false,
+            "factores": null,
+            "es_trivial": false,
+            "gcd_values": null
+          },
+          {
+            "k": 1,
+            "coeficiente_a_k": 2,
+            "convergente_p_k": 1,
+            "convergente_q_k": 2,
+            "fraccion": "1/2",
+            "valor_decimal": 0.5,
+            "es_candidato_r": true,
+            "es_periodo_valido": false,
+            "factores": null,
+            "es_trivial": false,
+            "gcd_values": null
+          }
+        ],
+        "periodo_encontrado": null,
+        "factores_encontrados": null,
+        "fraccion_python_limit_denom": "1/2",
+        "r_python": null,
+        "conteo": 989,
+        "probabilidad": 0.241455
+      }
+    ]
+  },
+  "a=11": {
+    "orden_teorico": 2,
+    "total_shots": 4096,
+    "resultados_analizados": [
+      {
+        "y_medido": 0,
+        "bitstring": "000000000",
+        "fase_estimada": 0.0,
+        "fase_fraccion": "0/512",
+        "coeficientes_fc": [
+          0
+        ],
+        "notacion_fc": "[0]",
+        "convergentes": [
+          {
+            "k": 0,
+            "coeficiente_a_k": 0,
+            "convergente_p_k": 0,
+            "convergente_q_k": 1,
+            "fraccion": "0/1",
+            "valor_decimal": 0.0,
+            "es_candidato_r": false,
+            "es_periodo_valido": false,
+            "factores": null,
+            "es_trivial": false,
+            "gcd_values": null
+          }
+        ],
+        "periodo_encontrado": null,
+        "factores_encontrados": null,
+        "fraccion_python_limit_denom": "0/1",
+        "r_python": null,
+        "conteo": 2058,
+        "probabilidad": 0.502441
+      },
+      {
+        "y_medido": 256,
+        "bitstring": "100000000",
+        "fase_estimada": 0.5,
+        "fase_fraccion": "256/512",
+        "coeficientes_fc": [
+          0,
+          2
+        ],
+        "notacion_fc": "[0; 2]",
+        "convergentes": [
+          {
+            "k": 0,
+            "coeficiente_a_k": 0,
+            "convergente_p_k": 0,
+            "convergente_q_k": 1,
+            "fraccion": "0/1",
+            "valor_decimal": 0.0,
+            "es_candidato_r": false,
+            "es_periodo_valido": false,
+            "factores": null,
+            "es_trivial": false,
+            "gcd_values": null
+          },
+          {
+            "k": 1,
+            "coeficiente_a_k": 2,
+            "convergente_p_k": 1,
+            "convergente_q_k": 2,
+            "fraccion": "1/2",
+            "valor_decimal": 0.5,
+            "es_candidato_r": true,
+            "es_periodo_valido": true,
+            "factores": [
+              3,
+              5
+            ],
+            "es_trivial": false,
+            "gcd_values": [
+              5,
+              3
+            ]
+          }
+        ],
+        "periodo_encontrado": 2,
+        "factores_encontrados": [
+          3,
+          5
+        ],
+        "fraccion_python_limit_denom": "1/2",
+        "r_python": 2,
+        "conteo": 2038,
+        "probabilidad": 0.497559
+      }
+    ]
+  },
+  "a=14": {
+    "orden_teorico": 2,
+    "total_shots": 4096,
+    "resultados_analizados": [
+      {
+        "y_medido": 0,
+        "bitstring": "000000000",
+        "fase_estimada": 0.0,
+        "fase_fraccion": "0/512",
+        "coeficientes_fc": [
+          0
+        ],
+        "notacion_fc": "[0]",
+        "convergentes": [
+          {
+            "k": 0,
+            "coeficiente_a_k": 0,
+            "convergente_p_k": 0,
+            "convergente_q_k": 1,
+            "fraccion": "0/1",
+            "valor_decimal": 0.0,
+            "es_candidato_r": false,
+            "es_periodo_valido": false,
+            "factores": null,
+            "es_trivial": false,
+            "gcd_values": null
+          }
+        ],
+        "periodo_encontrado": null,
+        "factores_encontrados": null,
+        "fraccion_python_limit_denom": "0/1",
+        "r_python": null,
+        "conteo": 2054,
+        "probabilidad": 0.501465
+      },
+      {
+        "y_medido": 256,
+        "bitstring": "100000000",
+        "fase_estimada": 0.5,
+        "fase_fraccion": "256/512",
+        "coeficientes_fc": [
+          0,
+          2
+        ],
+        "notacion_fc": "[0; 2]",
+        "convergentes": [
+          {
+            "k": 0,
+            "coeficiente_a_k": 0,
+            "convergente_p_k": 0,
+            "convergente_q_k": 1,
+            "fraccion": "0/1",
+            "valor_decimal": 0.0,
+            "es_candidato_r": false,
+            "es_periodo_valido": false,
+            "factores": null,
+            "es_trivial": false,
+            "gcd_values": null
+          },
+          {
+            "k": 1,
+            "coeficiente_a_k": 2,
+            "convergente_p_k": 1,
+            "convergente_q_k": 2,
+            "fraccion": "1/2",
+            "valor_decimal": 0.5,
+            "es_candidato_r": true,
+            "es_periodo_valido": true,
+            "factores": "triviales: gcd=1, 15",
+            "es_trivial": true,
+            "gcd_values": [
+              1,
+              15
+            ]
+          }
+        ],
+        "periodo_encontrado": 2,
+        "factores_encontrados": null,
+        "fraccion_python_limit_denom": "1/2",
+        "r_python": 2,
+        "conteo": 2042,
+        "probabilidad": 0.498535
+      }
+    ]
+  }
+}

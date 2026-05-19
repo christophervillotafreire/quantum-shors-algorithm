@@ -1,0 +1,627 @@
+{
+  "qft": {
+    "qft_directa": {
+      "stats_pre_transpilacion": {
+        "nombre": "QFT (9 qubits) (decompose)",
+        "num_qubits": 9,
+        "depth_total": 18,
+        "depth_2q": 16,
+        "total_gates": 49,
+        "compuertas": {
+          "cp": 36,
+          "h": 9,
+          "swap": 4
+        }
+      },
+      "stats_post_transpilacion": {
+        "nombre": "QFT (9 qubits) (transpilado cx+u3)",
+        "num_qubits": 9,
+        "depth_total": 61,
+        "depth_2q": 30,
+        "total_gates": 173,
+        "compuertas": {
+          "u3": 101,
+          "cx": 72
+        }
+      },
+      "unitariedad": {
+        "nombre": "QFT (9 qubits)",
+        "dimension": 512,
+        "norma_UdagU_menos_I": 3.838222858398875e-14,
+        "es_unitario": true
+      },
+      "qft_qft_inv_identidad_norma": 3.8235548385637206e-14,
+      "qft_qft_inv_es_identidad": true
+    },
+    "qft_inversa": {
+      "stats_pre_transpilacion": {
+        "nombre": "QFT⁻¹ (9 qubits) (decompose)",
+        "num_qubits": 9,
+        "depth_total": 18,
+        "depth_2q": 16,
+        "total_gates": 49,
+        "compuertas": {
+          "cp": 36,
+          "h": 9,
+          "swap": 4
+        }
+      },
+      "stats_post_transpilacion": {
+        "nombre": "QFT⁻¹ (9 qubits) (transpilado cx+u3)",
+        "num_qubits": 9,
+        "depth_total": 61,
+        "depth_2q": 30,
+        "total_gates": 189,
+        "compuertas": {
+          "u3": 117,
+          "cx": 72
+        }
+      },
+      "unitariedad": {
+        "nombre": "QFT⁻¹ (9 qubits)",
+        "dimension": 512,
+        "norma_UdagU_menos_I": 3.794516455295994e-14,
+        "es_unitario": true
+      }
+    },
+    "teoria": {
+      "n_qubits": 9,
+      "hadamards_esperados": 9,
+      "rotaciones_controladas_esperadas": 36,
+      "compuertas_totales_esperadas": 45,
+      "nota": "Para n=9: 9 H + 36 CR_k = 45 compuertas"
+    }
+  },
+  "exponenciacion_modular": {
+    "a=4": {
+      "orden_r": 2,
+      "factores_triviales": false,
+      "periodicidad_U_a_r_es_identidad": true,
+      "norma_U_a_r_menos_I": 0.0,
+      "bloques": [
+        {
+          "k": 0,
+          "b": 4,
+          "b_formula": "a^(2^0) mod 15 = 4^1 mod 15 = 4",
+          "depth_total": 462,
+          "depth_2q": 233,
+          "gates_2q": 236,
+          "total_gates": 627,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 1,
+          "b": 1,
+          "b_formula": "a^(2^1) mod 15 = 4^2 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 2,
+          "b": 1,
+          "b_formula": "a^(2^2) mod 15 = 4^4 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 3,
+          "b": 1,
+          "b_formula": "a^(2^3) mod 15 = 4^8 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 4,
+          "b": 1,
+          "b_formula": "a^(2^4) mod 15 = 4^16 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 5,
+          "b": 1,
+          "b_formula": "a^(2^5) mod 15 = 4^32 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 6,
+          "b": 1,
+          "b_formula": "a^(2^6) mod 15 = 4^64 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 7,
+          "b": 1,
+          "b_formula": "a^(2^7) mod 15 = 4^128 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 8,
+          "b": 1,
+          "b_formula": "a^(2^8) mod 15 = 4^256 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        }
+      ],
+      "depth_2q_total": 233,
+      "gates_2q_total": 236
+    },
+    "a=7": {
+      "orden_r": 4,
+      "factores_triviales": false,
+      "periodicidad_U_a_r_es_identidad": true,
+      "norma_U_a_r_menos_I": 0.0,
+      "bloques": [
+        {
+          "k": 0,
+          "b": 7,
+          "b_formula": "a^(2^0) mod 15 = 7^1 mod 15 = 7",
+          "depth_total": 464,
+          "depth_2q": 233,
+          "gates_2q": 236,
+          "total_gates": 631,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 1,
+          "b": 4,
+          "b_formula": "a^(2^1) mod 15 = 7^2 mod 15 = 4",
+          "depth_total": 462,
+          "depth_2q": 233,
+          "gates_2q": 236,
+          "total_gates": 627,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 2,
+          "b": 1,
+          "b_formula": "a^(2^2) mod 15 = 7^4 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 3,
+          "b": 1,
+          "b_formula": "a^(2^3) mod 15 = 7^8 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 4,
+          "b": 1,
+          "b_formula": "a^(2^4) mod 15 = 7^16 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 5,
+          "b": 1,
+          "b_formula": "a^(2^5) mod 15 = 7^32 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 6,
+          "b": 1,
+          "b_formula": "a^(2^6) mod 15 = 7^64 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 7,
+          "b": 1,
+          "b_formula": "a^(2^7) mod 15 = 7^128 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 8,
+          "b": 1,
+          "b_formula": "a^(2^8) mod 15 = 7^256 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        }
+      ],
+      "depth_2q_total": 466,
+      "gates_2q_total": 472
+    },
+    "a=11": {
+      "orden_r": 2,
+      "factores_triviales": false,
+      "periodicidad_U_a_r_es_identidad": true,
+      "norma_U_a_r_menos_I": 0.0,
+      "bloques": [
+        {
+          "k": 0,
+          "b": 11,
+          "b_formula": "a^(2^0) mod 15 = 11^1 mod 15 = 11",
+          "depth_total": 461,
+          "depth_2q": 230,
+          "gates_2q": 233,
+          "total_gates": 627,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 1,
+          "b": 1,
+          "b_formula": "a^(2^1) mod 15 = 11^2 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 2,
+          "b": 1,
+          "b_formula": "a^(2^2) mod 15 = 11^4 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 3,
+          "b": 1,
+          "b_formula": "a^(2^3) mod 15 = 11^8 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 4,
+          "b": 1,
+          "b_formula": "a^(2^4) mod 15 = 11^16 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 5,
+          "b": 1,
+          "b_formula": "a^(2^5) mod 15 = 11^32 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 6,
+          "b": 1,
+          "b_formula": "a^(2^6) mod 15 = 11^64 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 7,
+          "b": 1,
+          "b_formula": "a^(2^7) mod 15 = 11^128 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 8,
+          "b": 1,
+          "b_formula": "a^(2^8) mod 15 = 11^256 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        }
+      ],
+      "depth_2q_total": 230,
+      "gates_2q_total": 233
+    },
+    "a=14": {
+      "orden_r": 2,
+      "factores_triviales": true,
+      "periodicidad_U_a_r_es_identidad": true,
+      "norma_U_a_r_menos_I": 0.0,
+      "bloques": [
+        {
+          "k": 0,
+          "b": 14,
+          "b_formula": "a^(2^0) mod 15 = 14^1 mod 15 = 14",
+          "depth_total": 463,
+          "depth_2q": 231,
+          "gates_2q": 234,
+          "total_gates": 627,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 1,
+          "b": 1,
+          "b_formula": "a^(2^1) mod 15 = 14^2 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 2,
+          "b": 1,
+          "b_formula": "a^(2^2) mod 15 = 14^4 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 3,
+          "b": 1,
+          "b_formula": "a^(2^3) mod 15 = 14^8 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 4,
+          "b": 1,
+          "b_formula": "a^(2^4) mod 15 = 14^16 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 5,
+          "b": 1,
+          "b_formula": "a^(2^5) mod 15 = 14^32 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 6,
+          "b": 1,
+          "b_formula": "a^(2^6) mod 15 = 14^64 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 7,
+          "b": 1,
+          "b_formula": "a^(2^7) mod 15 = 14^128 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        },
+        {
+          "k": 8,
+          "b": 1,
+          "b_formula": "a^(2^8) mod 15 = 14^256 mod 15 = 1",
+          "depth_total": 0,
+          "depth_2q": 0,
+          "gates_2q": 0,
+          "total_gates": 0,
+          "unitariedad": true,
+          "norma_UdagU": 0.0
+        }
+      ],
+      "depth_2q_total": 231,
+      "gates_2q_total": 234
+    }
+  },
+  "circuito_completo": {
+    "a=4": {
+      "pre_transpilacion": {
+        "nombre": "RegisterQC a=4 (pre)",
+        "num_qubits": 13,
+        "depth_total": 12,
+        "depth_2q": 0,
+        "total_gates": 29,
+        "compuertas": {
+          "h": 9,
+          "c-unitary": 9,
+          "measure": 9,
+          "x": 1,
+          "IQFT": 1
+        }
+      },
+      "post_transpilacion": {
+        "nombre": "RegisterQC a=4 (post)",
+        "num_qubits": 13,
+        "depth_total": 462,
+        "depth_2q": 233,
+        "total_gates": 824,
+        "compuertas": {
+          "u3": 507,
+          "cx": 308,
+          "measure": 9
+        }
+      }
+    },
+    "a=7": {
+      "pre_transpilacion": {
+        "nombre": "RegisterQC a=7 (pre)",
+        "num_qubits": 13,
+        "depth_total": 12,
+        "depth_2q": 0,
+        "total_gates": 29,
+        "compuertas": {
+          "h": 9,
+          "c-unitary": 9,
+          "measure": 9,
+          "x": 1,
+          "IQFT": 1
+        }
+      },
+      "post_transpilacion": {
+        "nombre": "RegisterQC a=7 (post)",
+        "num_qubits": 13,
+        "depth_total": 919,
+        "depth_2q": 463,
+        "total_gates": 1442,
+        "compuertas": {
+          "u3": 892,
+          "cx": 541,
+          "measure": 9
+        }
+      }
+    },
+    "a=11": {
+      "pre_transpilacion": {
+        "nombre": "RegisterQC a=11 (pre)",
+        "num_qubits": 13,
+        "depth_total": 12,
+        "depth_2q": 0,
+        "total_gates": 29,
+        "compuertas": {
+          "h": 9,
+          "c-unitary": 9,
+          "measure": 9,
+          "x": 1,
+          "IQFT": 1
+        }
+      },
+      "post_transpilacion": {
+        "nombre": "RegisterQC a=11 (post)",
+        "num_qubits": 13,
+        "depth_total": 461,
+        "depth_2q": 230,
+        "total_gates": 824,
+        "compuertas": {
+          "u3": 510,
+          "cx": 305,
+          "measure": 9
+        }
+      }
+    },
+    "a=14": {
+      "pre_transpilacion": {
+        "nombre": "RegisterQC a=14 (pre)",
+        "num_qubits": 13,
+        "depth_total": 12,
+        "depth_2q": 0,
+        "total_gates": 29,
+        "compuertas": {
+          "h": 9,
+          "c-unitary": 9,
+          "measure": 9,
+          "x": 1,
+          "IQFT": 1
+        }
+      },
+      "post_transpilacion": {
+        "nombre": "RegisterQC a=14 (post)",
+        "num_qubits": 13,
+        "depth_total": 463,
+        "depth_2q": 231,
+        "total_gates": 824,
+        "compuertas": {
+          "u3": 509,
+          "cx": 306,
+          "measure": 9
+        }
+      }
+    }
+  }
+}

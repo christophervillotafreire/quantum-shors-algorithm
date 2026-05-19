@@ -1,0 +1,344 @@
+# Análisis Completo de la Carpeta `simulacion_con_ruido`
+
+> **Contexto:** Esta carpeta implementa la **Fase III** del anteproyecto — *"Validación en Fake Backends (mitigación de riesgo)"* — ejecutando el algoritmo de Shor (N=15) con el modelo de ruido real de **FakeTorino** (Heron r1, 133 qubits, Heavy-Hex) para cuantificar la degradación de señal y evaluar técnicas de mitigación de errores.
+
+---
+
+## 1. Estructura de la Carpeta
+
+```
+simulacion_con_ruido/
+├── scripts/           → 4 scripts principales + 1 módulo + 3 archivos de prueba
+│   ├── ejecutar_shor_faketorino_ruido.py      (principal)
+│   ├── calcular_fidelidad_ruido.py            (principal)
+│   ├── comparar_mitigacion.py                 (principal)
+│   ├── fracciones_continuas_ruido.py          (principal)
+│   ├── local_mitigation.py                    (módulo auxiliar)
+│   ├── test_dd_explicit.py                    (⚠ prueba)
+│   ├── test_pt.py                             (⚠ prueba)
+│   └── test_pt_explicit.py                    (⚠ prueba)
+├── datos/             → 4 archivos JSON con resultados numéricos
+├── imagenes/          → 3 gráficas PNG generadas
+└── reportes/          → 4 reportes Markdown auto-generados
+```
+
+---
+
+## 2. Descripción Detallada de Cada Archivo
+
+### 2.1 Scripts Principales
+
+Todos los scripts principales comparten una configuración base reducida respecto a la simulación ideal, diseñada para hacer viables los tiempos de cómputo con el modelo de ruido (~300× más lento que simulación ideal):
+
+| Parámetro | Valor |
+|:---|:---|
+| N | 15 |
+| Bases | $a \in \{4, 7\}$ — $a=4$ produce $r=2$, $a=7$ produce $r=4$ |
+| Shots | 512 |
+| Seed | 457 |
+| Qubits de control | 9 ($= 2\lceil\log_2 15\rceil + 1$) |
+| Backend | `AerSimulator.from_backend(FakeTorino())` — **ruido activo** |
+
+---
+
+#### 📄 [ejecutar_shor_faketorino_ruido.py](file:///home/christopher-villota17/Documentos/Quantum%20Computing/Proyecto%20Trabajo%20de%20Grado/quantum-shors-algorithm-main/simulacion_con_ruido/scripts/ejecutar_shor_faketorino_ruido.py)
+
+**Objetivo:** Establecer la **línea base ruidosa** (sin mitigación de errores) del algoritmo de Shor en FakeTorino.
+
+**Qué hace:**
+1. Construye el circuito de Shor ($N=15$) para cada base $a \in \{4, 7\}$ usando `RegisterQC`.
+2. **Transpila** el circuito con SABRE layout/routing en opt levels $\{0, 3\}$ (solo extremos).
+3. **Ejecuta** la simulación ruidosa con `SamplerV2` (512 shots) — sin DD, sin PT.
+4. **Calcula métricas:** profundidad 2Q, gates 2Q, PST, fidelidad de Hellinger ($\mathcal{F}_H$).
+5. **Extrae factores** vía fracciones continuas sobre los counts.
+6. **Compara** contra datos de la simulación ideal (carga JSON de `simulacion_ideal/datos/`).
+7. **Genera:** JSON, gráfica 3-paneles (PST con ruido, comparativa ideal/ruido, $\mathcal{F}_H$), reporte Markdown.
+
+**Relación con el anteproyecto:**
+- OE3: Ejecutar circuitos en Fake Backends con modelos de ruido real.
+- OE4: Cuantificar degradación comparando vs ideal con Fidelidad y PST.
+
+**Resultados obtenidos:**
+
+| Base | Opt | Depth 2Q | Gates 2Q | PST (%) | $\mathcal{F}_H$ | ¿Factoriza? |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 4 | 0 | 504 | 749 | 25.0 | 0.1482 | ✅ (3,5) |
+| 4 | 3 | 439 | 600 | **4.3** | **0.0010** | ✅ (3,5) |
+| 7 | 0 | 1015 | 1255 | 43.2 | 0.2285 | ✅ (3,5) |
+| 7 | 3 | 869 | 1071 | **59.2** | **0.4133** | ✅ (3,5) |
+
+> [!WARNING]
+> **Anomalía importante:** Para $a=4$, opt=3 tiene **peor** PST y $\mathcal{F}_H$ que opt=0. Esto contradice la expectativa de que mayor optimización mejore la señal. Posibles causas: (1) el optimizador rompió la estructura del circuito de período corto ($r=2$), o (2) el mapping de SABRE en opt=3 colocó qubits en posiciones con peores tasas de error. Este fenómeno **merece discusión en el trabajo de grado**.
+
+---
+
+#### 📄 [calcular_fidelidad_ruido.py](file:///home/christopher-villota17/Documentos/Quantum%20Computing/Proyecto%20Trabajo%20de%20Grado/quantum-shors-algorithm-main/simulacion_con_ruido/scripts/calcular_fidelidad_ruido.py)
+
+**Objetivo:** Análisis detallado de fidelidad entre distribuciones teóricas y ruidosas, usando **tres medidas de distancia estadística**.
+
+**Qué hace:**
+1. Ejecuta simulación ruidosa solo con **opt=3** (fijo).
+2. Calcula tres métricas vs distribución teórica:
+   - **Fidelidad de Hellinger:** $\mathcal{F}_H(P, Q) = \left(\sum_x \sqrt{P(x) Q(x)}\right)^2$ → 1 = idénticas
+   - **Distancia de Hellinger:** $D_H = \sqrt{1 - \sqrt{\mathcal{F}_H}}$ → 0 = idénticas
+   - **Divergencia KL:** $D_{KL}(P\|Q) = \sum_x P(x) \log\frac{P(x)}{Q(x)}$ → 0 = idénticas
+3. Calcula la **concentración de probabilidad** en los picos teóricos vs fuera de ellos.
+4. Compara contra la fidelidad de la simulación ideal.
+5. Genera: JSON, gráfica 3-paneles ($\mathcal{F}_H$ comparativo, distribución teórica vs ruidosa, concentración de probabilidad), reporte.
+
+**Relación con el anteproyecto:**
+- OE4 explícitamente: *"Cuantificar degradación con Fidelidad y PST"*.
+- Sección 4.2.4 del marco teórico: definición formal de la fidelidad (Ec. 2).
+
+**Resultados obtenidos:**
+
+| Base | $r$ | $\mathcal{F}_H$ ruido | $\mathcal{F}_H$ ideal | $\Delta\mathcal{F}_H$ | Prob. en picos |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 4 | 2 | 0.0010 | 0.9999 | **0.9990** | 0.20% |
+| 7 | 4 | 0.4559 | 0.9997 | **0.5438** | 46.3% |
+
+> [!IMPORTANT]
+> El caso $a=4$ muestra degradación casi total ($\mathcal{F}_H \approx 0$), confirmando que la señal se perdió completamente en el fondo de ruido. El caso $a=7$, a pesar de tener circuitos **más profundos**, conserva ~46% de la señal. Esto es coherente con la anomalía de opt=3 para $a=4$ reportada arriba.
+
+---
+
+#### 📄 [comparar_mitigacion.py](file:///home/christopher-villota17/Documentos/Quantum%20Computing/Proyecto%20Trabajo%20de%20Grado/quantum-shors-algorithm-main/simulacion_con_ruido/scripts/comparar_mitigacion.py)
+
+**Objetivo:** Evaluar el impacto de **Dynamical Decoupling (DD)** y **Pauli Twirling (PT)** en la señal y fidelidad. Este es el **script más importante** de la carpeta para el OE3.
+
+**Qué hace:**
+1. Transpila el circuito una única vez (opt=3, SABRE).
+2. Evalúa **4 variantes** de mitigación post-transpilación:
+   - **Baseline:** sin mitigación.
+   - **DD only:** Dynamical Decoupling (secuencia XpXm) aplicado con `PadDynamicalDecoupling`.
+   - **PT only:** Pauli Twirling aplicado con `Twirl2QClifford` (módulo local).
+   - **DD + PT:** ambas combinadas.
+3. Para cada variante: calcula PST, $\mathcal{F}_H$, $D_H$, $D_{KL}$, extrae factores.
+4. **Guardado incremental:** guarda datos tras completar cada base $a$, para no perder progreso en ejecuciones largas (~11,500 s para `a=7` con DD+PT).
+5. Genera: JSON, gráfica 4-paneles (PST, $\mathcal{F}_H$, mejora relativa, $D_{KL}$), reporte.
+
+**Relación con el anteproyecto:**
+- OE3: *"aplicar técnicas de mitigación de errores (DD y PT) para mejorar la relación señal-ruido"*.
+- Sección 4.2.5: descripción teórica de DD y PT.
+
+**Resultados obtenidos:**
+
+| Base | Variante | PST (%) | $\mathcal{F}_H$ | $D_{KL}$ | ¿Factoriza? |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 4 | Baseline | 3.52 | 0.0039 | 5.55 | ✅ |
+| 4 | DD only | 3.91 | 0.0073 | 5.00 | ✅ |
+| 4 | PT only | 2.34 | 0.0057 | 5.20 | ✅ |
+| 4 | DD + PT | 3.32 | 0.0029 | 19.15 | ✅ |
+| 7 | Baseline | **56.64** | 0.4029 | 0.93 | ✅ |
+| 7 | DD only | 49.61 | 0.3300 | 1.13 | ✅ |
+| 7 | PT only | 54.69 | 0.3998 | 0.93 | ✅ |
+| 7 | DD + PT | 46.48 | 0.2905 | 1.24 | ✅ |
+
+> [!WARNING]
+> **Resultado inesperado crítico:** Para ambas bases, la mitigación **no mejora** la señal — en varios casos la **empeora**. Para $a=7$: el baseline (PST=56.6%) supera a DD+PT (PST=46.5%). Este resultado es contraintuitivo y tiene varias explicaciones posibles:
+> 1. **DD en simulador vs hardware real:** La secuencia XpXm inserta gates adicionales en el circuito que el simulador ejecuta como operaciones imperfectas, pero sin beneficio de reenfocar decoherencia (el simulador ya modela $T_1$/$T_2$ de forma diferente al hardware real).
+> 2. **PT introduce overhead:** Las gates de Pauli adicionales añaden ruido de compuerta sin el beneficio estadístico que se obtendría al promediar múltiples ejecuciones con diferentes randomizaciones (aquí se usa una sola semilla).
+> 3. **Limitación fundamental del enfoque local:** `Twirl2QClifford` realiza una sola instancia de twirling (no promedia sobre múltiples), lo cual puede no ser suficiente para obtener el efecto esperado.
+>
+> **Recomendación para el trabajo de grado:** Este resultado debe discutirse honestamente. La mitigación de errores tiene mayor impacto en **hardware real** que en simuladores con modelos de ruido.
+
+---
+
+#### 📄 [fracciones_continuas_ruido.py](file:///home/christopher-villota17/Documentos/Quantum%20Computing/Proyecto%20Trabajo%20de%20Grado/quantum-shors-algorithm-main/simulacion_con_ruido/scripts/fracciones_continuas_ruido.py)
+
+**Objetivo:** Documentar el post-procesamiento clásico de fracciones continuas sobre resultados **ruidosos**, mostrando cómo el ruido genera fases espurias y candidatos $r$ falsos.
+
+**Qué hace:**
+1. Ejecuta con DD+PT activados (mejor mitigación disponible) y opt=3.
+2. Para las **15 mediciones más frecuentes** de cada base, aplica el algoritmo completo:
+   - $y \to \varphi = y/2^m \to$ fracción continua $\to s/r \to$ verificar $a^r \equiv 1 \pmod{N}$
+3. Clasifica cada medición como **señal** (coincide con fase teórica) o **ruido** (espuria).
+4. Calcula PST total y extrae factores globales.
+5. Tiene **guardado incremental**.
+6. Genera: JSON (muy detallado, ~12 KB), reporte con tabla de mediciones.
+
+**Relación con el anteproyecto:**
+- Sección 4.2.2: *"La extracción de r se realiza luego mediante fracciones continuas"*.
+- Demuestra la robustez del post-procesamiento clásico frente al ruido cuántico.
+
+**Resultados clave:**
+- **$a=4$:** PST bajísimo (4.49%). Solo 1 de las top 15 mediciones es señal. La distribución es esencialmente ruido uniforme — aún así se extraen factores (3, 5) gracias a períodos espurios que coinciden accidentalmente ($r=6$, $r=14$ son múltiplos de $r=2$).
+- **$a=7$:** PST = 46.7%. Las 4 mediciones más frecuentes son señal ($y=0, 128, 256, 384$ — exactamente los picos teóricos). Factores (3, 5) se extraen limpiamente de $\varphi = 1/4$ y $\varphi = 3/4$.
+
+---
+
+### 2.2 Módulo Auxiliar
+
+#### 📄 [local_mitigation.py](file:///home/christopher-villota17/Documentos/Quantum%20Computing/Proyecto%20Trabajo%20de%20Grado/quantum-shors-algorithm-main/simulacion_con_ruido/scripts/local_mitigation.py)
+
+**Objetivo:** Implementación local de **Pauli Twirling** como un `TransformationPass` de Qiskit.
+
+**Qué hace:**
+- Define la clase `Twirl2QClifford`, que es un pase de transpilación personalizado.
+- Para cada compuerta 2Q (CX, CZ, ECR) en el DAG del circuito:
+  1. Elige un par de Paulis aleatorio $(P_1, P_2) \in \{I, X, Y, Z\}^{\otimes 2}$ (16 combinaciones).
+  2. Calcula la evolución de Clifford: $P_{out} = U \cdot P_{in} \cdot U^\dagger$.
+  3. Inserta $P_{in}$ antes y $P_{out}$ después, preservando la operación lógica neta.
+  4. Re-transpila el mini-circuito a basis gates.
+- Usa `np.random.default_rng(seed)` para reproducibilidad.
+
+**Relación con el anteproyecto:**
+- Sección 4.2.5: *"Pauli Twirling convierte errores coherentes en ruido estocástico"*.
+- Es usado por `comparar_mitigacion.py` y `fracciones_continuas_ruido.py`.
+
+> [!NOTE]
+> Este módulo es **esencial** — implementa una técnica que Qiskit Runtime ofrece nativamente en hardware real pero que debe implementarse manualmente para Fake Backends locales. Debe incluirse en el trabajo de grado.
+
+---
+
+### 2.3 Archivos de Prueba (Test)
+
+#### ⚠️ [test_dd_explicit.py](file:///home/christopher-villota17/Documentos/Quantum%20Computing/Proyecto%20Trabajo%20de%20Grado/quantum-shors-algorithm-main/simulacion_con_ruido/scripts/test_dd_explicit.py)
+
+**Qué es:** Script de prueba rápida (~41 líneas) que verifica que `PadDynamicalDecoupling` funciona correctamente sobre un circuito Bell state simple (H + CX).
+
+**Veredicto:** 🔴 **No necesario para el trabajo de grado.** Es un script de desarrollo/debugging que solo verifica que la API de Qiskit funciona. No produce datos ni análisis.
+
+---
+
+#### ⚠️ [test_pt.py](file:///home/christopher-villota17/Documentos/Quantum%20Computing/Proyecto%20Trabajo%20de%20Grado/quantum-shors-algorithm-main/simulacion_con_ruido/scripts/test_pt.py)
+
+**Qué es:** Script mínimo (~14 líneas) que prueba `Twirl2QClifford` sobre una sola compuerta ECR.
+
+**Veredicto:** 🔴 **No necesario para el trabajo de grado.** Prueba unitaria de desarrollo.
+
+---
+
+#### ⚠️ [test_pt_explicit.py](file:///home/christopher-villota17/Documentos/Quantum%20Computing/Proyecto%20Trabajo%20de%20Grado/quantum-shors-algorithm-main/simulacion_con_ruido/scripts/test_pt_explicit.py)
+
+**Qué es:** Prototipo (~44 líneas) de un Pauli Twirling simplificado (`SimplePauliTwirl`) que **no hace nada** — la lógica de twirling está vacía (solo `pass`). Es un borrador descartado antes de implementar `local_mitigation.py`.
+
+**Veredicto:** 🔴 **No necesario para el trabajo de grado.** Prototipo abandonado. La clase `SimplePauliTwirl` definida aquí no tiene funcionalidad real.
+
+---
+
+### 2.4 Datos (JSON)
+
+| Archivo | Generado por | Tamaño | Contenido |
+|:---|:---|:---:|:---|
+| [resultados_ruido_faketorino_N15.json](file:///home/christopher-villota17/Documentos/Quantum%20Computing/Proyecto%20Trabajo%20de%20Grado/quantum-shors-algorithm-main/simulacion_con_ruido/datos/resultados_ruido_faketorino_N15.json) | `ejecutar_shor_faketorino_ruido.py` | 1.6 KB | Métricas de profundidad, PST, $\mathcal{F}_H$ para cada (a, opt) |
+| [fidelidad_ruido_N15.json](file:///home/christopher-villota17/Documentos/Quantum%20Computing/Proyecto%20Trabajo%20de%20Grado/quantum-shors-algorithm-main/simulacion_con_ruido/datos/fidelidad_ruido_N15.json) | `calcular_fidelidad_ruido.py` | 1.4 KB | $\mathcal{F}_H$, $D_H$, $D_{KL}$, top 10 mediciones |
+| [comparar_mitigacion_N15.json](file:///home/christopher-villota17/Documentos/Quantum%20Computing/Proyecto%20Trabajo%20de%20Grado/quantum-shors-algorithm-main/simulacion_con_ruido/datos/comparar_mitigacion_N15.json) | `comparar_mitigacion.py` | 3.4 KB | 4 variantes × 2 bases con todas las métricas |
+| [fracciones_continuas_ruido_N15.json](file:///home/christopher-villota17/Documentos/Quantum%20Computing/Proyecto%20Trabajo%20de%20Grado/quantum-shors-algorithm-main/simulacion_con_ruido/datos/fracciones_continuas_ruido_N15.json) | `fracciones_continuas_ruido.py` | 11.9 KB | Top 15 mediciones con análisis detallado por medición |
+
+Todos los JSON son **esenciales** para el trabajo de grado — contienen los datos numéricos que respaldan las tablas y discusión.
+
+---
+
+### 2.5 Imágenes (PNG)
+
+| Archivo | Generado por | Contenido |
+|:---|:---|:---|
+| `analisis_ruido_faketorino_N15.png` | `ejecutar_shor_faketorino_ruido.py` | 3 paneles: PST con ruido, comparativa ideal/ruido, $\mathcal{F}_H$ |
+| `fidelidad_ruido_N15.png` | `calcular_fidelidad_ruido.py` | 3 paneles: $\mathcal{F}_H$ comparativo, distribución, concentración |
+| `comparar_mitigacion_N15.png` | `comparar_mitigacion.py` | 4 paneles: PST, $\mathcal{F}_H$, mejora relativa, $D_{KL}$ |
+
+> [!NOTE]
+> **Falta una imagen:** `fracciones_continuas_ruido.py` no genera gráficas, solo un reporte Markdown con tablas. Esto es correcto dado que su análisis es cualitativo (tabla de mediciones individuales).
+
+---
+
+### 2.6 Reportes (Markdown)
+
+| Archivo | Generado por |
+|:---|:---|
+| `resultados_ruido_faketorino.md` | `ejecutar_shor_faketorino_ruido.py` |
+| `fidelidad_ruido.md` | `calcular_fidelidad_ruido.py` |
+| `comparar_mitigacion.md` | `comparar_mitigacion.py` |
+| `fracciones_continuas_ruido.md` | `fracciones_continuas_ruido.py` |
+
+Todos son **auto-generados** por los scripts — contienen tablas formateadas, links a imágenes y secciones de discusión predefinida.
+
+---
+
+## 3. Mapeo a Objetivos del Anteproyecto
+
+| Objetivo | Archivo(s) que lo atienden | Estado |
+|:---|:---|:---:|
+| **OE1:** Diseñar y caracterizar QFT y Exp. Modular | *(Atendido en `simulacion_ideal/`)* | ✅ |
+| **OE2:** Pre-procesamiento clásico para selección de $a$ | `utilities/optimal_a.py` | ✅ |
+| **OE3:** Ejecutar en Fake Backends + aplicar DD/PT | `ejecutar_shor_faketorino_ruido.py` + `comparar_mitigacion.py` + `local_mitigation.py` | ✅ |
+| **OE4:** Cuantificar degradación (Fidelidad, PST) | `calcular_fidelidad_ruido.py` + `fracciones_continuas_ruido.py` | ✅ |
+| **Fase III:** Validación en Fake Backends | **Toda la carpeta** | ✅ |
+
+---
+
+## 4. Flujo de Ejecución (Orden Secuencial)
+
+```mermaid
+graph TD
+    A["1. ejecutar_shor_faketorino_ruido.py<br/>Línea base ruidosa<br/>~6-100 min por combo"] --> B["2. calcular_fidelidad_ruido.py<br/>Análisis de fidelidad detallado<br/>~12 min"]
+    B --> C["3. comparar_mitigacion.py<br/>DD/PT: 4 variantes × 2 bases<br/>~7-11h total"]
+    C --> D["4. fracciones_continuas_ruido.py<br/>Post-procesamiento con DD+PT<br/>~2-3h"]
+    
+    style A fill:#e74c3c,color:white
+    style B fill:#f39c12,color:white
+    style C fill:#3498db,color:white
+    style D fill:#27ae60,color:white
+```
+
+> [!IMPORTANT]
+> Los scripts 3 y 4 dependen de `local_mitigation.py` para el Pauli Twirling. Los scripts 1 y 2 son independientes entre sí pero deben ejecutarse antes que 3 y 4 para tener la comparación baseline.
+
+---
+
+## 5. Archivos que NO Sirven para el Trabajo de Grado
+
+| Archivo | Motivo | Acción recomendada |
+|:---|:---|:---|
+| `test_dd_explicit.py` | Script de prueba de desarrollo. Solo verifica que `PadDynamicalDecoupling` de Qiskit funciona. No produce datos ni análisis para la tesis. | 🗑️ Eliminar o mover a carpeta de testing |
+| `test_pt.py` | Script mínimo de 14 líneas para probar `Twirl2QClifford`. Prueba unitaria de desarrollo. | 🗑️ Eliminar o mover a carpeta de testing |
+| `test_pt_explicit.py` | **Prototipo abandonado.** Contiene `SimplePauliTwirl` que no implementa ninguna lógica (el cuerpo es `pass`). Fue reemplazado por `local_mitigation.py`. | 🗑️ Eliminar |
+| `__pycache__/` | Caché de Python. No es contenido del repositorio. | 🗑️ Ya debe estar en `.gitignore` |
+
+---
+
+## 6. Observaciones Técnicas y Puntos de Discusión
+
+### 6.1 Tiempos de ejecución
+
+Los tiempos registrados en los JSON revelan que la simulación ruidosa es extremadamente costosa:
+- `a=7, opt=3, DD+PT`: **11,500 segundos** (~3.2 horas) para 512 shots.
+- `a=7, opt=3, baseline`: **3,650 segundos** (~1 hora).
+- `a=4, opt=3`: ~115-167 segundos.
+
+Esto justifica la reducción a solo 2 bases y 512 shots (vs 4 bases y 4096 shots de la simulación ideal).
+
+### 6.2 El caso anómalo de $a=4$
+
+Para $a=4$ ($r=2$), la señal se perdió casi completamente con opt=3 ($\mathcal{F}_H \approx 0.001$). Esto es paradójico porque $r=2$ produce el circuito de exponenciación modular más simple. Hipótesis:
+- El optimizador de nivel 3 pudo cancelar compuertas que eran esenciales para la interferencia constructiva del QPE.
+- El layout de SABRE en opt=3 pudo asignar qubits a posiciones con peores propiedades de ruido en el modelo de FakeTorino.
+
+### 6.3 DD y PT no mejoran la señal en simulador
+
+Este resultado es consistente con la literatura: las técnicas de mitigación están diseñadas para **hardware real** donde:
+- DD suprime el acoplamiento ambiental **continuo** (no discretizado en un modelo de ruido).
+- PT promedia errores coherentes **sistemáticos** del hardware (que un simulador ya modela como canales estocásticos).
+- El overhead de gates adicionales que DD y PT insertan **empeora** la simulación en un Fake Backend.
+
+### 6.4 Redundancia parcial entre scripts
+
+Los scripts 1 y 2 (`ejecutar_shor_faketorino_ruido.py` y `calcular_fidelidad_ruido.py`) calculan la fidelidad de Hellinger por separado. El script 2 añade valor con métricas adicionales ($D_H$, $D_{KL}$, concentración de probabilidad) pero podría haberse integrado en el primero.
+
+---
+
+## 7. Resumen Ejecutivo
+
+| Categoría | Archivos | ¿Útil para TdG? |
+|:---|:---:|:---:|
+| Scripts principales | 4 | ✅ Todos |
+| Módulo auxiliar | 1 (`local_mitigation.py`) | ✅ Esencial |
+| Scripts de prueba | 3 (`test_*`) | ❌ Ninguno |
+| Datos JSON | 4 | ✅ Todos |
+| Imágenes PNG | 3 | ✅ Todas |
+| Reportes Markdown | 4 | ✅ Todos |
+| **Total archivos** | **19** | **16 útiles, 3 descartables** |
+
+> [!TIP]
+> **Para el documento de grado:** Los resultados más valiosos de esta carpeta son: (1) la cuantificación de la degradación $\mathcal{F}_H$ ideal → ruido, (2) la demostración de que DD/PT no mejoran en simulador (lo cual es un resultado honesto y discutible), y (3) las tablas detalladas de fracciones continuas que muestran cómo el ruido genera fases espurias pero el post-procesamiento clásico aún puede extraer factores correctos.

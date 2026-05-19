@@ -1,0 +1,494 @@
+[Skip to main content](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#main-content)
+[IBM Quantum Platform](https://docs.quantum.ibm.com/)
+- [Home](https://docs.quantum.ibm.com/)
+- [Instances](https://docs.quantum.ibm.com/instances)
+- [Workloads](https://docs.quantum.ibm.com/workloads?user=me)
+- [Compute resources](https://docs.quantum.ibm.com/computers)
+- [FunctionsPreview](https://docs.quantum.ibm.com/functions)
+- 
+- [Documentation](https://docs.quantum.ibm.com/docs/guides)
+- [Tutorials](https://docs.quantum.ibm.com/docs/tutorials)
+- [API references](https://docs.quantum.ibm.com/docs/api)
+- 
+- [Learning](https://docs.quantum.ibm.com/learning)
+- [Composer](https://docs.quantum.ibm.com/composer)
+[Home](https://docs.quantum.ibm.com/)
+[Instances](https://docs.quantum.ibm.com/instances)
+[Workloads](https://docs.quantum.ibm.com/workloads?user=me)
+[Compute resources](https://docs.quantum.ibm.com/computers)
+[FunctionsPreview](https://docs.quantum.ibm.com/functions)
+[Documentation](https://docs.quantum.ibm.com/docs/guides)
+[Tutorials](https://docs.quantum.ibm.com/docs/tutorials)
+[API references](https://docs.quantum.ibm.com/docs/api)
+[Learning](https://docs.quantum.ibm.com/learning)
+[Composer](https://docs.quantum.ibm.com/composer)
+- [Documentation](https://docs.quantum.ibm.com/docs/guides)
+- [Tutorials](https://docs.quantum.ibm.com/docs/tutorials)
+- API references
+[Documentation](https://docs.quantum.ibm.com/docs/guides)
+[Tutorials](https://docs.quantum.ibm.com/docs/tutorials)
+
+# https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#fake-providerFake Provider
+
+qiskit_ibm_runtime.fake_provider
+
+```
+qiskit_ibm_runtime.fake_provider
+```
+
+## https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#overviewOverview
+The fake provider module contains fake providers and fake backends classes. The fake backends are built to mimic the behaviors of IBM Quantum systems using system snapshots. The system snapshots contain important information about the quantum system such as coupling map, basis gates, qubit properties (T1, T2, error rate, etc.) which are useful for testing the transpiler and performing noisy simulations of the system.
+
+## https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#example-usageExample Usage
+Here is an example of using a fake backend for transpilation and simulation.
+
+```
+from qiskit import QuantumCircuit from qiskit import transpile from qiskit.visualization import plot_histogram from qiskit_ibm_runtime import SamplerV2 from qiskit_ibm_runtime.fake_provider import FakeManilaV2 # Get a fake backend from the fake provider backend = FakeManilaV2() # Create a simple circuit circuit = QuantumCircuit(3) circuit.h(0) circuit.cx(0,1) circuit.cx(0,2) circuit.measure_all() circuit.draw('mpl', style="iqp")
+```
+
+
+```
+from qiskit import QuantumCircuit from qiskit import transpile from qiskit.visualization import plot_histogram from qiskit_ibm_runtime import SamplerV2 from qiskit_ibm_runtime.fake_provider import FakeManilaV2 # Get a fake backend from the fake provider backend = FakeManilaV2() # Create a simple circuit circuit = QuantumCircuit(3) circuit.h(0) circuit.cx(0,1) circuit.cx(0,2) circuit.measure_all() circuit.draw('mpl', style="iqp")
+```
+
+
+```
+# Transpile the ideal circuit to a circuit that can be # directly executed by the backend transpiled_circuit = transpile(circuit, backend) transpiled_circuit.draw('mpl', style="iqp")
+```
+
+
+```
+# Transpile the ideal circuit to a circuit that can be # directly executed by the backend transpiled_circuit = transpile(circuit, backend) transpiled_circuit.draw('mpl', style="iqp")
+```
+
+
+```
+# Run the transpiled circuit using the simulated fake backend sampler = SamplerV2(backend) job = sampler.run([transpiled_circuit]) pub_result = job.result()[0] counts = pub_result.data.meas.get_counts() plot_histogram(counts)
+```
+
+
+```
+# Run the transpiled circuit using the simulated fake backend sampler = SamplerV2(backend) job = sampler.run([transpiled_circuit]) pub_result = job.result()[0] counts = pub_result.data.meas.get_counts() plot_histogram(counts)
+```
+
+Please note that the simulation is done using a noise model generated from system snapshots obtained in the past (sometimes a few years ago) and the results are not representative of the latest behaviors of the real quantum system that the fake backend is mimicking. If you want to run noisy simulations with the latest backend snapshots, you can use the refresh() method.
+
+```
+refresh()
+```
+
+
+```
+from qiskit_ibm_runtime import QiskitRuntimeService from qiskit_ibm_runtime.fake_provider import FakeSherbrooke # initialize service to access real backends service = QiskitRuntimeService() # call refresh to retrieve latest backend data # note that this overwrites your local qiskit-ibm-runtime files backend = FakeSherbrooke() backend.refresh(service)
+```
+
+
+```
+from qiskit_ibm_runtime import QiskitRuntimeService from qiskit_ibm_runtime.fake_provider import FakeSherbrooke # initialize service to access real backends service = QiskitRuntimeService() # call refresh to retrieve latest backend data # note that this overwrites your local qiskit-ibm-runtime files backend = FakeSherbrooke() backend.refresh(service)
+```
+
+## https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#fake-providersFake Providers
+Fake providers provide access to a list of fake backends.
+[FakeProviderForBackendV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-provider-for-backend-v2)
+
+```
+FakeProviderForBackendV2
+```
+
+### https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#fake-v2-backendsFake V2 Backends
+
+Fake V2 backends are fake backends with IBM Quantum systems snapshots implemented with BackendV2 interface. They are all subclasses of FakeBackendV2.
+
+```
+BackendV2
+```
+
+
+```
+FakeBackendV2
+```
+
+[FakeAlgiers](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-algiers)
+
+```
+FakeAlgiers
+```
+
+[FakeAlmadenV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-almaden-v2)
+
+```
+FakeAlmadenV2
+```
+
+[FakeArmonkV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-armonk-v2)
+
+```
+FakeArmonkV2
+```
+
+[FakeAthensV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-athens-v2)
+
+```
+FakeAthensV2
+```
+
+[FakeAuckland](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-auckland)
+
+```
+FakeAuckland
+```
+
+[FakeBelemV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-belem-v2)
+
+```
+FakeBelemV2
+```
+
+[FakeBoeblingenV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-boeblingen-v2)
+
+```
+FakeBoeblingenV2
+```
+
+[FakeBogotaV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-bogota-v2)
+
+```
+FakeBogotaV2
+```
+
+[FakeBrisbane](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-brisbane)
+
+```
+FakeBrisbane
+```
+
+[FakeBrooklynV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-brooklyn-v2)
+
+```
+FakeBrooklynV2
+```
+
+[FakeBurlingtonV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-burlington-v2)
+
+```
+FakeBurlingtonV2
+```
+
+[FakeCairoV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-cairo-v2)
+
+```
+FakeCairoV2
+```
+
+[FakeCambridgeV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-cambridge-v2)
+
+```
+FakeCambridgeV2
+```
+
+[FakeCasablancaV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-casablanca-v2)
+
+```
+FakeCasablancaV2
+```
+
+[FakeCusco](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-cusco)
+
+```
+FakeCusco
+```
+
+[FakeEssexV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-essex-v2)
+
+```
+FakeEssexV2
+```
+
+[FakeFez](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-fez)
+
+```
+FakeFez
+```
+
+[FakeGeneva](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-geneva)
+
+```
+FakeGeneva
+```
+
+[FakeGuadalupeV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-guadalupe-v2)
+
+```
+FakeGuadalupeV2
+```
+
+[FakeHanoiV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-hanoi-v2)
+
+```
+FakeHanoiV2
+```
+
+[FakeJakartaV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-jakarta-v2)
+
+```
+FakeJakartaV2
+```
+
+[FakeJohannesburgV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-johannesburg-v2)
+
+```
+FakeJohannesburgV2
+```
+
+[FakeKawasaki](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-kawasaki)
+
+```
+FakeKawasaki
+```
+
+[FakeKolkataV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-kolkata-v2)
+
+```
+FakeKolkataV2
+```
+
+[FakeKyiv](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-kyiv)
+
+```
+FakeKyiv
+```
+
+[FakeKyoto](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-kyoto)
+
+```
+FakeKyoto
+```
+
+[FakeLagosV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-lagos-v2)
+
+```
+FakeLagosV2
+```
+
+[FakeLimaV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-lima-v2)
+
+```
+FakeLimaV2
+```
+
+[FakeFractionalBackend](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-fractional-backend)
+
+```
+FakeFractionalBackend
+```
+
+[FakeLondonV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-london-v2)
+
+```
+FakeLondonV2
+```
+
+[FakeManhattanV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-manhattan-v2)
+
+```
+FakeManhattanV2
+```
+
+[FakeManilaV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-manila-v2)
+
+```
+FakeManilaV2
+```
+
+[FakeMarrakesh](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-marrakesh)
+
+```
+FakeMarrakesh
+```
+
+[FakeMelbourneV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-melbourne-v2)
+
+```
+FakeMelbourneV2
+```
+
+### https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#fake-v2-backendsFake V2 Backends
+
+[FakeMontrealV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-montreal-v2)
+
+```
+FakeMontrealV2
+```
+
+[FakeMumbaiV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-mumbai-v2)
+
+```
+FakeMumbaiV2
+```
+
+[FakeNairobiV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-nairobi-v2)
+
+```
+FakeNairobiV2
+```
+
+[FakeOsaka](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-osaka)
+
+```
+FakeOsaka
+```
+
+[FakeOslo](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-oslo)
+
+```
+FakeOslo
+```
+
+[FakeOurenseV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-ourense-v2)
+
+```
+FakeOurenseV2
+```
+
+[FakeParisV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-paris-v2)
+
+```
+FakeParisV2
+```
+
+[FakePeekskill](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-peekskill)
+
+```
+FakePeekskill
+```
+
+[FakePerth](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-perth)
+
+```
+FakePerth
+```
+
+[FakePrague](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-prague)
+
+```
+FakePrague
+```
+
+[FakePoughkeepsieV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-poughkeepsie-v2)
+
+```
+FakePoughkeepsieV2
+```
+
+[FakeQuebec](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-quebec)
+
+```
+FakeQuebec
+```
+
+[FakeQuitoV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-quito-v2)
+
+```
+FakeQuitoV2
+```
+
+[FakeRochesterV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-rochester-v2)
+
+```
+FakeRochesterV2
+```
+
+[FakeRomeV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-rome-v2)
+
+```
+FakeRomeV2
+```
+
+[FakeSantiagoV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-santiago-v2)
+
+```
+FakeSantiagoV2
+```
+
+[FakeSherbrooke](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-sherbrooke)
+
+```
+FakeSherbrooke
+```
+
+[FakeSingaporeV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-singapore-v2)
+
+```
+FakeSingaporeV2
+```
+
+[FakeSydneyV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-sydney-v2)
+
+```
+FakeSydneyV2
+```
+
+[FakeTorino](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-torino)
+
+```
+FakeTorino
+```
+
+[FakeTorontoV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-toronto-v2)
+
+```
+FakeTorontoV2
+```
+
+[FakeValenciaV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-valencia-v2)
+
+```
+FakeValenciaV2
+```
+
+[FakeVigoV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-vigo-v2)
+
+```
+FakeVigoV2
+```
+
+[FakeWashingtonV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-washington-v2)
+
+```
+FakeWashingtonV2
+```
+
+[FakeYorktownV2](https://docs.quantum.ibm.com/docs/api/qiskit-ibm-runtime/fake-provider-fake-yorktown-v2)
+
+```
+FakeYorktownV2
+```
+
+[GitHub](https://github.com/Qiskit/documentation/issues/new/choose)
+On this page
+- [Overview](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#overview)
+- [Example Usage](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#example-usage)
+- [Fake Providers](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#fake-providers)
+- [Fake Backends](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#fake-backends)
+- [Fake V2 Backends](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#fake-v2-backends)
+[Overview](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#overview)
+[Example Usage](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#example-usage)
+[Fake Providers](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#fake-providers)
+[Fake Backends](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#fake-backends)
+[Fake V2 Backends](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#fake-v2-backends)
+[GitHub](https://github.com/Qiskit/documentation/issues/new/choose)
+© IBM Corp., 2017-2026
+- [Terms](https://www.ibm.com/us-en/legal/terms)
+- [Privacy](https://www.ibm.com/us-en/privacy)
+- Cookie preferences
+- [Support](https://docs.quantum.ibm.com/docs/guides/support)
+
+### https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake_provider#fake-v2-backendsFake V2 Backends
+
+- [Accessibility](https://docs.quantum.ibm.com/docs/accessibility)
+- [Security](https://docs.quantum.ibm.com/docs/guides/secure-data)
+[Terms](https://www.ibm.com/us-en/legal/terms)
+[Privacy](https://www.ibm.com/us-en/privacy)
+[Support](https://docs.quantum.ibm.com/docs/guides/support)
+[Accessibility](https://docs.quantum.ibm.com/docs/accessibility)
+[Security](https://docs.quantum.ibm.com/docs/guides/secure-data)
