@@ -1,0 +1,577 @@
+{
+  "config": {
+    "N": 15,
+    "a": 4,
+    "backend": "ibm_torino",
+    "seed": 457,
+    "shots": 4096,
+    "timestamp": "2026-02-13T18:58:59.432435",
+    "job_ids": [
+      "d67rla9v6o8c73d5ucp0"
+    ]
+  },
+  "optimization_levels": [
+    {
+      "optimization_level": 0,
+      "depth_total": 2615,
+      "depth_2q": 570,
+      "count_2q_gates": 923,
+      "count_cz": 923,
+      "count_ecr": 0,
+      "count_rzz": 0,
+      "count_swap_literal": 0,
+      "count_total_gates": 5667,
+      "num_qubits": 133,
+      "layout_method": "trivial",
+      "routing_method": "basic",
+      "transpilation_time": 0.255,
+      "count_swap_estimated": 113,
+      "extra_2q_from_routing": 339
+    },
+    {
+      "optimization_level": 1,
+      "depth_total": 1869,
+      "depth_2q": 526,
+      "count_2q_gates": 779,
+      "count_cz": 779,
+      "count_ecr": 0,
+      "count_rzz": 0,
+      "count_swap_literal": 0,
+      "count_total_gates": 4042,
+      "num_qubits": 133,
+      "layout_method": "sabre",
+      "routing_method": "sabre",
+      "transpilation_time": 0.239,
+      "count_swap_estimated": 65,
+      "extra_2q_from_routing": 195
+    },
+    {
+      "optimization_level": 2,
+      "depth_total": 1580,
+      "depth_2q": 433,
+      "count_2q_gates": 584,
+      "count_cz": 584,
+      "count_ecr": 0,
+      "count_rzz": 0,
+      "count_swap_literal": 0,
+      "count_total_gates": 3210,
+      "num_qubits": 133,
+      "layout_method": "sabre",
+      "routing_method": "sabre",
+      "transpilation_time": 0.429,
+      "count_swap_estimated": 0,
+      "extra_2q_from_routing": 0
+    },
+    {
+      "optimization_level": 3,
+      "depth_total": 1609,
+      "depth_2q": 439,
+      "count_2q_gates": 600,
+      "count_cz": 600,
+      "count_ecr": 0,
+      "count_rzz": 0,
+      "count_swap_literal": 0,
+      "count_total_gates": 3328,
+      "num_qubits": 133,
+      "layout_method": "sabre",
+      "routing_method": "sabre",
+      "transpilation_time": 1.278,
+      "count_swap_estimated": 5,
+      "extra_2q_from_routing": 16
+    }
+  ],
+  "routing_comparison": [
+    {
+      "optimization_level": 3,
+      "depth_total": 1598,
+      "depth_2q": 439,
+      "count_2q_gates": 600,
+      "count_cz": 600,
+      "count_ecr": 0,
+      "count_rzz": 0,
+      "count_swap_literal": 0,
+      "count_total_gates": 3338,
+      "num_qubits": 133,
+      "layout_method": "sabre",
+      "routing_method": "sabre",
+      "transpilation_time": 0.438,
+      "algorithm_name": "SABRE"
+    },
+    {
+      "optimization_level": 3,
+      "depth_total": 2137,
+      "depth_2q": 662,
+      "count_2q_gates": 1092,
+      "count_cz": 1092,
+      "count_ecr": 0,
+      "count_rzz": 0,
+      "count_swap_literal": 0,
+      "count_total_gates": 4925,
+      "num_qubits": 133,
+      "layout_method": "trivial",
+      "routing_method": "basic",
+      "transpilation_time": 1.812,
+      "algorithm_name": "Basic"
+    }
+  ],
+  "swap_analysis": {
+    "min_2q_gates": 584,
+    "per_level": [
+      {
+        "optimization_level": 0,
+        "extra_2q_gates": 339,
+        "estimated_swaps": 113,
+        "swap_overhead_pct": 36.7
+      },
+      {
+        "optimization_level": 1,
+        "extra_2q_gates": 195,
+        "estimated_swaps": 65,
+        "swap_overhead_pct": 25.0
+      },
+      {
+        "optimization_level": 2,
+        "extra_2q_gates": 0,
+        "estimated_swaps": 0,
+        "swap_overhead_pct": 0.0
+      },
+      {
+        "optimization_level": 3,
+        "extra_2q_gates": 16,
+        "estimated_swaps": 5,
+        "swap_overhead_pct": 2.7
+      }
+    ],
+    "reduction_level0_to_3": {
+      "depth_2q_reduction_pct": 23.0,
+      "gates_2q_reduction_pct": 35.0,
+      "total_gates_reduction_pct": 41.3
+    }
+  },
+  "gate_details": [
+    {
+      "level": 0,
+      "gates": {
+        "sx": 2396,
+        "rz": 2338,
+        "cz": 923,
+        "measure": 9,
+        "x": 1
+      }
+    },
+    {
+      "level": 1,
+      "gates": {
+        "sx": 1765,
+        "rz": 1489,
+        "cz": 779,
+        "measure": 9
+      }
+    },
+    {
+      "level": 2,
+      "gates": {
+        "sx": 1461,
+        "rz": 1138,
+        "cz": 584,
+        "x": 18,
+        "measure": 9
+      }
+    },
+    {
+      "level": 3,
+      "gates": {
+        "sx": 1491,
+        "rz": 1191,
+        "cz": 600,
+        "x": 37,
+        "measure": 9
+      }
+    }
+  ],
+  "hardware_results": [
+    {
+      "label": "opt_level_0",
+      "total_shots": 4096,
+      "unique_bitstrings": 500,
+      "signal_pct": 6.1,
+      "noise_pct": 93.9,
+      "signal_count": 250,
+      "noise_count": 3846,
+      "top_10": [
+        [
+          "000000000",
+          103
+        ],
+        [
+          "100000000",
+          87
+        ],
+        [
+          "011000000",
+          66
+        ],
+        [
+          "001000000",
+          65
+        ],
+        [
+          "101000000",
+          65
+        ],
+        [
+          "010000000",
+          64
+        ],
+        [
+          "110000000",
+          56
+        ],
+        [
+          "111000000",
+          51
+        ],
+        [
+          "000100000",
+          51
+        ],
+        [
+          "100100000",
+          48
+        ]
+      ],
+      "factors_found": {
+        "factors": [
+          3,
+          5
+        ],
+        "valid_periods": [
+          2,
+          4,
+          8
+        ],
+        "success": true
+      }
+    },
+    {
+      "label": "opt_level_1",
+      "total_shots": 4096,
+      "unique_bitstrings": 487,
+      "signal_pct": 15.53,
+      "noise_pct": 84.47,
+      "signal_count": 636,
+      "noise_count": 3460,
+      "top_10": [
+        [
+          "100000000",
+          298
+        ],
+        [
+          "000000000",
+          276
+        ],
+        [
+          "111000000",
+          117
+        ],
+        [
+          "011000000",
+          103
+        ],
+        [
+          "011110000",
+          66
+        ],
+        [
+          "110000000",
+          65
+        ],
+        [
+          "111110000",
+          60
+        ],
+        [
+          "010000000",
+          60
+        ],
+        [
+          "101000000",
+          57
+        ],
+        [
+          "100000100",
+          55
+        ]
+      ],
+      "factors_found": {
+        "factors": [
+          3,
+          5
+        ],
+        "valid_periods": [
+          2,
+          4,
+          8
+        ],
+        "success": true
+      }
+    },
+    {
+      "label": "opt_level_2",
+      "total_shots": 4096,
+      "unique_bitstrings": 374,
+      "signal_pct": 50.78,
+      "noise_pct": 49.22,
+      "signal_count": 2080,
+      "noise_count": 2016,
+      "top_10": [
+        [
+          "000000000",
+          949
+        ],
+        [
+          "100000000",
+          850
+        ],
+        [
+          "000000010",
+          175
+        ],
+        [
+          "100000010",
+          162
+        ],
+        [
+          "000000001",
+          162
+        ],
+        [
+          "100000001",
+          102
+        ],
+        [
+          "000010000",
+          63
+        ],
+        [
+          "000001000",
+          60
+        ],
+        [
+          "100010000",
+          49
+        ],
+        [
+          "000000100",
+          43
+        ]
+      ],
+      "factors_found": {
+        "factors": [
+          3,
+          5
+        ],
+        "valid_periods": [
+          2,
+          4,
+          8
+        ],
+        "success": true
+      }
+    },
+    {
+      "label": "opt_level_3",
+      "total_shots": 4096,
+      "unique_bitstrings": 421,
+      "signal_pct": 3.0,
+      "noise_pct": 97.0,
+      "signal_count": 123,
+      "noise_count": 3973,
+      "top_10": [
+        [
+          "111100000",
+          209
+        ],
+        [
+          "011100000",
+          135
+        ],
+        [
+          "001000000",
+          117
+        ],
+        [
+          "111100100",
+          115
+        ],
+        [
+          "001100000",
+          104
+        ],
+        [
+          "101000000",
+          98
+        ],
+        [
+          "101100000",
+          88
+        ],
+        [
+          "111000000",
+          84
+        ],
+        [
+          "000000000",
+          71
+        ],
+        [
+          "001000100",
+          70
+        ]
+      ],
+      "factors_found": {
+        "factors": [
+          3,
+          5
+        ],
+        "valid_periods": [
+          2,
+          8,
+          12,
+          14
+        ],
+        "success": true
+      }
+    }
+  ],
+  "hardware_routing_results": [
+    {
+      "label": "routing_SABRE",
+      "total_shots": 4096,
+      "unique_bitstrings": 455,
+      "signal_pct": 5.08,
+      "noise_pct": 94.92,
+      "signal_count": 208,
+      "noise_count": 3888,
+      "top_10": [
+        [
+          "000000000",
+          112
+        ],
+        [
+          "100000000",
+          72
+        ],
+        [
+          "110100000",
+          70
+        ],
+        [
+          "000100000",
+          69
+        ],
+        [
+          "100100000",
+          59
+        ],
+        [
+          "110000000",
+          58
+        ],
+        [
+          "000100100",
+          57
+        ],
+        [
+          "000000100",
+          53
+        ],
+        [
+          "000010000",
+          52
+        ],
+        [
+          "100000100",
+          51
+        ]
+      ],
+      "factors_found": {
+        "factors": [
+          3,
+          5
+        ],
+        "valid_periods": [
+          2,
+          4,
+          8,
+          12,
+          14
+        ],
+        "success": true
+      }
+    },
+    {
+      "label": "routing_Basic",
+      "total_shots": 4096,
+      "unique_bitstrings": 491,
+      "signal_pct": 12.3,
+      "noise_pct": 87.7,
+      "signal_count": 504,
+      "noise_count": 3592,
+      "top_10": [
+        [
+          "000000000",
+          174
+        ],
+        [
+          "100000000",
+          141
+        ],
+        [
+          "010000000",
+          121
+        ],
+        [
+          "000000001",
+          103
+        ],
+        [
+          "100000001",
+          82
+        ],
+        [
+          "010000001",
+          61
+        ],
+        [
+          "110000000",
+          52
+        ],
+        [
+          "000010000",
+          49
+        ],
+        [
+          "001000000",
+          46
+        ],
+        [
+          "100010000",
+          44
+        ]
+      ],
+      "factors_found": {
+        "factors": [
+          3,
+          5
+        ],
+        "valid_periods": [
+          2,
+          4,
+          8
+        ],
+        "success": true
+      }
+    }
+  ]
+}

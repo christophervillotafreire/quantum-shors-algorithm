@@ -1,0 +1,3879 @@
+{
+  "A1_approx_degree": [
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.5,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A1_approx_degree",
+        "study_variable": "approx_degree",
+        "study_value": 0.5
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.08,
+      "isa_stats": {
+        "total_gates": 20,
+        "depth": 5,
+        "depth_2q": 0,
+        "num_qubits": 127,
+        "ecr": 0,
+        "cz": 0,
+        "rz": 7,
+        "sx": 4,
+        "x": 0,
+        "rx": 0,
+        "2q_gates": 0
+      },
+      "ideal": {
+        "time_s": 0.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 4.01,
+        "shots": 1024,
+        "signal_pct": 47.75,
+        "noise_pct": 52.25,
+        "fidelity": 0.2692,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          8,
+          4
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 487,
+            "expected_prob": 0.5,
+            "observed_prob": 0.4756
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 2,
+            "expected_prob": 0.5,
+            "observed_prob": 0.002
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 32
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.6,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A1_approx_degree",
+        "study_variable": "approx_degree",
+        "study_value": 0.6
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.03,
+      "isa_stats": {
+        "total_gates": 24,
+        "depth": 5,
+        "depth_2q": 0,
+        "num_qubits": 127,
+        "ecr": 0,
+        "cz": 0,
+        "rz": 9,
+        "sx": 6,
+        "x": 0,
+        "rx": 0,
+        "2q_gates": 0
+      },
+      "ideal": {
+        "time_s": 0.03,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 3.33,
+        "shots": 1024,
+        "signal_pct": 47.75,
+        "noise_pct": 52.25,
+        "fidelity": 0.2868,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          8,
+          4
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 484,
+            "expected_prob": 0.5,
+            "observed_prob": 0.4727
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 5,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0049
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 30
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A1_approx_degree",
+        "study_variable": "approx_degree",
+        "study_value": 0.7
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.03,
+      "isa_stats": {
+        "total_gates": 393,
+        "depth": 206,
+        "depth_2q": 43,
+        "num_qubits": 127,
+        "ecr": 43,
+        "cz": 0,
+        "rz": 202,
+        "sx": 139,
+        "x": 0,
+        "rx": 0,
+        "2q_gates": 43
+      },
+      "ideal": {
+        "time_s": 0.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 3.72,
+        "shots": 1024,
+        "signal_pct": 58.11,
+        "noise_pct": 41.89,
+        "fidelity": 0.3143,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 594,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5801
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 1,
+            "expected_prob": 0.5,
+            "observed_prob": 0.001
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 20
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6kuc3ofh9oc73em9bi0",
+        "shots": 4096,
+        "signal_pct": 84.69,
+        "noise_pct": 15.31,
+        "fidelity": 0.5757,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          4,
+          2,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 3353,
+            "expected_prob": 0.5,
+            "observed_prob": 0.8186
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 116,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0283
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 35
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.8,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A1_approx_degree",
+        "study_variable": "approx_degree",
+        "study_value": 0.8
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.19,
+      "isa_stats": {
+        "total_gates": 1229,
+        "depth": 685,
+        "depth_2q": 156,
+        "num_qubits": 127,
+        "ecr": 159,
+        "cz": 0,
+        "rz": 645,
+        "sx": 402,
+        "x": 14,
+        "rx": 0,
+        "2q_gates": 159
+      },
+      "ideal": {
+        "time_s": 0.14,
+        "shots": 4096,
+        "signal_pct": 33.08,
+        "noise_pct": 66.92,
+        "fidelity": 0.3203,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2,
+          8,
+          4
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 440,
+            "expected_prob": 0.5,
+            "observed_prob": 0.1074
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 915,
+            "expected_prob": 0.5,
+            "observed_prob": 0.2234
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 158
+      },
+      "noisy_fakekyiv": {
+        "time_s": 9.97,
+        "shots": 1024,
+        "signal_pct": 30.86,
+        "noise_pct": 69.14,
+        "fidelity": 0.2997,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2,
+          4,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 105,
+            "expected_prob": 0.5,
+            "observed_prob": 0.1025
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 211,
+            "expected_prob": 0.5,
+            "observed_prob": 0.2061
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 125
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.9,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A1_approx_degree",
+        "study_variable": "approx_degree",
+        "study_value": 0.9
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.06,
+      "isa_stats": {
+        "total_gates": 1858,
+        "depth": 1073,
+        "depth_2q": 239,
+        "num_qubits": 127,
+        "ecr": 242,
+        "cz": 0,
+        "rz": 982,
+        "sx": 620,
+        "x": 5,
+        "rx": 0,
+        "2q_gates": 242
+      },
+      "ideal": {
+        "time_s": 0.06,
+        "shots": 4096,
+        "signal_pct": 32.98,
+        "noise_pct": 67.02,
+        "fidelity": 0.3149,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2,
+          4,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 395,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0964
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 956,
+            "expected_prob": 0.5,
+            "observed_prob": 0.2334
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 157
+      },
+      "noisy_fakekyiv": {
+        "time_s": 7.41,
+        "shots": 1024,
+        "signal_pct": 31.74,
+        "noise_pct": 68.26,
+        "fidelity": 0.3056,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2,
+          4,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 101,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0986
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 224,
+            "expected_prob": 0.5,
+            "observed_prob": 0.2188
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 131
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 1.0,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A1_approx_degree",
+        "study_variable": "approx_degree",
+        "study_value": 1.0
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.18,
+      "isa_stats": {
+        "total_gates": 4127,
+        "depth": 1982,
+        "depth_2q": 444,
+        "num_qubits": 127,
+        "ecr": 586,
+        "cz": 0,
+        "rz": 2082,
+        "sx": 1414,
+        "x": 36,
+        "rx": 0,
+        "2q_gates": 586
+      },
+      "ideal": {
+        "time_s": 0.17,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 1.0,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 2039,
+            "expected_prob": 0.5,
+            "observed_prob": 0.4978
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 2057,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5022
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 2
+      },
+      "noisy_fakekyiv": {
+        "time_s": 68.71,
+        "shots": 1024,
+        "signal_pct": 19.43,
+        "noise_pct": 80.57,
+        "fidelity": 0.1928,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2,
+          4
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 117,
+            "expected_prob": 0.5,
+            "observed_prob": 0.1143
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 82,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0801
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 268
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6kuubofh9oc73em9ul0",
+        "shots": 4096,
+        "signal_pct": 1.59,
+        "noise_pct": 98.41,
+        "fidelity": 0.0159,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          4,
+          6,
+          14,
+          2
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "total_shots": 4096,
+        "unique_outcomes": 492
+      }
+    }
+  ],
+  "A2_opt_level": [
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 0,
+        "approx_degree": 0.7,
+        "layout_method": "trivial",
+        "routing_method": "basic",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A2_opt_level",
+        "study_variable": "opt_level",
+        "study_value": 0
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.77,
+      "isa_stats": {
+        "total_gates": 14138,
+        "depth": 4800,
+        "depth_2q": 770,
+        "num_qubits": 127,
+        "ecr": 1220,
+        "cz": 0,
+        "rz": 8406,
+        "sx": 4194,
+        "x": 309,
+        "rx": 0,
+        "2q_gates": 1220
+      },
+      "ideal": {
+        "time_s": 1.56,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.9999,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 2009,
+            "expected_prob": 0.5,
+            "observed_prob": 0.4905
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 2087,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5095
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 2
+      },
+      "noisy_fakekyiv": {
+        "time_s": 235.93,
+        "shots": 1024,
+        "signal_pct": 1.76,
+        "noise_pct": 98.24,
+        "fidelity": 0.0175,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          8,
+          2
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 8,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0078
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 10,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0098
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 363
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6agiong4t5c73837880",
+        "shots": 4096,
+        "signal_pct": 1.1,
+        "noise_pct": 98.9,
+        "fidelity": 0.011,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2,
+          4,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 23,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0056
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 22,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0054
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 512
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 1,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A2_opt_level",
+        "study_variable": "opt_level",
+        "study_value": 1
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.26,
+      "isa_stats": {
+        "total_gates": 4790,
+        "depth": 2132,
+        "depth_2q": 532,
+        "num_qubits": 127,
+        "ecr": 740,
+        "cz": 0,
+        "rz": 2250,
+        "sx": 1628,
+        "x": 163,
+        "rx": 0,
+        "2q_gates": 740
+      },
+      "ideal": {
+        "time_s": 0.57,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 1.0,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 2066,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5044
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 2030,
+            "expected_prob": 0.5,
+            "observed_prob": 0.4956
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 2
+      },
+      "noisy_fakekyiv": {
+        "time_s": 91.06,
+        "shots": 1024,
+        "signal_pct": 17.38,
+        "noise_pct": 82.62,
+        "fidelity": 0.1738,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2,
+          4,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 90,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0879
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 88,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0859
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 294
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6agiu97ce2c73fe8obg",
+        "shots": 4096,
+        "signal_pct": 3.05,
+        "noise_pct": 96.95,
+        "fidelity": 0.0305,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          4,
+          2
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 59,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0144
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 66,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0161
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 505
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 2,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A2_opt_level",
+        "study_variable": "opt_level",
+        "study_value": 2
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.13,
+      "isa_stats": {
+        "total_gates": 596,
+        "depth": 333,
+        "depth_2q": 68,
+        "num_qubits": 127,
+        "ecr": 68,
+        "cz": 0,
+        "rz": 308,
+        "sx": 205,
+        "x": 6,
+        "rx": 0,
+        "2q_gates": 68
+      },
+      "ideal": {
+        "time_s": 0.1,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 7.79,
+        "shots": 1024,
+        "signal_pct": 57.71,
+        "noise_pct": 42.29,
+        "fidelity": 0.3296,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 588,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5742
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 3,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0029
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 22
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6agj2p7ce2c73fe8ohg",
+        "shots": 4096,
+        "signal_pct": 70.83,
+        "noise_pct": 29.17,
+        "fidelity": 0.5285,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          4,
+          2
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 2713,
+            "expected_prob": 0.5,
+            "observed_prob": 0.6624
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 188,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0459
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 57
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A2_opt_level",
+        "study_variable": "opt_level",
+        "study_value": 3
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.05,
+      "isa_stats": {
+        "total_gates": 393,
+        "depth": 206,
+        "depth_2q": 43,
+        "num_qubits": 127,
+        "ecr": 43,
+        "cz": 0,
+        "rz": 202,
+        "sx": 139,
+        "x": 0,
+        "rx": 0,
+        "2q_gates": 43
+      },
+      "ideal": {
+        "time_s": 0.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 7.88,
+        "shots": 1024,
+        "signal_pct": 54.1,
+        "noise_pct": 45.9,
+        "fidelity": 0.2935,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 553,
+            "expected_prob": 0.5,
+            "observed_prob": 0.54
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 1,
+            "expected_prob": 0.5,
+            "observed_prob": 0.001
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 21
+      }
+    }
+  ],
+  "A3_bases": [
+    {
+      "config": {
+        "a": 2,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A3_bases",
+        "study_variable": "a",
+        "study_value": 2
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.13,
+      "isa_stats": {
+        "total_gates": 889,
+        "depth": 475,
+        "depth_2q": 99,
+        "num_qubits": 127,
+        "ecr": 99,
+        "cz": 0,
+        "rz": 465,
+        "sx": 309,
+        "x": 7,
+        "rx": 0,
+        "2q_gates": 99
+      },
+      "ideal": {
+        "time_s": 0.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.25,
+        "r_expected": 4,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.25,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 7.99,
+        "shots": 1024,
+        "signal_pct": 78.32,
+        "noise_pct": 21.68,
+        "fidelity": 0.3693,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 730,
+            "expected_prob": 0.25,
+            "observed_prob": 0.7129
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 62,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0605
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 9,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0088
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 1,
+            "expected_prob": 0.25,
+            "observed_prob": 0.001
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 30
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6aghkvg4t5c7383774g",
+        "shots": 4096,
+        "signal_pct": 42.41,
+        "noise_pct": 57.59,
+        "fidelity": 0.2433,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 1478,
+            "expected_prob": 0.25,
+            "observed_prob": 0.3608
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 179,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0437
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 72,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0176
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 8,
+            "expected_prob": 0.25,
+            "observed_prob": 0.002
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 72
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A3_bases",
+        "study_variable": "a",
+        "study_value": 4
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.04,
+      "isa_stats": {
+        "total_gates": 393,
+        "depth": 206,
+        "depth_2q": 43,
+        "num_qubits": 127,
+        "ecr": 43,
+        "cz": 0,
+        "rz": 202,
+        "sx": 139,
+        "x": 0,
+        "rx": 0,
+        "2q_gates": 43
+      },
+      "ideal": {
+        "time_s": 0.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 3.43,
+        "shots": 1024,
+        "signal_pct": 55.47,
+        "noise_pct": 44.53,
+        "fidelity": 0.3175,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 565,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5518
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 3,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0029
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 22
+      }
+    },
+    {
+      "config": {
+        "a": 7,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A3_bases",
+        "study_variable": "a",
+        "study_value": 7
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.07,
+      "isa_stats": {
+        "total_gates": 757,
+        "depth": 409,
+        "depth_2q": 81,
+        "num_qubits": 127,
+        "ecr": 81,
+        "cz": 0,
+        "rz": 399,
+        "sx": 262,
+        "x": 6,
+        "rx": 0,
+        "2q_gates": 81
+      },
+      "ideal": {
+        "time_s": 0.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.25,
+        "r_expected": 4,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.25,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 4.44,
+        "shots": 1024,
+        "signal_pct": 82.42,
+        "noise_pct": 17.58,
+        "fidelity": 0.3953,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 778,
+            "expected_prob": 0.25,
+            "observed_prob": 0.7598
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 26,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0254
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 39,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0381
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 1,
+            "expected_prob": 0.25,
+            "observed_prob": 0.001
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 28
+      }
+    },
+    {
+      "config": {
+        "a": 8,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A3_bases",
+        "study_variable": "a",
+        "study_value": 8
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.24,
+      "isa_stats": {
+        "total_gates": 748,
+        "depth": 392,
+        "depth_2q": 84,
+        "num_qubits": 127,
+        "ecr": 84,
+        "cz": 0,
+        "rz": 388,
+        "sx": 263,
+        "x": 4,
+        "rx": 0,
+        "2q_gates": 84
+      },
+      "ideal": {
+        "time_s": 0.11,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.25,
+        "r_expected": 4,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.25,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 9.11,
+        "shots": 1024,
+        "signal_pct": 82.81,
+        "noise_pct": 17.19,
+        "fidelity": 0.2988,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 818,
+            "expected_prob": 0.25,
+            "observed_prob": 0.7988
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 29,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0283
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 1,
+            "expected_prob": 0.25,
+            "observed_prob": 0.001
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 21
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6aghrvg4t5c738377b0",
+        "shots": 4096,
+        "signal_pct": 79.42,
+        "noise_pct": 20.58,
+        "fidelity": 0.4836,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 2709,
+            "expected_prob": 0.25,
+            "observed_prob": 0.6614
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 315,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0769
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 205,
+            "expected_prob": 0.25,
+            "observed_prob": 0.05
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 24,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0059
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 55
+      }
+    },
+    {
+      "config": {
+        "a": 11,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A3_bases",
+        "study_variable": "a",
+        "study_value": 11
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.03,
+      "isa_stats": {
+        "total_gates": 128,
+        "depth": 55,
+        "depth_2q": 12,
+        "num_qubits": 127,
+        "ecr": 13,
+        "cz": 0,
+        "rz": 65,
+        "sx": 40,
+        "x": 1,
+        "rx": 0,
+        "2q_gates": 13
+      },
+      "ideal": {
+        "time_s": 0.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 7.85,
+        "shots": 1024,
+        "signal_pct": 84.57,
+        "noise_pct": 15.43,
+        "fidelity": 0.493,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          4,
+          8,
+          2
+        ],
+        "factors": [
+          5,
+          3
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 860,
+            "expected_prob": 0.5,
+            "observed_prob": 0.8398
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 6,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0059
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 16
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6agi07g4t5c738377f0",
+        "shots": 4096,
+        "signal_pct": 35.45,
+        "noise_pct": 64.55,
+        "fidelity": 0.3091,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          4,
+          2,
+          8
+        ],
+        "factors": [
+          5,
+          3
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 1211,
+            "expected_prob": 0.5,
+            "observed_prob": 0.2957
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 241,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0588
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 90
+      }
+    },
+    {
+      "config": {
+        "a": 13,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A3_bases",
+        "study_variable": "a",
+        "study_value": 13
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.06,
+      "isa_stats": {
+        "total_gates": 841,
+        "depth": 446,
+        "depth_2q": 92,
+        "num_qubits": 127,
+        "ecr": 92,
+        "cz": 0,
+        "rz": 443,
+        "sx": 291,
+        "x": 6,
+        "rx": 0,
+        "2q_gates": 92
+      },
+      "ideal": {
+        "time_s": 0.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.25,
+        "r_expected": 4,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.25,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 5.66,
+        "shots": 1024,
+        "signal_pct": 86.13,
+        "noise_pct": 13.87,
+        "fidelity": 0.4555,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 569,
+            "expected_prob": 0.25,
+            "observed_prob": 0.5557
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 310,
+            "expected_prob": 0.25,
+            "observed_prob": 0.3027
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 3,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0029
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 23
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6agi5954hss73b673gg",
+        "shots": 4096,
+        "signal_pct": 45.34,
+        "noise_pct": 54.66,
+        "fidelity": 0.214,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 1646,
+            "expected_prob": 0.25,
+            "observed_prob": 0.4019
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 186,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0454
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 25,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0061
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 0,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 65
+      }
+    }
+  ],
+  "A3_ref_no_approx": [
+    {
+      "config": {
+        "a": 2,
+        "opt_level": 3,
+        "approx_degree": 1.0,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A3_ref_no_approx",
+        "study_variable": "a",
+        "study_value": 2
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.8,
+      "isa_stats": {
+        "total_gates": 7614,
+        "depth": 4135,
+        "depth_2q": 907,
+        "num_qubits": 127,
+        "ecr": 1058,
+        "cz": 0,
+        "rz": 3895,
+        "sx": 2586,
+        "x": 66,
+        "rx": 0,
+        "2q_gates": 1058
+      },
+      "ideal": {
+        "time_s": 1.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.9997,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 1049,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2561
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 1047,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2556
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 965,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2356
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 1035,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2527
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 4
+      },
+      "noisy_fakekyiv": {
+        "time_s": 166.3,
+        "shots": 1024,
+        "signal_pct": 14.84,
+        "noise_pct": 85.16,
+        "fidelity": 0.148,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 34,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0332
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 41,
+            "expected_prob": 0.25,
+            "observed_prob": 0.04
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 43,
+            "expected_prob": 0.25,
+            "observed_prob": 0.042
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 34,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0332
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 275
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 1.0,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A3_ref_no_approx",
+        "study_variable": "a",
+        "study_value": 4
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.79,
+      "isa_stats": {
+        "total_gates": 4127,
+        "depth": 1982,
+        "depth_2q": 444,
+        "num_qubits": 127,
+        "ecr": 586,
+        "cz": 0,
+        "rz": 2082,
+        "sx": 1414,
+        "x": 36,
+        "rx": 0,
+        "2q_gates": 586
+      },
+      "ideal": {
+        "time_s": 0.54,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.9999,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 2082,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5083
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 2014,
+            "expected_prob": 0.5,
+            "observed_prob": 0.4917
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 2
+      },
+      "noisy_fakekyiv": {
+        "time_s": 70.83,
+        "shots": 1024,
+        "signal_pct": 16.6,
+        "noise_pct": 83.4,
+        "fidelity": 0.1645,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2,
+          4
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 101,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0986
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 69,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0674
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 265
+      }
+    },
+    {
+      "config": {
+        "a": 7,
+        "opt_level": 3,
+        "approx_degree": 1.0,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A3_ref_no_approx",
+        "study_variable": "a",
+        "study_value": 7
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 1.01,
+      "isa_stats": {
+        "total_gates": 7616,
+        "depth": 4129,
+        "depth_2q": 907,
+        "num_qubits": 127,
+        "ecr": 1058,
+        "cz": 0,
+        "rz": 3896,
+        "sx": 2590,
+        "x": 63,
+        "rx": 0,
+        "2q_gates": 1058
+      },
+      "ideal": {
+        "time_s": 1.0,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.9998,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 1002,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2446
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 1076,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2627
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 1008,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2461
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 1010,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2466
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 4
+      },
+      "noisy_fakekyiv": {
+        "time_s": 165.57,
+        "shots": 1024,
+        "signal_pct": 17.68,
+        "noise_pct": 82.32,
+        "fidelity": 0.1755,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 55,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0537
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 40,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0391
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 36,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0352
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 50,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0488
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 269
+      }
+    },
+    {
+      "config": {
+        "a": 8,
+        "opt_level": 3,
+        "approx_degree": 1.0,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A3_ref_no_approx",
+        "study_variable": "a",
+        "study_value": 8
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 1.16,
+      "isa_stats": {
+        "total_gates": 7607,
+        "depth": 4134,
+        "depth_2q": 906,
+        "num_qubits": 127,
+        "ecr": 1057,
+        "cz": 0,
+        "rz": 3891,
+        "sx": 2589,
+        "x": 61,
+        "rx": 0,
+        "2q_gates": 1057
+      },
+      "ideal": {
+        "time_s": 1.11,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.9996,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 983,
+            "expected_prob": 0.25,
+            "observed_prob": 0.24
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 982,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2397
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 1055,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2576
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 1076,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2627
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 4
+      },
+      "noisy_fakekyiv": {
+        "time_s": 169.2,
+        "shots": 1024,
+        "signal_pct": 16.21,
+        "noise_pct": 83.79,
+        "fidelity": 0.1612,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 51,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0498
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 33,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0322
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 41,
+            "expected_prob": 0.25,
+            "observed_prob": 0.04
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 41,
+            "expected_prob": 0.25,
+            "observed_prob": 0.04
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 266
+      }
+    },
+    {
+      "config": {
+        "a": 11,
+        "opt_level": 3,
+        "approx_degree": 1.0,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A3_ref_no_approx",
+        "study_variable": "a",
+        "study_value": 11
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.54,
+      "isa_stats": {
+        "total_gates": 4094,
+        "depth": 1946,
+        "depth_2q": 430,
+        "num_qubits": 127,
+        "ecr": 584,
+        "cz": 0,
+        "rz": 2058,
+        "sx": 1406,
+        "x": 37,
+        "rx": 0,
+        "2q_gates": 584
+      },
+      "ideal": {
+        "time_s": 0.39,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.9999,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2
+        ],
+        "factors": [
+          5,
+          3
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 2009,
+            "expected_prob": 0.5,
+            "observed_prob": 0.4905
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 2087,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5095
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 2
+      },
+      "noisy_fakekyiv": {
+        "time_s": 80.11,
+        "shots": 1024,
+        "signal_pct": 18.16,
+        "noise_pct": 81.84,
+        "fidelity": 0.1814,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2,
+          4
+        ],
+        "factors": [
+          5,
+          3
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 100,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0977
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 86,
+            "expected_prob": 0.5,
+            "observed_prob": 0.084
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 281
+      }
+    },
+    {
+      "config": {
+        "a": 13,
+        "opt_level": 3,
+        "approx_degree": 1.0,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A3_ref_no_approx",
+        "study_variable": "a",
+        "study_value": 13
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 1.2,
+      "isa_stats": {
+        "total_gates": 7611,
+        "depth": 4135,
+        "depth_2q": 907,
+        "num_qubits": 127,
+        "ecr": 1058,
+        "cz": 0,
+        "rz": 3896,
+        "sx": 2587,
+        "x": 61,
+        "rx": 0,
+        "2q_gates": 1058
+      },
+      "ideal": {
+        "time_s": 0.95,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.9999,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 1001,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2444
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 1048,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2559
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 1043,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2546
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 1004,
+            "expected_prob": 0.25,
+            "observed_prob": 0.2451
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 4
+      },
+      "noisy_fakekyiv": {
+        "time_s": 164.75,
+        "shots": 1024,
+        "signal_pct": 15.82,
+        "noise_pct": 84.18,
+        "fidelity": 0.1566,
+        "r_expected": 4,
+        "r_found": 4,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 48,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0469
+          },
+          {
+            "peak_decimal": 128,
+            "bitstring": "010000000",
+            "count": 40,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0391
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 28,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0273
+          },
+          {
+            "peak_decimal": 384,
+            "bitstring": "110000000",
+            "count": 46,
+            "expected_prob": 0.25,
+            "observed_prob": 0.0449
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 267
+      }
+    }
+  ],
+  "A4_layout": [
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "trivial",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A4_layout",
+        "study_variable": "layout_method",
+        "study_value": "trivial"
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.16,
+      "isa_stats": {
+        "total_gates": 441,
+        "depth": 219,
+        "depth_2q": 44,
+        "num_qubits": 127,
+        "ecr": 47,
+        "cz": 0,
+        "rz": 231,
+        "sx": 153,
+        "x": 1,
+        "rx": 0,
+        "2q_gates": 47
+      },
+      "ideal": {
+        "time_s": 0.09,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 7.84,
+        "shots": 1024,
+        "signal_pct": 71.78,
+        "noise_pct": 28.22,
+        "fidelity": 0.4286,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          2
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 728,
+            "expected_prob": 0.5,
+            "observed_prob": 0.7109
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 7,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0068
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 22
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "dense",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A4_layout",
+        "study_variable": "layout_method",
+        "study_value": "dense"
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.04,
+      "isa_stats": {
+        "total_gates": 414,
+        "depth": 216,
+        "depth_2q": 44,
+        "num_qubits": 127,
+        "ecr": 44,
+        "cz": 0,
+        "rz": 216,
+        "sx": 145,
+        "x": 0,
+        "rx": 0,
+        "2q_gates": 44
+      },
+      "ideal": {
+        "time_s": 0.03,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 8.06,
+        "shots": 1024,
+        "signal_pct": 87.01,
+        "noise_pct": 12.99,
+        "fidelity": 0.5394,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          8,
+          2,
+          4
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 878,
+            "expected_prob": 0.5,
+            "observed_prob": 0.8574
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 13,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0127
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 15
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A4_layout",
+        "study_variable": "layout_method",
+        "study_value": "sabre"
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.03,
+      "isa_stats": {
+        "total_gates": 393,
+        "depth": 206,
+        "depth_2q": 43,
+        "num_qubits": 127,
+        "ecr": 43,
+        "cz": 0,
+        "rz": 202,
+        "sx": 139,
+        "x": 0,
+        "rx": 0,
+        "2q_gates": 43
+      },
+      "ideal": {
+        "time_s": 0.03,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 3.53,
+        "shots": 1024,
+        "signal_pct": 57.81,
+        "noise_pct": 42.19,
+        "fidelity": 0.3128,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 591,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5771
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 1,
+            "expected_prob": 0.5,
+            "observed_prob": 0.001
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 24
+      }
+    }
+  ],
+  "A5_routing": [
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "basic",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A5_routing",
+        "study_variable": "routing_method",
+        "study_value": "basic"
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.29,
+      "isa_stats": {
+        "total_gates": 382,
+        "depth": 211,
+        "depth_2q": 41,
+        "num_qubits": 127,
+        "ecr": 41,
+        "cz": 0,
+        "rz": 198,
+        "sx": 129,
+        "x": 5,
+        "rx": 0,
+        "2q_gates": 41
+      },
+      "ideal": {
+        "time_s": 0.08,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 11.83,
+        "shots": 1024,
+        "signal_pct": 57.42,
+        "noise_pct": 42.58,
+        "fidelity": 0.3108,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 587,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5732
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 1,
+            "expected_prob": 0.5,
+            "observed_prob": 0.001
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 23
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A5_routing",
+        "study_variable": "routing_method",
+        "study_value": "sabre"
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.05,
+      "isa_stats": {
+        "total_gates": 393,
+        "depth": 206,
+        "depth_2q": 43,
+        "num_qubits": 127,
+        "ecr": 43,
+        "cz": 0,
+        "rz": 202,
+        "sx": 139,
+        "x": 0,
+        "rx": 0,
+        "2q_gates": 43
+      },
+      "ideal": {
+        "time_s": 0.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 3.55,
+        "shots": 1024,
+        "signal_pct": 58.98,
+        "noise_pct": 41.02,
+        "fidelity": 0.3288,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 602,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5879
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 2,
+            "expected_prob": 0.5,
+            "observed_prob": 0.002
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 21
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "stochastic",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A5_routing",
+        "study_variable": "routing_method",
+        "study_value": "stochastic"
+      },
+      "error": "'Invalid plugin name stochastic for stage routing'"
+    }
+  ],
+  "A6_A7_mitigation": [
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": false,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A6_A7_mitigation",
+        "study_variable": "mitigation",
+        "study_value": "Sin mitigaci\u00f3n"
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.05,
+      "isa_stats": {
+        "total_gates": 393,
+        "depth": 206,
+        "depth_2q": 43,
+        "num_qubits": 127,
+        "ecr": 43,
+        "cz": 0,
+        "rz": 202,
+        "sx": 139,
+        "x": 0,
+        "rx": 0,
+        "2q_gates": 43
+      },
+      "ideal": {
+        "time_s": 0.05,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 8.1,
+        "shots": 1024,
+        "signal_pct": 55.37,
+        "noise_pct": 44.63,
+        "fidelity": 0.3001,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 566,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5527
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 1,
+            "expected_prob": 0.5,
+            "observed_prob": 0.001
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 20
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6agiah7ce2c73fe8no0",
+        "shots": 4096,
+        "signal_pct": 82.84,
+        "noise_pct": 17.16,
+        "fidelity": 0.5473,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          4,
+          2,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 3303,
+            "expected_prob": 0.5,
+            "observed_prob": 0.8064
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 90,
+            "expected_prob": 0.5,
+            "observed_prob": 0.022
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 30
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": false,
+        "dd_sequence": "XY4",
+        "study": "A6_A7_mitigation",
+        "study_variable": "mitigation",
+        "study_value": "Solo PT"
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.05,
+      "isa_stats": {
+        "total_gates": 393,
+        "depth": 206,
+        "depth_2q": 43,
+        "num_qubits": 127,
+        "ecr": 43,
+        "cz": 0,
+        "rz": 202,
+        "sx": 139,
+        "x": 0,
+        "rx": 0,
+        "2q_gates": 43
+      },
+      "ideal": {
+        "time_s": 0.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 3.77,
+        "shots": 1024,
+        "signal_pct": 57.91,
+        "noise_pct": 42.09,
+        "fidelity": 0.3306,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          4,
+          8,
+          2
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 590,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5762
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 3,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0029
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 23
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6kuc3ofh9oc73em9bi0",
+        "shots": 4096,
+        "signal_pct": 84.69,
+        "noise_pct": 15.31,
+        "fidelity": 0.5757,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          4,
+          2,
+          8
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 3353,
+            "expected_prob": 0.5,
+            "observed_prob": 0.8186
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 116,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0283
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 35
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": false,
+        "pt_enable_measure": false,
+        "dd_enable": true,
+        "dd_sequence": "XY4",
+        "study": "A6_A7_mitigation",
+        "study_variable": "mitigation",
+        "study_value": "Solo DD (XY4)"
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.04,
+      "isa_stats": {
+        "total_gates": 393,
+        "depth": 206,
+        "depth_2q": 43,
+        "num_qubits": 127,
+        "ecr": 43,
+        "cz": 0,
+        "rz": 202,
+        "sx": 139,
+        "x": 0,
+        "rx": 0,
+        "2q_gates": 43
+      },
+      "ideal": {
+        "time_s": 0.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 8.02,
+        "shots": 1024,
+        "signal_pct": 54.49,
+        "noise_pct": 45.51,
+        "fidelity": 0.2955,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 557,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5439
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 1,
+            "expected_prob": 0.5,
+            "observed_prob": 0.001
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 22
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6agiesnsg9c7397rug0",
+        "shots": 4096,
+        "signal_pct": 20.29,
+        "noise_pct": 79.71,
+        "fidelity": 0.154,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          8,
+          4
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 771,
+            "expected_prob": 0.5,
+            "observed_prob": 0.1882
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 60,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0146
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 163
+      }
+    },
+    {
+      "config": {
+        "a": 4,
+        "opt_level": 3,
+        "approx_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "pt_enable_gates": true,
+        "pt_enable_measure": false,
+        "dd_enable": true,
+        "dd_sequence": "XY4",
+        "study": "A6_A7_mitigation",
+        "study_variable": "mitigation",
+        "study_value": "PT + DD (XY4)"
+      },
+      "N": 15,
+      "control_qubits": 9,
+      "target_qubits": 4,
+      "total_qubits": 13,
+      "transpile_time_s": 0.04,
+      "isa_stats": {
+        "total_gates": 393,
+        "depth": 206,
+        "depth_2q": 43,
+        "num_qubits": 127,
+        "ecr": 43,
+        "cz": 0,
+        "rz": 202,
+        "sx": 139,
+        "x": 0,
+        "rx": 0,
+        "2q_gates": 43
+      },
+      "ideal": {
+        "time_s": 0.04,
+        "shots": 4096,
+        "signal_pct": 100.0,
+        "noise_pct": 0.0,
+        "fidelity": 0.5,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 4096,
+            "expected_prob": 0.5,
+            "observed_prob": 1.0
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 1
+      },
+      "noisy_fakekyiv": {
+        "time_s": 8.0,
+        "shots": 1024,
+        "signal_pct": 56.74,
+        "noise_pct": 43.26,
+        "fidelity": 0.2837,
+        "r_expected": 2,
+        "r_found": null,
+        "candidates_r": [
+          4,
+          8
+        ],
+        "factors": null,
+        "factors_correct": false,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 581,
+            "expected_prob": 0.5,
+            "observed_prob": 0.5674
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 0,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0
+          }
+        ],
+        "total_shots": 1024,
+        "unique_outcomes": 16
+      },
+      "hw_ibm_torino": {
+        "job_id": "d6agik97ce2c73fe8o20",
+        "shots": 4096,
+        "signal_pct": 0.76,
+        "noise_pct": 99.24,
+        "fidelity": 0.0072,
+        "r_expected": 2,
+        "r_found": 2,
+        "candidates_r": [
+          14,
+          2
+        ],
+        "factors": [
+          3,
+          5
+        ],
+        "factors_correct": true,
+        "peak_details": [
+          {
+            "peak_decimal": 0,
+            "bitstring": "000000000",
+            "count": 9,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0022
+          },
+          {
+            "peak_decimal": 256,
+            "bitstring": "100000000",
+            "count": 22,
+            "expected_prob": 0.5,
+            "observed_prob": 0.0054
+          }
+        ],
+        "total_shots": 4096,
+        "unique_outcomes": 469
+      }
+    }
+  ]
+}

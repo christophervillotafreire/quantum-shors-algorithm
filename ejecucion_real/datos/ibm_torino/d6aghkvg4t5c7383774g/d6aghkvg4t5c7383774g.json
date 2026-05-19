@@ -1,0 +1,33 @@
+{
+    "csa": {
+        "2": {
+            "cz": 225,
+            "rzz": 0,
+            "rx": 0,
+            "rz": 420,
+            "sx": 546,
+            "x": 6,
+            "total_gates": 1487,
+            "circuit_depth": 225
+        }
+    },
+    "settings": {
+        "number_to_factor": 15,
+        "control_qubits": 9,
+        "a_coefficients": [
+            2
+        ],
+        "backend": "ibmqpu",
+        "ibm_qpu": "ibm_torino",
+        "shots": 4096,
+        "phases_max_top_number": 5,
+        "optimization_level": 3.0,
+        "approximation_degree": 0.7,
+        "layout_method": "sabre",
+        "routing_method": "sabre",
+        "translation_method": "translator",
+        "sabre_optimization": false,
+        "dynamical_decoupling": false,
+        "pauli_twirling": true
+    }
+}
